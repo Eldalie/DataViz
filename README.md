@@ -1,3 +1,8 @@
+LINKS : 
+  - Process Book : https://gandalfatepfl.github.io/DataViz/ProcessBook
+  - Visualisation  :  https://gandalfatepfl.github.io/DataViz/map.html
+  - Screen CAST : 
+  
 # DataViz : history of Rock genre in time !!!
 
 
