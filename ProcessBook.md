@@ -2,6 +2,19 @@
 
 Description: Visulaitaion tool to show how rock involve in time.
 
+We will focus on this genre :
+    - pop rock
+    - blues-rock
+    - folk rock
+    - indie rock
+    - rock
+    - psychedelic rock
+    - rock 'n roll
+    - alternative rock
+    - hard rock
+    - soft rock
+
+
 ```
 +------------------------------------------------------------------------------------------------------+-----------------------------+
 |                                                                                                      |           TITLE             |
