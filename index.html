@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<head>
+<style>
+#maps    {
+    width: 100vw;
+    height : 80%;
+    
+}
+</style>
+</head>
+
+<body>
+<script src="//d3js.org/d3.v3.min.js"></script>
+<script src="//d3js.org/topojson.v1.min.js"></script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+		<body>
+		<!-- Plotly chart will be drawn inside this DIV -->
+		<div id="maps"></div>
+		<script>
+		Plotly.d3.json('data.json', function(err, rows){
+
+console.log(rows.map((row)=>row[1] ))
+
+
+var data = [{
+    type: 'scattergeo',
+    mode: 'markers',
+    
+     /*text: [
+            'Montreal', 'Toronto', 'Vancouver', 'Calgary', 'Edmonton',
+            'Ottawa', 'Halifax', 'Victoria', 'Winnepeg', 'Regina'
+        ],*/
+        lon: rows.map((row)=>row[3] ),
+        lat: rows.map((row)=>row[2] ),
+    
+    
+    
+    marker: {
+            size: 7,
+            color: [
+                '#bebada', '#fdb462', '#fb8072', '#d9d9d9', '#bc80bd',
+                '#b3de69', '#8dd3c7', '#80b1d3', '#fccde5', '#ffffb3'
+            ],
+            line: {
+                width: 1
+            }
+        },
+}];
+
+var layout = {
+    'geo': {
+        'scope': 'world',
+        'resolution': 5000
+    }
+};
+
+Plotly.newPlot('maps', data, layout);
+  
+});
+		</script>
+		</body>
+
+		
