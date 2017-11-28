@@ -6,60 +6,34 @@ LINKS :
 # DataViz : history of Rock genre in time !!!
 
 
-Description: Visulaitaion tool to show how rock involve in time.
-
-```
-+------------------------------------------------------------------------------------------------------+-----------------------------+
-|                                                                                                      |           TITLE             |
-|                                                                                                      |                             |
-|                                                                                                      |     SOME TEXTE              |
-|                                                                                                      |                             |
-|                                                                                                      |                             |
-|                                                                                                      |                             |
-|                                                                                                      |                             |
-|                                                                                                      |                             |
-|                                                                                                      |                             |
-|                       WORDL MAP : WITH ZOMING,move,each song is a dot with a color                   +-----------------------------+
-|                       of his genre                                                                   |                             |
-|                                                                                                      |                             |
-|                                                                                                      |                             |
-|                                                                                                      |                             |
-|                                                                                                      |       LEGEND !!             |
-|                                                                                                      |                             |
-|                                                                                                      |                             |
-|                                                                                                      |                             |
-|                inportant event                                                                       |                             |
-|                                                                                                      |                             |
-+--------------------+-------------------------------------------+-------------+-----------------------+-----------------------------+
-|                    |                                           |             |                                                     |
-|                    |                                           |             |                                                     |
-|                    |                                           |             |                                                     |
-|                    |                                           |             |         Golden ratio                                |
-|                    |                                           |             |                                                     |
-|                    |                                           |             |                                                     |
-|                    |                                           |             |                                                     |
-|                    |     SELECT TIME    +       STREAM GRAPH   |             |                                                     |
-|                    |                                           |             |                                                     |
-|                    |                                           |             |                                                     |
-|                    |                                           |             |                                                     |
-|                    |                                           |             |                                                     |
-|                    |                                           |             |                                                     |
-|                    |                                           |             |                                                     |
-|                    |                                           |             |                                                     |
-|                    |                                           |             |                                                     |
-+--------------------+-------------------------------------------+-------------+-----------------------------------------------------+
-                                                               start          END
-
-```
-
-
-
-
-
-
 TAsk to do : 
 
-[] : Get Real DATA : 
+- [ ] : Get Real DATA in json  : 
+        get_year,
+        get_artist_latitude,
+        get_artist_longitude,
+        get_artist_hotttnesss,
+        get_artist,
+        get_artist_id,
+        get_artist_terms,
+        get_artist_terms_weight,
+        get_artist_name,
+        get_similar_artists,
+        
+        
+- [ ] : load the Data in json
+- [ ] : build the Stream Graphe
+- [ ] : build the Maps
+- [ ] : CSS/achitecture
+  - [ ] : legend
+  - [ ] : Introdution
+  - [ ] : big event of rock on timeline/Stream Graphe
+
+- [ ] Process Book
+
+- [ ] : Screen cast
+
+
 
 
 
