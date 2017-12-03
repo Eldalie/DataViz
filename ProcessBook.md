@@ -1,6 +1,6 @@
 # this is our process book
 
-Description: Visulaitaion tool to show how rock involve in time.
+Description: Visulaitaion tool to show how rock evolve in time.
 
 We will focus on this genre :
     - pop rock
