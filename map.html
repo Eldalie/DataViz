@@ -1,66 +1,87 @@
 <!DOCTYPE html>
-<meta charset="utf-8">
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>EPFL : Datavisulation on Millon Song ! </title>
+        <!-- <meta name="description" content="The HTML5 Herald">--> 
+        <meta name="author" content="Groupe : ">
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
+        <link rel="stylesheet" href="./css/style.css">
 
-<head>
-<style>
-#maps    {
-    width: 100vw;
-    height : 80%;
+    </head>
+
+    <body>
     
-}
-</style>
-</head>
+    	<!-- Plotly chart will be drawn inside this DIV -->
+		<div id="graph" >
+		    
 
-<body>
-<script src="//d3js.org/d3.v3.min.js"></script>
-<script src="//d3js.org/topojson.v1.min.js"></script>
-<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+		    <div id="up-panel" class="split" >
+		        
+		        <div class="split horizpan ">
+        		    <div id="maps" class="split split-horizontal" >
+        		        
+        		    
+        		    </div>
+    		    
+    		    
+        		    <div id="legend" class="split split-horizontal">
+        		        <div id="text">LEGEND</div> 
+        		        <div id="genre"></div>
+        		    </div>
+    		    </div>
+		    </div>
+		    
+            
+		        <div id="streamgraph" class="split">
+		    
+		    
+		       
+		        </div>
+		</div>
+		
+		
+		
 
-		<body>
-		<!-- Plotly chart will be drawn inside this DIV -->
-		<div id="maps"></div>
-		<script>
-		Plotly.d3.json('data.json', function(err, rows){
-
-console.log(rows.map((row)=>row[1] ))
-
-
-var data = [{
-    type: 'scattergeo',
-    mode: 'markers',
-    
-     /*text: [
-            'Montreal', 'Toronto', 'Vancouver', 'Calgary', 'Edmonton',
-            'Ottawa', 'Halifax', 'Victoria', 'Winnepeg', 'Regina'
-        ],*/
-        lon: rows.map((row)=>row[3] ),
-        lat: rows.map((row)=>row[2] ),
-    
-    
-    
-    marker: {
-            size: 7,
-            color: [
-                '#bebada', '#fdb462', '#fb8072', '#d9d9d9', '#bc80bd',
-                '#b3de69', '#8dd3c7', '#80b1d3', '#fccde5', '#ffffb3'
-            ],
-            line: {
-                width: 1
-            }
-        },
-}];
-
-var layout = {
-    'geo': {
-        'scope': 'world',
-        'resolution': 5000
-    }
-};
-
-Plotly.newPlot('maps', data, layout);
+      <!-- MAPS -->
+        <script src="//d3js.org/topojson.v1.min.js"></script>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css"/>
+        <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.2.0/dist/MarkerCluster.Default.css"/>
+        <script src=' https://unpkg.com/leaflet.markercluster@1.2.0/dist/leaflet.markercluster.js'></script>
+        
+        
+        <script src="https://d3js.org/d3.v4.min.js"></script>
+        
+        <!-- MISC -->
+        <script
+			  src="https://code.jquery.com/jquery-3.2.1.min.js"
+			  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+			  crossorigin="anonymous"></script>
+        
+        <script src="js/script.js"></script>
+        
+         
+        
+          <!-- SPLIT -->
+        <script src="https://unpkg.com/split.js/split.min.js"></script>
   
-});
-		</script>
+        <script type="text/javascript" >
+        Split(['#up-panel', '#streamgraph'], {
+         direction: 'vertical',
+         sizes: [75, 25],
+        cursor: 'row-resize'
+                })
+        Split(['#maps', '#legend'], {
+         sizes: [75, 25],
+        cursor: 'col-resize'
+                })
+        </script>
+		
+
+		
+		
 		</body>
+</html>
 
 		

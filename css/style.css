@@ -1,0 +1,80 @@
+
+html, body {
+    width:100%;  
+    height : 100%;
+  }
+  
+.split{
+     -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+  .gutter {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: 50%;
+  }
+  .gutter.gutter-horizontal {
+    cursor: col-resize;
+    background-image: url('../grips/vertical.png');
+     height: 100%;
+    float: left;
+  }
+  .gutter.gutter-vertical {
+    cursor: row-resize;
+    background-image: url('../grips/horizontal.png');
+  }
+
+.horizpan{
+    width:100%;  
+height:100%; 
+}
+
+
+.split.split-horizontal {
+    height: 100%; 
+    float : left;
+
+  }
+
+#graph    {
+    width:100%;  
+    height : 100%;
+    
+    margin: 0 0 0 0;
+    position:absolute; 
+    left:0;
+    right :0;
+    top:0;
+        
+     background-image: url("http://rotalstepmusic.net/uploads/images/wwwwwwwwwwwww.jpg");    
+     background-color: #000000;
+}
+
+
+#up-panel
+{
+    width:100%;  
+}
+
+#maps
+{
+    height:100%; 
+    width:100%;  
+}
+
+#legend
+{
+    /*background-color: gray;*/
+    height:100%; 
+    color : white;
+}
+
+#streamgraph
+{
+background-color: green;
+height:100%; 
+}
