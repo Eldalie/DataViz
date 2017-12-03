@@ -15,7 +15,6 @@
 
     <body>
     
-    	<!-- Plotly chart will be drawn inside this DIV -->
 		<div id="graph" >
 		    
 
@@ -29,8 +28,15 @@
     		    
     		    
         		    <div id="legend" class="split split-horizontal">
-        		        <div id="text">LEGEND</div> 
-        		        <div id="genre"></div>
+        		        
+        		        <div class="split horizpan ">
+            		        <div id="text">
+            		            <h2> Welcome to Rock !</h2>
+            		            <p>This tool help to undurstand how rock propagte altrought time and space</p>
+            		            
+            		        </div> 
+            		        <div id="genre">LEGEND<br/></div>
+        		        </div>
         		    </div>
     		    </div>
 		    </div>
@@ -80,6 +86,13 @@
         Split(['#maps', '#legend'], {
          sizes: [75, 25],
         cursor: 'col-resize'
+                })
+                
+          Split(['#text', '#genre'], {
+         direction: 'vertical',
+         sizes: [50, 50],
+        cursor: 'row-resize',
+        onDrag : updatestream
                 })
         </script>
 		
