@@ -3,6 +3,7 @@ global d3
 */
 
 const GENRES = ["hip hop","soft rock","folk rock"];//...TODO
+const COLOR = ["green","blue","red","violet"]
 var YEARSTART = 0;
 var YEAREND = 2900;
 var FIRSTYEAR = 1900;
@@ -43,7 +44,6 @@ var yAxis = d3.axisLeft(yScale);
 svg.append('g').classed('x axis', true);
 svg.append('g').classed('y axis', true);
 
-var z = d3.interpolateCool;
 
 var area = d3.area()
     .x(function(d, i) { return xScale(i); })
@@ -51,6 +51,25 @@ var area = d3.area()
     .y1(function(d) { return yScale(d[1]); });
 
 
+var brush = d3.brushX()
+    .on("brush end", brushed);
+
+svg.append("g")
+    .attr("class", "brush");
+
+function brushed()
+{
+    
+    var s = d3.event.selection || xScale.range();
+    s = s.map(xScale.invert);
+
+  YEARSTART = s[0]+FIRSTYEAR;
+  YEAREND = s[1]+FIRSTYEAR;
+    console.log(YEARSTART,YEAREND)
+  updatemap();
+
+    
+}
 
 function stackMax(layer) {
   return d3.max(layer, function(d) { return d[1]; });
@@ -93,6 +112,8 @@ function fill_stream(data)
     layers = stack(year);
     yScale.domain([d3.min(layers, stackMin), d3.max(layers, stackMax)])
 }
+
+
 function updatestream()
 {
     
@@ -113,15 +134,22 @@ function updatestream()
      yAxis.scale(yScale);
 
     svg.attr("width", width).attr("height", height);
-    console.log(layers)
+
     var paths = svg.selectAll(".chemain")
                .data(layers);
-    paths.exit().remove();       
+    //paths.exit().remove();       
     var enter = paths.enter().append("path").attr('class', 'chemain')  ;
-    enter.merge(paths).attr("d", area).attr("fill", function() { return z(Math.random()); });
+    enter.merge(paths).attr("d", area).attr("fill", function(d,i) { return COLOR[i]; });
 
     svg.select('.x.axis').call(xAxis);
     svg.select('.y.axis').call(yAxis);
+    
+    brush.extent([[0, 0], [width, height]])
+    console.log(d3.brushSelection(d3.select(".brush").node()))
+    
+    svg.select(".brush") 
+      .call(brush)
+      .call(brush.move, (d3.brushSelection(d3.select(".brush").node()) || xScale.range()));
 }
 
 
@@ -131,7 +159,8 @@ function updatestream()
 // GENRE SLECTION:
 for(genre of GENRES)
 {
-    $('#genre').append("<input name=\""+genre+"\" type=\"checkbox\">"+genre+"</input><br/>");
+    
+    $('#genre').append("<label style=\"color:"+ COLOR[GENRES.indexOf(genre)]+"\" ><input  name=\""+genre+"\" type=\"checkbox\"/>"+genre+"</label><br/>");
 }
 
 
@@ -154,7 +183,7 @@ function updatemap()
     
     for(var element of data)
     {
-        const COLOR = ["green","blue","red","violet"]
+ 
         
         var color =  COLOR[GENRES.indexOf(element[6][0])];
         var greenIcon = new L.Icon({
