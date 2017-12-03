@@ -101,24 +101,37 @@ h2
 }
 
 
-.svg-container {
-    display: inline-block;
-    position: relative;
+.svgstream
+{
+ 
     width: 100%;
-    vertical-align: top;
-}
-.svg-content-responsive {
-    display: inline-block;
-    top: 10px;
-    left: 0;
-}
-
-.axis{
+   
     
-    color: white;
+     position: absolute;
+  bottom: 1px;
+  left: 0;
 }
 
+
+
+.axis text{
+    
+    fill: white;
+}
+.axis line{
+    
+    fill: white;
+}
+.axis path{
+    
+    fill: white;
+}
 .leaflet-container {
     background-color:rgba(0,0,0,0.0);
     overflow: hidden;
+}
+.chemain
+{
+    
+   opacity: 0.6;
 }

@@ -29,17 +29,20 @@ var year = undefined;
 var stack = d3.stack(),
     layers = undefined;
 
+var heightXAxis = 25;
+var weightYAxis = 25;
+
 var width = $("body").width();
 var height = $("body").height()*0.25;
 
 var svg = d3.select('#streamgraph')
-         .append("svg").attr("width", width)
+         .append("svg").attr('class', 'svgstream').attr("width", width)
           .attr("height", height);
 
 
 
 
-var xScale = d3.scaleLinear().domain([0, LASTYEAR-FIRSTYEAR ]);
+var xScale = d3.scaleLinear().domain([FIRSTYEAR, LASTYEAR ]);
 var yScale = d3.scaleLinear();
 var xAxis = d3.axisTop(xScale)
 var yAxis = d3.axisLeft(yScale);
@@ -50,25 +53,30 @@ svg.append('g').classed('y axis', true);
 
 
 var area = d3.area()
-    .x(function(d, i) { return xScale(i); })
+    .x(function(d, i) { return xScale(i+FIRSTYEAR); })
     .y0(function(d) { return yScale(d[0]); })
     .y1(function(d) { return yScale(d[1]); });
 
 
 var brush = d3.brushX()
     .on("brush end", brushed);
+    
+svg.append("g")
+    .attr("class", "stream");
 
 svg.append("g")
     .attr("class", "brush");
+    
 
+    
 function brushed()
 {
     
     var s = d3.event.selection || xScale.range();
     s = s.map(xScale.invert);
 
-  YEARSTART = s[0]+FIRSTYEAR;
-  YEAREND = s[1]+FIRSTYEAR;
+  YEARSTART = s[0];
+  YEAREND = s[1];
     console.log(YEARSTART,YEAREND)
   updatemap();
 
@@ -125,35 +133,37 @@ function updatestream()
     
     console.log("update");
     
-    width = $("#streamgraph").width(),
-    height =$("#streamgraph").height();
+    width = $("#streamgraph").width()-1;
+    height =$("#streamgraph").height()-1;
     console.log(width,height)
 
 
-     xScale.range([0, width]);
+     xScale.range([0, width-weightYAxis]);
     
-     yScale.range([height, 0]);
+     yScale.range([height-heightXAxis, 0]);
      
-     xAxis.scale(xScale)
-     yAxis.scale(yScale);
+     //xAxis.scale(xScale)
+     //yAxis.scale(yScale);
 
     svg.attr("width", width).attr("height", height);
 
-    var paths = svg.selectAll(".chemain")
+    var paths = svg.select(".stream").selectAll(".chemain")
                .data(layers);
     //paths.exit().remove();       
-    var enter = paths.enter().append("path").attr('class', 'chemain')  ;
+    var enter = paths.enter().append("path").attr("transform", "translate(" + weightYAxis + "," + heightXAxis + ")").attr('class', 'chemain')  ;
     enter.merge(paths).attr("d", area).attr("fill", function(d,i) { return COLOR[i]; });
 
     svg.select('.x.axis').call(xAxis);
-    svg.select('.y.axis').call(yAxis);
-    
-    brush.extent([[0, 0], [width, height]])
+    svg.select('.y.axis').call(yAxis)
+     svg.select('.x.axis').attr("transform", "translate(" + weightYAxis + ","+heightXAxis+")");
+     svg.select('.y.axis').attr("transform", "translate(" + weightYAxis + "," + heightXAxis + ")");
+     
+    brush.extent([[weightYAxis, heightXAxis], [width, height]])
     console.log(d3.brushSelection(d3.select(".brush").node()))
     
     svg.select(".brush") 
       .call(brush)
-      .call(brush.move, (d3.brushSelection(d3.select(".brush").node()) || xScale.range()));
+      .call(brush.move, (d3.brushSelection(d3.select(".brush").node()) || [weightYAxis,width]));
 }
 
 
