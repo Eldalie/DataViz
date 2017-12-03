@@ -1,17 +1,17 @@
-## Process book - Evolution of Rock Music 
+# Process book - Evolution of Rock Music 
 
 To do in the process book: 
 
-- Overview, motivation, target audience
-- Related work and inspiration
-- Questions: What am I trying to show this my viz?
-- Dataset: where does it come from, what are you processing steps?
-- Exploratory data analysis: What viz have you used to gain insights on the data?
-- Designs: What are the different visualizations you considered? Justify the design decisions you made using the perceptual and design principles.
-- Did you deviate from your initial proposal? (it’s ok)
+- [] Overview, motivation, target audience
+- [] Related work and inspiration
+- [] Questions: What am I trying to show this my viz?
+- [] Dataset: where does it come from, what are you processing steps?
+- [] Exploratory data analysis: What viz have you used to gain insights on the data?
+- [] Designs: What are the different visualizations you considered? Justify the design decisions you made using the perceptual and design principles.
+- [] Did you deviate from your initial proposal? (it’s ok)
 
 
-#Introduction 
+## Introduction 
 
 Music. 
 Regardless of the context in space or time, this simple word can evoke millions of melodies, rythms, artists that have influenced our lives. Music has followed us for our whole lifes, given shape and embelished our best memories. 
