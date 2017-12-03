@@ -14,7 +14,11 @@ var DATA = [];
 // DECLARATION ....
 
 //MAP INIT:
-var map = new L.Map("maps", {center: [37.8, -96.9], zoom: 4}).addLayer(new L.TileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"));
+var map = new L.Map("maps", {attributionControl: false , center: [37.8, -96.9], zoom: 4});//.addLayer(new L.TileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"));
+fetch("https://raw.githubusercontent.com/johan/world.geo.json/master/countries.geo.json")
+  .then(function(response) { return response.json(); })
+  .then(function(data) {L.geoJSON(data).addTo(map)});
+
 var Artist =  L.layerGroup();
 
 
@@ -160,7 +164,7 @@ function updatestream()
 for(genre of GENRES)
 {
     
-    $('#genre').append("<label style=\"color:"+ COLOR[GENRES.indexOf(genre)]+"\" ><input  name=\""+genre+"\" type=\"checkbox\"/>"+genre+"</label><br/>");
+    $('#genre').append("<label style=\"color:"+ COLOR[GENRES.indexOf(genre)]+"\" ><input  name=\""+genre+"\" type=\"checkbox\" checked >"+genre+"</label><br/>");
 }
 
 
