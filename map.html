@@ -34,7 +34,7 @@
 		    
             
 		        <div id="streamgraph" class="split">
-		    
+		         
 		    
 		       
 		        </div>
@@ -67,10 +67,14 @@
         <script src="https://unpkg.com/split.js/split.min.js"></script>
   
         <script type="text/javascript" >
+        
+              window.addEventListener("resize", updatestream);
+        
         Split(['#up-panel', '#streamgraph'], {
          direction: 'vertical',
          sizes: [75, 25],
-        cursor: 'row-resize'
+        cursor: 'row-resize',
+        onDragEnd : updatestream
                 })
         Split(['#maps', '#legend'], {
          sizes: [75, 25],

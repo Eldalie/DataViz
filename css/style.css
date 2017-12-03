@@ -75,6 +75,23 @@ height:100%;
 
 #streamgraph
 {
-background-color: green;
+
 height:100%; 
+}
+
+.svg-container {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    vertical-align: top;
+}
+.svg-content-responsive {
+    display: inline-block;
+    top: 10px;
+    left: 0;
+}
+
+.axis{
+    
+    color: white;
 }
