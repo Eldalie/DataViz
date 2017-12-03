@@ -22,14 +22,7 @@ We want to share our enthusiasm with our visualization project "Evolution of Roc
 This process book hopefully shed lights into our thought process during the establishment of our visualization, from the choice of the subject to the final touch of the visualization technique used.
 
 
-Initially, we wanted to show the evolution of all types of music thoughout the past century in the world in order to understand the different eras of music by country. The idea was to highlight the evolution of one or two features of a song (e.g. hotness,danceability) by country in time. 
-As a visualization we had the intention to use a 2D scatter plot with a slider to navigate in time.  [See example](https://youtu.be/jbkSRLYSojo?t=32s)
-
-
-We tought that the subject was too wide and not specific enough to convey a clear enough message to the viewer. 
-
-
-
+# Data analysis 
 
 The Million Song Dataset with its abundant and detailed features for each song is such an incredible source for data treatment. In our case, we had to do some a fair bit of data analysis to understand its nature in order to grasp the potential for a visualization.
 
@@ -41,17 +34,12 @@ One thing that everyone agrees upon is that, regardless of the context in space 
 Evolution of rock 
 
 
-In this process book, we hope to provide th
+## A slow start.. for the best ! 
 
+Initially, we wanted to show the evolution of all types of music thoughout the past century in the world in order to understand the different eras of music by country. The idea was to highlight the evolution of one or two features of a song (e.g. hotness,danceability) by country in time. 
+As a visualization we had the intention to use a 2D scatter plot with a slider to navigate in time.  [See example](https://youtu.be/jbkSRLYSojo?t=32s)
 
-
-
-
-
-
-
-
-
+We tought that the subject was too wide and not specific enough to convey a clear enough message to the viewer. The scatter plot is a bit simplistic as a visualization method and also difficult to interpret so we decided to have more meaningful approach with the map and the streamgraph. 
 
 
 Description: Visualization tool to show how rock evolve in time.
