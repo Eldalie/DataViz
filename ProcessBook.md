@@ -21,6 +21,9 @@ We want to share our enthusiasm with our visualization project "Evolution of Roc
 
 This process book hopefully shed lights into our thought process during the establishment of our visualization, from the choice of the subject to the final touch of the visualization technique used.
 
+For this visualization we focused our energy on Rock Music. Why Rock Music ? First of all, Rock music was a uninanimous choice in terms of music taste in our team so it's only natural to choose the genre that suits us the best. We were really motivated to know more about the subgenres we like the most, and to expand our music knowledge by discovering other styles ! 
+We also want to reach the maximum of audience with our visualization, that is meant to be easy to understand and instructive. Rock with its many subgenres, covers a large scope of the music produced in the western countries for the past 70 years and we believe that everyone knows at least some songs from iconic artists and groups like Elvis Presley, The Beatles and even Michael Jackson. Hopefully we can provide a good explanation of rock music through our visualization and even surprise the rock pundits ! 
+
 
 
 ## Related work and inspiration 
@@ -30,6 +33,7 @@ BENZI BASICALLY
 ## Data analysis 
 
 The Million Song Dataset with its abundant and detailed features for each song is such an incredible source for data treatment. In our case, we had to do some a fair bit of data analysis to understand its nature in order to grasp the potential for a visualization.
+
 
 We will focus on those genres :
 
