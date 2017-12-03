@@ -116,7 +116,7 @@ function fill_stream(data)
 
 function updatestream()
 {
-    
+    map.invalidateSize();
 
     
     console.log("update");
