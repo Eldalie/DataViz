@@ -16,27 +16,32 @@ TAsk to do :
         get_artist_latitude,
         get_artist_longitude,
         get_artist_hotttnesss,
-        get_artist,
+        get_artist_name,
         get_artist_id,
         get_artist_terms,
-        get_artist_terms_weight,
-        get_artist_name,
-        get_similar_artists,
+        get title,
+        get song_hotness,
         
 - [ ] : Preprocessing. Remove the artists that don't have the rock genre 
                        Filter the rock and by year and location 
                        
-- [ ] : load the Data in json
-- [ ] : build the Stream Graph
+- [x] : Load the Data in json
+- [x] : Build the Stream Graph
 
-  - [ ] : Make it interactive (Click on one color display the genre on the map)
+  - [ ] : Make the brush on the time axis (Leave a line down the stream graph still) 
+          On the stream graph: 
+          Make it interactive (Click on one color display the genre on the map)
+          
   - [ ] : Add options: 1 way to see the progression year by year 
-                       1 brush (Done) 
                        1 automated progression for the story telling (Press play then show our story) 
-         
-         
-         
-- [ ] : build the Maps
+                       
+            
+- [ ] : Build the Map
+    
+    - [ ] : Choose the maps (That show the city) Adapt the color. Adapt the font, background. IMPROVE THE DESIGN 
+    - [ ] : Make the map interactive : Click on the US for example change the stream graph 
+
+
 - [ ] : CSS/achitecture
   - [ ] : legend
   - [ ] : Introdution
