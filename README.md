@@ -23,7 +23,9 @@ TAsk to do :
         get_artist_name,
         get_similar_artists,
         
-        
+- [ ] : Preprocessing. Remove the artists that don't have the rock genre 
+                       Filter the rock and by year and location 
+                       
 - [ ] : load the Data in json
 - [ ] : build the Stream Graph
 
