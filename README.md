@@ -28,6 +28,9 @@ TAsk to do :
 - [ ] : build the Stream Graph
 
   - [ ] : Make it interactive (Click on one color display the genre on the map)
+  - [ ] : Add options: 1 way to see the progression year by year 
+                       1 brush (Done) 
+                       1 automated progression for the story telling (Press play then show our story) 
          
          
          
