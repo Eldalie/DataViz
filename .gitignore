@@ -126,3 +126,4 @@ ENV/
 *.mtc1
 *.out
 *.synctex.gz
+*.json
