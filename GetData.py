@@ -1,7 +1,6 @@
 #This scrit must be launch on the cluster with the comand spark-submit --master yarn GetData.py and spark and yar install like describe on the spark git on ada : https://github.com/epfl-ada/ADA2017-Tutorials/tree/master/05%20-%20Using%20the%20cluster
 
 import numpy as np
-#import hdf5_getters
 from hdf5_getters import *
 import json
 import tables
