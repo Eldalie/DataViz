@@ -2,19 +2,19 @@
 global d3
 */
 
-const GENRES = ["hip hop","soft rock","folk rock"];//...TODO
-const COLOR = ["green","blue","red","violet"]
+const GENRES = ["rock 'n roll","pop rock","blues-rock","indie rock","soft rock","alternative rock"];//...TODO
+const COLOR = ["green","blue","red","violet","yellow","orange"]
 var YEARSTART = 0;
 var YEAREND = 2900;
-var FIRSTYEAR = 1900;
-var LASTYEAR = 2015;
+var FIRSTYEAR = 1960;
+var LASTYEAR = 2010;
 var SELECTEDGENRE = GENRES;
 var DATA = [];
 
 // DECLARATION ....
 
 //MAP INIT:
-var map = new L.Map("maps", {attributionControl: false , center: [37.8, -96.9], zoom: 4});//.addLayer(new L.TileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"));
+var map = new L.Map("maps", {attributionControl: false , center: [ 46.519962, 6.633597], zoom: 2})//.addLayer(new L.TileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"));
 fetch("https://raw.githubusercontent.com/johan/world.geo.json/master/countries.geo.json")
   .then(function(response) { return response.json(); })
   .then(function(data) {L.geoJSON(data).addTo(map)});
@@ -44,7 +44,7 @@ var svg = d3.select('#streamgraph')
 
 var xScale = d3.scaleLinear().domain([FIRSTYEAR, LASTYEAR ]);
 var yScale = d3.scaleLinear();
-var xAxis = d3.axisTop(xScale)
+var xAxis = d3.axisTop(xScale).tickFormat(d3.format("d")).ticks((LASTYEAR-FIRSTYEAR)/2);
 var yAxis = d3.axisLeft(yScale);
 
 
@@ -61,6 +61,7 @@ var area = d3.area()
 var brush = d3.brushX()
     .on("brush end", brushed);
     
+    
 svg.append("g")
     .attr("class", "stream");
 
@@ -71,14 +72,27 @@ svg.append("g")
     
 function brushed()
 {
-    
+  if (!d3.event.sourceEvent) return; // Only transition after input.
+ 
+  
     var s = d3.event.selection || xScale.range();
     s = s.map(xScale.invert);
 
-  YEARSTART = s[0];
-  YEAREND = s[1];
-    console.log(YEARSTART,YEAREND)
+ console.log(s)
+  YEARSTART = Math.floor(s[0]);
+  YEAREND = Math.floor(s[1]);
+
+  if(YEAREND-YEARSTART<1)
+  YEAREND =YEARSTART+1; 
+
   updatemap();
+  
+    console.log([(YEARSTART),(YEAREND) ])
+
+    console.log([xScale(YEARSTART),xScale(YEAREND) ])
+
+
+  d3.select(this).transition().call(d3.event.target.move, [weightYAxis+xScale(YEARSTART),weightYAxis+xScale(YEAREND) ] );
 
     
 }
@@ -101,9 +115,12 @@ function fill_stream(data)
      {
         if(GENRES.includes(element[6][0]) )
         {
-            year[element[0]-FIRSTYEAR] =  new Array(n).fill(0);
+             if( year[element[0]-FIRSTYEAR] == undefined)
+                year[element[0]-FIRSTYEAR] =  new Array(n).fill(0);
             
             year[element[0]-FIRSTYEAR][GENRES.indexOf(element[6][0])]+=1;
+            
+            
         }
      }
       if(year[0] == undefined)
@@ -114,12 +131,13 @@ function fill_stream(data)
          {
             year[y] = new Array(n).fill(0)
              for(var x=0;x< GENRES.length;x++)
-             year[y][x]+=Math.floor(Math.random() *(x+2) )
+             year[y][x]=0//Math.floor(Math.random() *(x+2) )
          }
          
-         for(var x=0;x< GENRES.length;x++)
-             year[y][x] = year[y-1][x]+year[y][x]; 
+         //for(var x=0;x< GENRES.length;x++)
+         //    year[y][x] = year[y-1][x]+year[y][x]; 
      }
+
     stack.keys(d3.range(GENRES.length)).offset(d3.stackOffsetWiggle);
     layers = stack(year);
     yScale.domain([d3.min(layers, stackMin), d3.max(layers, stackMax)])
@@ -226,7 +244,7 @@ function SelectToShow()
  
      for(var element of data.data)
      {
-        if(SELECTEDGENRE.includes(element[6][0]) &&  element[0]>=YEARSTART  && element[0]<=YEAREND )
+        if(SELECTEDGENRE.includes(element[6][0]) &&  element[0]>=YEARSTART  && element[0]<YEAREND )
         {
             selected.push(element);
         }
