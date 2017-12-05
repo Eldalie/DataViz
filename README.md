@@ -25,7 +25,12 @@ TAsk to do :
         
         
 - [ ] : load the Data in json
-- [ ] : build the Stream Graphe
+- [ ] : build the Stream Graph
+
+  - [ ] : Make it interactive (Click on one color display the genre on the map)
+         
+         
+         
 - [ ] : build the Maps
 - [ ] : CSS/achitecture
   - [ ] : legend
