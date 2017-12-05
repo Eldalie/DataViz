@@ -23,9 +23,19 @@ TAsk to do :
         get_artist_name,
         get_similar_artists,
         
-        
+- [ ] : Preprocessing. Remove the artists that don't have the rock genre 
+                       Filter the rock and by year and location 
+                       
 - [ ] : load the Data in json
-- [ ] : build the Stream Graphe
+- [ ] : build the Stream Graph
+
+  - [ ] : Make it interactive (Click on one color display the genre on the map)
+  - [ ] : Add options: 1 way to see the progression year by year 
+                       1 brush (Done) 
+                       1 automated progression for the story telling (Press play then show our story) 
+         
+         
+         
 - [ ] : build the Maps
 - [ ] : CSS/achitecture
   - [ ] : legend
