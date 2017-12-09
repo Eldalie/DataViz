@@ -29,8 +29,8 @@ feature = [get_year,
         get_artist_name,
         get_artist_id,
         get_artist_terms,
-        get_artist_terms_weight,
-        get_similar_artists,
+        get_title,
+        get_song_hotttnesss,
            ]
     
 def LoadData(content):
@@ -56,7 +56,7 @@ def Filter(data):
         for i in lzero:
             if(data[i]==0.0):
                 return False
-        return (data[0]!=0)
+        return (data[0]!=0) and any("rock" in s for s in data[6])
 
 
 #import findspark

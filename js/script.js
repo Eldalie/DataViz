@@ -2,6 +2,17 @@
 global d3
 */
 
+var timer = function(name) {
+    var start = new Date();
+    return {
+        stop: function() {
+            var end  = new Date();
+            var time = end.getTime() - start.getTime();
+            console.log('Timer:', name, 'finished in', time, 'ms');
+        }
+    }
+};
+
 const GENRES = ["rock 'n roll","pop rock","blues-rock","indie rock","soft rock","alternative rock"];//...TODO
 const COLOR = ["green","blue","red","violet","yellow","orange"]
 var YEARSTART = 0;
@@ -14,12 +25,92 @@ var DATA = [];
 // DECLARATION ....
 
 //MAP INIT:
-var map = new L.Map("maps", {attributionControl: false , center: [ 46.519962, 6.633597], zoom: 2})//.addLayer(new L.TileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"));
-fetch("https://raw.githubusercontent.com/johan/world.geo.json/master/countries.geo.json")
-  .then(function(response) { return response.json(); })
-  .then(function(data) {L.geoJSON(data).addTo(map)});
+var map = new L.Map("maps", {attributionControl: false , center: [ 46.519962, 6.633597], zoom: 2}).addLayer(new L.TileLayer("https://{s}.tile.thunderforest.com/spinal-map/{z}/{x}/{y}.png"));
 
-var Artist =  L.layerGroup();
+//http://leaflet-extras.github.io/leaflet-providers/preview/
+/*fetch("https://raw.githubusercontent.com/johan/world.geo.json/master/countries.geo.json")
+  .then(function(response) { return response.json(); })
+  .then(function(data) {L.geoJSON(data).addTo(map)});*/
+
+var ArtistCluster = new PruneClusterForLeaflet();
+ArtistCluster.BuildLeafletClusterIcon = function(cluster) {
+        var e = new L.Icon.MarkerCluster();
+
+        e.stats = cluster.stats;
+        e.population = cluster.population;
+        return e;
+    };
+
+    var colors =COLOR;// ['#ff4b00', '#bac900', '#EC1813', '#55BCBE', '#D2204C', '#FF0000', '#ada59a', '#3e647e'],
+        pi2 = Math.PI * 2;
+
+    L.Icon.MarkerCluster = L.Icon.extend({
+        options: {
+            iconSize: new L.Point(44, 44),
+            className: 'prunecluster leaflet-markercluster-icon'
+        },
+
+        createIcon: function () {
+            // based on L.Icon.Canvas from shramov/leaflet-plugins (BSD licence)
+            var e = document.createElement('canvas');
+            this._setIconStyles(e, 'icon');
+            var s = this.options.iconSize;
+            e.width = s.x;
+            e.height = s.y;
+            this.draw(e.getContext('2d'), s.x, s.y);
+            return e;
+        },
+
+        createShadow: function () {
+            return null;
+        },
+
+        draw: function(canvas, width, height) {
+
+            var lol = 0;
+
+            var start = 0;
+            for (var i = 0, l = colors.length; i < l; ++i) {
+
+                var size = this.stats[i] / this.population;
+
+
+                if (size > 0) {
+                    canvas.beginPath();
+                    canvas.moveTo(22, 22);
+                    canvas.fillStyle = colors[i];
+                    var from = start + 0.14,
+                        to = start + size * pi2;
+
+                    if (to < from) {
+                        from = start;
+                    }
+                    canvas.arc(22,22,22, from, to);
+
+                    start = start + size*pi2;
+                    canvas.lineTo(22,22);
+                    canvas.fill();
+                    canvas.closePath();
+                }
+
+            }
+
+            canvas.beginPath();
+            canvas.fillStyle = 'white';
+            canvas.arc(22, 22, 18, 0, Math.PI*2);
+            canvas.fill();
+            canvas.closePath();
+
+            canvas.fillStyle = '#555';
+            canvas.textAlign = 'center';
+            canvas.textBaseline = 'middle';
+            canvas.font = 'bold 12px sans-serif';
+
+            canvas.fillText(this.population, 22, 22, 40);
+        }
+    });
+
+map.addLayer(ArtistCluster);
 
 
 
@@ -29,7 +120,7 @@ var year = undefined;
 var stack = d3.stack(),
     layers = undefined;
 
-var heightXAxis = 25;
+var heightXAxis = 90;
 var weightYAxis = 25;
 
 var width = $("body").width();
@@ -73,12 +164,15 @@ svg.append("g")
 function brushed()
 {
   if (!d3.event.sourceEvent) return; // Only transition after input.
- 
+    //console.log(d3.event)
+  if(d3.event.type != "end") return; 
+  
+    //console.log(d3.event)
   
     var s = d3.event.selection || xScale.range();
     s = s.map(xScale.invert);
 
- console.log(s)
+ //console.log(s)
   YEARSTART = Math.floor(s[0]);
   YEAREND = Math.floor(s[1]);
 
@@ -87,12 +181,12 @@ function brushed()
 
   updatemap();
   
-    console.log([(YEARSTART),(YEAREND) ])
+    //console.log([(YEARSTART),(YEAREND) ])
 
-    console.log([xScale(YEARSTART),xScale(YEAREND) ])
+    //console.log([xScale(YEARSTART),xScale(YEAREND) ])
 
 
-  d3.select(this).transition().call(d3.event.target.move, [weightYAxis+xScale(YEARSTART),weightYAxis+xScale(YEAREND) ] );
+//  d3.select(this).transition().call(d3.event.target.move, [weightYAxis+xScale(YEARSTART),weightYAxis+xScale(YEAREND) ] );
 
     
 }
@@ -149,11 +243,11 @@ function updatestream()
     map.invalidateSize();
 
     
-    console.log("update");
+    //console.log("update");
     
     width = $("#streamgraph").width()-1;
     height =$("#streamgraph").height()-1;
-    console.log(width,height)
+    //console.log(width,height)
 
 
      xScale.range([0, width-weightYAxis]);
@@ -176,8 +270,8 @@ function updatestream()
      svg.select('.x.axis').attr("transform", "translate(" + weightYAxis + ","+heightXAxis+")");
      svg.select('.y.axis').attr("transform", "translate(" + weightYAxis + "," + heightXAxis + ")");
      
-    brush.extent([[weightYAxis, heightXAxis], [width, height]])
-    console.log(d3.brushSelection(d3.select(".brush").node()))
+    brush.extent([[weightYAxis, 0], [width, heightXAxis]])
+    //console.log(d3.brushSelection(d3.select(".brush").node()))
     
     svg.select(".brush") 
       .call(brush)
@@ -197,7 +291,7 @@ for(genre of GENRES)
 
 
 $('input[type=checkbox]').change(function() {
-    console.log(this.name)
+    //console.log(this.name)
     if (this.checked) {
         SELECTEDGENRE.push(this.name); 
     } else {
@@ -207,33 +301,57 @@ $('input[type=checkbox]').change(function() {
 });
 
 
-
-function updatemap()
+function build_marker()
 {
-    var data = SelectToShow();
-    Artist.clearLayers();
-    
-    for(var element of data)
+
+
+
+    for(var element of DATA.data)
     {
  
-        
         var color =  COLOR[GENRES.indexOf(element[6][0])];
-        var greenIcon = new L.Icon({
+        /*var greenIcon = new L.Icon({
           iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-'+color+'.png',
           shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
           iconSize: [25, 41],
           iconAnchor: [12, 41],
           popupAnchor: [1, -34],
           shadowSize: [41, 41]
-        });
-         var m = L.marker( [element[1], element[2]] , {icon: greenIcon});
-
-         Artist.addLayer( m );
-        
+        });*/
+        element["marker"] = new PruneCluster.Marker(element[1], element[2]);//,{color:color}) // L.marker( [element[1], element[2]] , {icon: greenIcon});
+        element["marker"].category = GENRES.indexOf(element[6][0]) ;
+        element["marker"].weight = 4;
+        ArtistCluster.RegisterMarker(element["marker"]);
         //console.log("MARKER  :"+[element[1], element[2]])
     }
-    //map.addLayer(Artist);
-    Artist.addTo(map);
+
+    
+}
+function updatemap()
+{
+
+
+    var t = timer("SELECT");
+    var data = SelectToShow();
+
+
+       for(var element of DATA.data)
+    {
+        element['marker'].filtered = true;
+    }
+    
+    
+    for(var element of data)
+    {
+ 
+    //console.log("add"  + element['marker'] )
+        // Artist.addLayer( element['marker'] );
+        element['marker'].filtered = false;
+        //console.log("MARKER  :"+[element[1], element[2]])
+    }
+    ArtistCluster.ProcessView();
+    //Artist.addTo(map);
+    t.stop()
 }
 
 
@@ -258,9 +376,11 @@ function SelectToShow()
 d3.json("data.json", function(data) {
  
  DATA = data;
-  updatemap();
+ //DATA.data =  DATA.data.slice(0,100)
+
   fill_stream(data);
   updatestream();
-//MAPS !! 
+  build_marker();
+  updatemap();
 
 });

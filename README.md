@@ -22,7 +22,7 @@ TAsk to do :
         get title,
         get song_hotness,
         
-- [ ] : Preprocessing. Remove the artists that don't have the rock genre 
+- [x] : Preprocessing. Remove the artists that don't have the rock genre 
                        Filter the rock and by year and location 
                        
 - [x] : Load the Data in json

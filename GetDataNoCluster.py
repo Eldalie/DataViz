@@ -58,7 +58,7 @@ def Filter(data):
         for i in lzero:
             if(data[i]==0.0):
                 return False
-        return (data[0]!=0) and ("rock" in data[6][0])
+        return (data[0]!=0) and any("rock" in s for s in data[6])
 
 
 fjson = open("/buffer/AGREGATE/data2.json","w")
