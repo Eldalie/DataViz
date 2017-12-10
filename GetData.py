@@ -31,6 +31,7 @@ feature = [get_year,
         get_artist_terms,
         get_title,
         get_song_hotttnesss,
+        get_track_7digitalid
            ]
     
 def LoadData(content):

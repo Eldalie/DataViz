@@ -32,21 +32,17 @@ feature = [get_year,
         get_artist_terms,
         get_title,
         get_song_hotttnesss,
-        get_track_7digitalid
         #get_artist_terms_weight,
         #get_similar_artists,
            ]
 
-def LoadData(f):
+def LoadData(h5,i):
      #if(isinstance(content, tuple)):
        # content = content[1]
 
-    h5 = open_h5_file_read(f)
 
+    data= [ funct(h5,i) for funct in feature]
 
-    data= [ funct(h5) for funct in feature]
-
-    h5.close()
     return data
 
 # keep only elemnt that math the Filter
@@ -66,17 +62,16 @@ fjson = open("/buffer/AGREGATE/data2.json","w")
 
 fjson.write('{"columns":'+jsonData([name.__name__[4:].replace('_', ' ') for name in feature])+',\n"data":[')
 
-lastdir = None
-ext='.h5'
-base_directory = "../million-song/dataset/"
-for root, dirs, files in os.walk(base_directory):
-        if "AdditionalFiles"  in  root:
-                continue
-        print(root)
-        files = glob.glob(os.path.join(root,'*'+ext))
-        for f in files:
-                data = LoadData(f)
-                if Filter(data):
-                        fjson.write(jsonData(data))
+h5 = open_h5_file_read("../million-song/dataset/AdditionalFiles/msd_summary_file.h5")
 
-fsjon.write(']}')
+try : 
+    i = 0
+    while True: 
+        LoadData(h5,i)
+        data = LoadData(h5,i)
+        if Filter(data):
+                fjson.write(jsonData(data))
+        i+=1
+except : 
+    pass
+fjson.write(']}')
