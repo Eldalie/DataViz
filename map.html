@@ -2,85 +2,84 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>EPFL : Datavisulation on Millon Song ! </title>
-        <!-- <meta name="description" content="The HTML5 Herald">--> 
+        <title> EPFL : Data visualization on Millon Songs ! </title>
+        <!-- <meta name="description" content="The HTML5 Herald">-->
         <meta name="author" content="Groupe : ">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css"/>
         <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.2.0/dist/MarkerCluster.Default.css"/>
         <link rel="stylesheet" href="css/LeafletStyleSheet.css"/>
-
-
         <link rel="stylesheet" href="./css/style.css">
 
     </head>
 
     <body>
-    
+
 		<div id="graph" >
-		    
+
 
 		    <div id="up-panel" class="split" >
-		        
-		        <div class="split horizpan ">
+
+		        <div class= "split horizpan ">
         		    <div id="maps" class="split split-horizontal" >
-        		        
-        		    
+
+
         		    </div>
-    		    
-    		    
+
+
         		    <div id="legend" class="split split-horizontal">
-        		        
+
         		        <div class="split horizpan ">
-            		        <div id="text">
-            		            <h2> Welcome to Rock !</h2>
-            		            <p>This tool help to undurstand how rock propagte altrought time and space</p>
-            		            
-            		        </div> 
-            		        <div id="genre">LEGEND<br/></div>
+
+            		        <div id = "text">
+
+            		            <p id ="title"> Let's ROCK !<p>
+            		            <p>This tool help to understand the evolution of Rock Music. <br/> Enjoy ! </p>
+
+            		        </div>
+
+            		        <div id="genre">  <p id ="title"> Choose your sauce ! </p> </div>
+
         		        </div>
         		    </div>
     		    </div>
 		    </div>
-		    
-            
+
+
 		        <div id="streamgraph" class="split">
-		         
-		    
-		       
+
+
+
 		        </div>
 		</div>
-		
-		
-		
 
       <!-- MAPS -->
         <script src="//d3js.org/topojson.v1.min.js"></script>
         <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
         <script src=' https://unpkg.com/leaflet.markercluster@1.2.0/dist/leaflet.markercluster.js'></script>
-        
-        
+
+
         <script src="https://d3js.org/d3.v4.min.js"></script>
-        
+
         <!-- MISC -->
         <script
 			  src="https://code.jquery.com/jquery-3.2.1.min.js"
 			  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
 			  crossorigin="anonymous"></script>
-        
+
         <script src="js/PruneCluster.js"></script>
-        
+
         <script src="js/script.js"></script>
-        
-         
-        
+
+
+
           <!-- SPLIT -->
         <script src="https://unpkg.com/split.js/split.min.js"></script>
-  
+
         <script type="text/javascript" >
-        
+
               window.addEventListener("resize", updatestream);
-        
+
         Split(['#up-panel', '#streamgraph'], {
          direction: 'vertical',
          sizes: [75, 25],
@@ -91,7 +90,7 @@
          sizes: [75, 25],
         cursor: 'col-resize'
                 })
-                
+
           Split(['#text', '#genre'], {
          direction: 'vertical',
          sizes: [50, 50],
@@ -99,11 +98,9 @@
         onDrag : updatestream
                 })
         </script>
-		
 
-		
-		
+
+
+
 		</body>
 </html>
-
-		
