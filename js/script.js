@@ -21,7 +21,7 @@ var timer = function(name) {
 //Class for benchmark !
 
 const GENRES = ["rock 'n roll","pop rock","blues-rock","indie rock","soft rock","alternative rock"];//...TODO
-const COLOR = ["594F4F","EDE574" ,"355C7D" ,"F8B195" ,"9DE0AD","547980" ]
+const COLOR = ["#594F4F","#EDE574" ,"#355C7D" ,"#F8B195" ,"#9DE0AD","#547980" ]
 
 var ICONES = [];
 //First year of studie
@@ -31,7 +31,6 @@ const LASTYEAR = 2010;
 //
 
 //Select what yer show on the maps:
->>>>>>> 61aadd4f401981a244ff9124412212066d0576cf
 var YEARSTART = 0;
 var YEAREND = 2900;
 
@@ -39,12 +38,9 @@ var YEAREND = 2900;
 var SELECTEDGENRE = GENRES;
 //ALL the DATA
 var DATA = [];
-
-
 //MAP INIT:
 var map = new L.Map("maps", {attributionControl: false , center: [ 46.519962, 6.633597], zoom: 2}).addLayer(new L.TileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"));
 build_icone();
->>>>>>> 61aadd4f401981a244ff9124412212066d0576cf
 //http://leaflet-extras.github.io/leaflet-providers/preview/
 /*fetch("https://raw.githubusercontent.com/johan/world.geo.json/master/countries.geo.json")
   .then(function(response) { return response.json(); })
@@ -59,7 +55,6 @@ ArtistCluster.BuildLeafletClusterIcon = function(cluster) {
         return e;
     };
 
->>>>>>> 61aadd4f401981a244ff9124412212066d0576cf
 
 map.addLayer(ArtistCluster);
 
@@ -213,7 +208,7 @@ function updatestream()
                .data(layers);
     paths.exit().remove();
     var enter = paths.enter().append("path").attr("transform", "translate(" + weightYAxis + "," + heightXAxis + ")").attr('class', 'chemin')  ;
-    enter.merge(paths).attr("d", area).attr("fill", function(d,i) { return "#"+ COLOR[GENRES.indexOf(SELECTEDGENRE[i])] ; });
+    enter.merge(paths).attr("d", area).attr("fill", function(d,i) { return COLOR[GENRES.indexOf(SELECTEDGENRE[i])] ; });
 
     svg.select('.x.axis').call(xAxis);
     svg.select('.y.axis').call(yAxis)
@@ -222,7 +217,7 @@ function updatestream()
             .attr("transform", function(d) {
                 return "rotate(-45)"
                 }) .attr("dx", "+3.0em")
-            .attr("dy", "-0.00em");
+            .attr("dy", "+0.90em");
 ;
      svg.select('.y.axis').attr("transform", "translate(" + weightYAxis + "," + heightXAxis + ")");
 
@@ -242,7 +237,7 @@ function updatestream()
 for(genre of GENRES)
 {
 
-    $('#genre').append("<label style=\"color:"+ "#"+ COLOR[GENRES.indexOf(genre)]+"\" ><input  name=\""+genre+"\" type=\"checkbox\" checked >"+genre+"</label><br/>");
+    $('#genre').append("<label style=\"color:"+  COLOR[GENRES.indexOf(genre)]+"\" ><input  name=\""+genre+"\" type=\"checkbox\" checked >"+genre+"</label><br/>");
 }
 
 
@@ -265,7 +260,7 @@ function build_icone()
     for(let color of COLOR)
     {
 
-             color
+             
          var Icon = new L.Icon({
               iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-'+color+'.png',
               shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
@@ -289,7 +284,7 @@ function build_marker()
     {
 
         let index_genre = GENRES.indexOf(element[6][0]);
-        var color =  "#"+ COLOR[index_genre];
+        var color =  COLOR[index_genre];
 
         element["marker"] = new PruneCluster.Marker(element[1]+Math.random()/5.0, element[2]+Math.random()/5.0);//,{color:color}) // L.marker( [element[1], element[2]] , {icon: greenIcon});
 
