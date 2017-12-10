@@ -32,6 +32,7 @@ feature = [get_year,
         get_artist_terms,
         get_title,
         get_song_hotttnesss,
+        get_track_7digitalid
         #get_artist_terms_weight,
         #get_similar_artists,
            ]

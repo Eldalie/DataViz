@@ -62,7 +62,7 @@ fjson = open("/buffer/AGREGATE/data2.json","w")
 
 fjson.write('{"columns":'+jsonData([name.__name__[4:].replace('_', ' ') for name in feature])+',\n"data":[')
 
-h5 = open_h5_file_read("../million-song/dataset/msd_summary_file.h5")
+h5 = open_h5_file_read("../million-song/dataset/AdditionalFiles/msd_summary_file.h5")
 
 try : 
     i = 0
@@ -74,4 +74,4 @@ try :
         i+=1
 except : 
     pass
-fsjon.write(']}')
+fjson.write(']}')
