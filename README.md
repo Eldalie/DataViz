@@ -11,7 +11,7 @@ In this repo ...
 
 TAsk to do : 
 
-- [ ] : Get Real DATA in json  : 
+- [X] : Get Real DATA in json  : 
         get_year,
         get_artist_latitude,
         get_artist_longitude,
