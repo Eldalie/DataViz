@@ -215,9 +215,9 @@ function updatestream()
      svg.select('.x.axis').attr("transform", "translate(" + weightYAxis + ","+heightXAxis+")")
      .selectAll("text")
             .attr("transform", function(d) {
-                return "rotate(-45)"
-                }) .attr("dx", "+3.0em")
-            .attr("dy", "+0.90em");
+                return "rotate(-65)"
+                }) .attr("dx", "+2.2em")
+            .attr("dy", "+1.3em");
 ;
      svg.select('.y.axis').attr("transform", "translate(" + weightYAxis + "," + heightXAxis + ")");
 
