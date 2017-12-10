@@ -35,7 +35,7 @@ TAsk to do :
           Find a way to make them interactive in both directions.
           
   - [ ] : Add options: 1 way to see the progression year by year 
-                       1 automated progression for the story telling (Press play then show our story) 
+  - [x]                    1 automated progression for the story telling (Press play then show our story) 
                        
 - [ ] : Build the Map
     

@@ -29,7 +29,7 @@ const COLOR = ["green","blue","red","violet","yellow","orange"]
 //ICONE OF EACH GENRE ON THe MAP
 var ICONES = [];
 //First year of studie
-const FIRSTYEAR = 1960;
+const FIRSTYEAR = 1956;
 //Last years of studie
 const LASTYEAR = 2010;
 //
