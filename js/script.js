@@ -20,7 +20,7 @@ var timer = function(name) {
 };
 //Class for benchmark !
 
-const GENRES = ["rock 'n roll","pop rock","blues-rock","indie rock","soft rock","alternative rock"];//...TODO
+const GENRES = ["rock 'n roll","pop rock","blues-rock","indie rock","soft rock","alternative rock"].sort();//...TODO
 const COLOR = ["#594F4F","#EDE574" ,"#355C7D" ,"#F8B195" ,"#9DE0AD","#547980" ]
 
 var ICONES = [];
@@ -248,6 +248,7 @@ $('input[type=checkbox]').change(function() {
     } else {
         SELECTEDGENRE = SELECTEDGENRE.filter(e => e !== this.name);
     }
+    SELECTEDGENRE = SELECTEDGENRE.sort()
     fill_stream();
     updatestream();
     updatemap();
