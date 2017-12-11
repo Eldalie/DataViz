@@ -103,8 +103,6 @@ svg.append("g")
 svg.append("g")
     .attr("class", "brush");
 
-
-
 function brushed()
 {
   if (!d3.event.sourceEvent) return; // Only transition after input.
@@ -179,7 +177,7 @@ function fill_stream()
     stack = d3.stack();
     stack.keys(d3.range(SELECTEDGENRE.length)).offset(d3.stackOffsetWiggle);
     layers = stack(year);
-    yScale.domain([d3.min(layers, stackMin), d3.max(layers, stackMax)])
+    yScale.domain([d3.min(layers, stackMin), d3.max(layers, stackMax)]);
 }
 
 
@@ -210,6 +208,16 @@ function updatestream()
     var enter = paths.enter().append("path").attr("transform", "translate(" + weightYAxis + "," + heightXAxis + ")").attr('class', 'chemin')  ;
     enter.merge(paths).attr("d", area).attr("fill", function(d,i) { return COLOR[GENRES.indexOf(SELECTEDGENRE[i])] ; });
 
+    svg.select(".stream").selectAll(".chemin")
+        .attr("opacity", 1)
+        .on("mouseover", function(d, i) {
+            d3.select('#streamgraph').select(".stream").selectAll(".chemin").transition()
+                .duration(250)
+                .attr("opacity", function(d, j) {
+                    return j != i ? 0.6 : 1;
+                })
+            })
+    
     svg.select('.x.axis').call(xAxis);
     svg.select('.y.axis').call(yAxis)
      svg.select('.x.axis').attr("transform", "translate(" + weightYAxis + ","+heightXAxis+")")
