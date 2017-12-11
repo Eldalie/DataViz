@@ -21,7 +21,8 @@ var timer = function(name) {
 //Class for benchmark !
 
 const GENRES = ["rock 'n roll","pop rock","blues-rock","indie rock","soft rock","alternative rock"].sort();//...TODO
-const COLOR = ["#594F4F","#EDE574" ,"#355C7D" ,"#F8B195" ,"#9DE0AD","#547980" ]
+const COLOR = ["#547980","#355C7D","#F8B195","#EDE574","#594F4F","#9DE0AD"]
+
 
 var ICONES = [];
 //First year of studie
@@ -216,7 +217,7 @@ function updatestream()
                     return j != i ? 0.6 : 1;
                 })
             })
-    
+
     svg.select('.x.axis').call(xAxis);
     svg.select('.y.axis').call(yAxis)
      svg.select('.x.axis').attr("transform", "translate(" + weightYAxis + ","+heightXAxis+")")
@@ -268,7 +269,7 @@ function build_icone()
     for(let color of COLOR)
     {
 
-             
+
          var Icon = new L.Icon({
               iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-'+color+'.png',
               shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
