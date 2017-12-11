@@ -35,7 +35,7 @@ var YEARSTART = 0;
 var YEAREND = 2900;
 
 //Select what genre are selected by the user
-var SELECTEDGENRE = GENRES;
+var SELECTEDGENRE = GENRES.sort();
 //ALL the DATA
 var DATA = [];
 //MAP INIT:
@@ -145,7 +145,6 @@ function fill_stream()
 {
     var data = DATA;
     var n  = SELECTEDGENRE.length;
-
     year =  new Array(LASTYEAR-FIRSTYEAR);
 
     for(var element of data.data)
@@ -242,7 +241,7 @@ function updatestream()
 
 
 // GENRE SLECTION:
-for(genre of GENRES)
+for(let genre of GENRES.slice().reverse())
 {
 
     $('#genre').append("<label style=\"color:"+  COLOR[GENRES.indexOf(genre)]+"\" ><input  name=\""+genre+"\" type=\"checkbox\" checked >"+genre+"</label><br/>");
@@ -256,7 +255,7 @@ $('input[type=checkbox]').change(function() {
     } else {
         SELECTEDGENRE = SELECTEDGENRE.filter(e => e !== this.name);
     }
-    SELECTEDGENRE = SELECTEDGENRE.sort()
+    SELECTEDGENRE = SELECTEDGENRE.sort();
     fill_stream();
     updatestream();
     updatemap();
