@@ -65,10 +65,8 @@ def Filter(data):
 import pyspark 
 
 conf = pyspark.SparkConf()
-conf.setAppName("GET DATA")
-sc = pyspark.SparkContext(conf=conf)
-
-sc.addPyFile("./hdf5_getters.py")
+conf.setAppName("GET DATA").setMaster("yarn-client").set("spark.executor.heartbeatInterval","3600s")
+sc = pyspark.SparkContext('local[4]', '', conf=conf)
 
 fjson = open("/buffer/AGREGATE/data2.json","w")
 fjson.write('{"columns":'+jsonData([name.__name__[4:].replace('_', ' ') for name in feature])+',\n"data":')
@@ -76,17 +74,20 @@ fjson.write('{"columns":'+jsonData([name.__name__[4:].replace('_', ' ') for name
 # Select on what you want work
 path='hdfs:/datasets/million-song_untar/'
 
-for l1 in "ABCDEFGHIJLKMNOPQRSTUVWXYZ" : 
-    for l2 in "ABCDEFGHIJLKMNOPQRSTUVWXYZ" :
-        for l3 in "ABCDEFGHIJLKMNOPQRSTUVWXYZ" :
+for l1 in "MNOPQRSTUVWXYZ" : 
+    for l2 in "ABCDEFGHIJKLMNOPQRSTUVWXYZ" :
+        for l3 in "ABCDEFGHIJKLMNOPQRSTUVWXYZ" :
             gp = path+l1+'/'+l2+'/'+l3+'/*.h5'
             print(gp)
             #Spark !!!! save data to json file
-            cf = sc.binaryFiles(gp).collect()
-            for file in cf:
-                 data = LoadData(file)
-                 if Filter(data):
-                     fjson.write(jsonData(data))
+            try :
+                cf = sc.binaryFiles(gp).collect()
+                for file in cf:
+                     data = LoadData(file)
+                     if Filter(data):
+                         fjson.write(jsonData(data))
+            except : 
+                pass
 
 
 
