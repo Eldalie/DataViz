@@ -139,6 +139,7 @@ var colors =COLOR;// ['#ff4b00', '#bac900', '#EC1813', '#55BCBE', '#D2204C', '#F
               var maxr = 0;
               var nbr = 0;
               const r = 30/10;
+              const minr = 10;
               for (var i = 0; i <  colors.length; ++i) {
                   
                   if(this.stats[i]>0)
@@ -147,6 +148,8 @@ var colors =COLOR;// ['#ff4b00', '#bac900', '#EC1813', '#55BCBE', '#D2204C', '#F
                   if(percent>maxr)
                     maxr=percent;
               }
+              
+              maxr = Math.max(minr,maxr);
 
             let sx=0;
             let sy=1;
@@ -186,6 +189,7 @@ var colors =COLOR;// ['#ff4b00', '#bac900', '#EC1813', '#55BCBE', '#D2204C', '#F
                     continue;
 
                 var percent = Math.log(this.stats[i])*r;
+                percent = Math.max(10,percent);
                 var x =  j%sx*2*maxr+maxr+5;
                 var y =  Math.floor(j/sx)*2*maxr+maxr+5;
                     /*canvas.beginPath();
