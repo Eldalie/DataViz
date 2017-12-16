@@ -69,11 +69,12 @@ function brushed()
     {
 
         var s = d3.event.selection;
+        s[0] -=  weightYAxis;
+        s[1] -=  weightYAxis;
         s = s.map(xScale.invert);
     
-     //console.log(s)
-      YEARSTART = Math.floor(s[0]);
-      YEAREND = Math.floor(s[1]);
+      YEARSTART = Math.round(s[0]);
+      YEAREND = Math.round(s[1]);
     }
 
   if(YEAREND-YEARSTART<1)

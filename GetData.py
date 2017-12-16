@@ -49,7 +49,7 @@ def LoadData(content):
 
 # keep only elemnt that math the Filter
 def Filter(data):
-        lnan = [1,2,3]
+        lnan = [1,2]
         for i in lnan:
             if(np.isnan(data[i])):
                 return False

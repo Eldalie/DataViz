@@ -20,10 +20,21 @@ var ArtistCluster = new PruneClusterForLeaflet(250,150);
 ArtistCluster.BuildLeafletClusterIcon = function(cluster) {
             var e = new L.Icon.MarkerCluster();
 
+            //e.on('click', function() {});
             e.stats = cluster.stats;
             e.population = cluster.population;
             return e;
 };
+ArtistCluster.BuildLeafletCluster =  function (cluster, position) {
+        var _this = this;
+        var m = new L.Marker(position, {
+            icon: this.BuildLeafletClusterIcon(cluster)
+        });
+        m._leafletClusterBounds = cluster.bounds;
+        m.on('click', function () {        });
+        return m;
+    }
+
 
 map.addLayer(ArtistCluster);
 
@@ -61,17 +72,10 @@ function build_marker()
 
             let index_genre = GENRES.indexOf(element[6][0]);
             var color =  COLOR[index_genre];
-<<<<<<< HEAD
-    
-            element["marker"] = new PruneCluster.Marker(element[1]+Math.random()/25.0, element[2]+Math.random()/25.0);//,{color:color}) // L.marker( [element[1], element[2]] , {icon: greenIcon});
-    
-    
-=======
 
             element["marker"] = new PruneCluster.Marker(element[1]+Math.random()/10.0, element[2]+Math.random()/10.0);//,{color:color}) // L.marker( [element[1], element[2]] , {icon: greenIcon});
 
 
->>>>>>> 2a1ae20b047f7b81a0a60f13d71073253b9e9f14
             element["marker"].data.icon = ICONES[index_genre];  // See http://leafletjs.com/reference.html#icon
             element["marker"].data.popup = 'Year : '+element[0]+'<br/>Artist Name: '+element[4]+' <br/> Tittle: '+element[7]+'<br/> GENRE : '+element[6][0]+' <br/> hotness : '+element[3]+'/'+element[8];
 
@@ -136,16 +140,20 @@ var colors = COLOR; // ['#ff4b00', '#bac900', '#EC1813', '#55BCBE', '#D2204C', '
            // iconSize: new L.Point(150, 100),
             className: 'prunecluster leaflet-markercluster-icon'
         },
+        
+        
 
         createIcon: function () {
               var maxr = 0;
               var nbr = 0;
               const r = 30/10;
-              const minr = 10;
+              const minr = 10;//rayon minimal to see cluster
+              
+              // first we calcul the rayon on the most genre in this cluster
               for (var i = 0; i <  colors.length; ++i) {
 
                   if(this.stats[i]>0)
-                    nbr+=1;
+                    nbr+=1;//count the non empty genre
                   let percent = Math.log(this.stats[i])*r;
                   if(percent>maxr)
                     maxr=percent;
@@ -155,16 +163,21 @@ var colors = COLOR; // ['#ff4b00', '#bac900', '#EC1813', '#55BCBE', '#D2204C', '
 
             let sx=0;
             let sy=1;
+            //compute the size of the grid !!! 
             while(sx*sy<nbr)
             {
                 if(sy+1<=sx)
                 sy+=1;
                 else
                 sx+=1;
-
             }
-                          console.log(maxr,sx,sy)
-            this.options.iconSize = new L.Point(maxr*(2*sx)+maxr, maxr*(2*sy)+maxr);
+            
+            
+            //console.log(maxr,sx,sy)
+            
+            // the icone size is : 
+            // Size grid mutiply by max size of each dot 
+            this.options.iconSize = new L.Point(2*maxr*sx+maxr, 2*maxr*sy+maxr);
 
 
             var e = document.createElement('canvas');
@@ -172,7 +185,7 @@ var colors = COLOR; // ['#ff4b00', '#bac900', '#EC1813', '#55BCBE', '#D2204C', '
             var s = this.options.iconSize;
             e.width = s.x;
             e.height = s.y;
-            this.draw(e.getContext('2d'), s.x, s.y,maxr,sx,sy);
+            this.draw(e.getContext('2d'), maxr,sx,sy,r);
             return e;
         },
 
@@ -180,9 +193,8 @@ var colors = COLOR; // ['#ff4b00', '#bac900', '#EC1813', '#55BCBE', '#D2204C', '
             return null;
         },
 
-        draw: function(canvas, width, height,maxr,sx,sy) {
+        draw: function(canvas,maxr,sx,sy,r) {
 
-                              const r = 30/10;
 
             var start = 0;
             for (var i = 0,j=0; i <  colors.length; ++i) {
@@ -216,7 +228,7 @@ var colors = COLOR; // ['#ff4b00', '#bac900', '#EC1813', '#55BCBE', '#D2204C', '
                     canvas.fill();
                     canvas.closePath();
 
-                    canvas.fillStyle = '#555';
+                    canvas.fillStyle = '#FFFFFF';
                     canvas.textAlign = 'center';
                     canvas.textBaseline = 'middle';
                     canvas.font = 'bold 12px sans-serif';
