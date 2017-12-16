@@ -21,9 +21,8 @@ var timer = function(name) {
 //Class for benchmark !
 
 const GENRES = ["rock 'n roll","pop rock","blues-rock","indie rock","soft rock","alternative rock"].sort();//...TODO
-
-
-const COLOR = ["#594F4F","#EDE574" ,"#355C7D" ,"#F8B195" ,"#9DE0AD","#547980" ]
+const COLOR = [ "#547980" ,"#355C7D","#9DE0AD","#EDE574","#594F4F","#F8B195" ]
+const ICONE_NAMES = ["guitar","guitare", "music-note", "star","rock-and-roll","headphones"]
 
 var ICONES = [];
 //First year of studie
@@ -128,5 +127,3 @@ d3.json("data.json", function(data) {
   updatemap();
 
 });
-
-
