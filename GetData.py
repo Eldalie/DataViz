@@ -4,7 +4,6 @@ import numpy as np
 from hdf5_getters import *
 import json
 import tables
-import subprocess
 
 #class to encode a numpy elemnts in json
 class NumpyAwareJSONEncoder(json.JSONEncoder):

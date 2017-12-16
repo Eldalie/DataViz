@@ -20,7 +20,7 @@ data = json.loads(json_data)
 
 
 #with open("data.json", "a") as myfile:
-#    for l in data['data'] :
+#for l in data['data'] :
  #    if "rock" in l[6][0]:
  #       #print(jsonData(l))
  #       myfile.write(jsonData(l))

@@ -66,7 +66,7 @@ function build_marker()
             let index_genre = GENRES.indexOf(element[6][0]);
             var color =  COLOR[index_genre];
     
-            element["marker"] = new PruneCluster.Marker(element[1]+Math.random()/10.0, element[2]+Math.random()/10.0);//,{color:color}) // L.marker( [element[1], element[2]] , {icon: greenIcon});
+            element["marker"] = new PruneCluster.Marker(element[1]+Math.random()/25.0, element[2]+Math.random()/25.0);//,{color:color}) // L.marker( [element[1], element[2]] , {icon: greenIcon});
     
     
             element["marker"].data.icon = ICONES[index_genre];  // See http://leafletjs.com/reference.html#icon
