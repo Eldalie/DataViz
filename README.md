@@ -52,6 +52,10 @@ TAsk to do :
 - [ ] Process Book
 
 - [ ] : Screen cast
+  
+  - Demonstrate what you can do with your viz in a fun, engaging and impactful manner
+  - Talk about your main contributions rather than on technical details
+  - 2 min video not more (max +5 sec)
 
 
 
