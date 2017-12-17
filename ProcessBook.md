@@ -25,17 +25,28 @@ For this visualization we focused our energy on Rock Music. Why Rock Music ? Fir
 We also want to reach the maximum of audience with our visualization, that is meant to be easy to understand and instructive. Rock with its many subgenres, covers a large scope of the music produced in the western countries for the past 70 years and we believe that everyone knows at least some songs from iconic artists and groups like Elvis Presley, The Beatles and even Michael Jackson. Hopefully we can provide a good explanation of rock music through our visualization and even surprise the rock pundits ! 
 
 
-
 ## Related work and inspiration 
 
 BENZI BASICALLY 
 
+Questions: What am I trying to show this my viz?
+
+
 ## Data analysis 
 
-The Million Song Dataset with its abundant and detailed features for each song is such an incredible source for data treatment. In our case, we had to do some a fair bit of data analysis to understand its nature in order to grasp the potential for a visualization.
+The Million Song Dataset with its abundant and detailed features for each song is such an incredible source for data treatment. In our case, we had to do some a fair bit of data analysis to understand its nature in order to grasp the potential for a visualization. 
+The full dataset is available in the cluster of the EPFL so we had to write a script to retrieve all the important features that would have meaning for our visualization. For example, features like the BPM, segments_loudness_start that are more focused toward music analysis were left off to save some computation time and memory. (The whole Million Song Dataset is 280 GB in size). 
+Because our visualization is based on the map and on a streamgraph, the location of the artist and the year of the song release is mandatory. Those two requirements . 
 
+It leaves us with around 32 000 songs with the following criteria: 
+       - Year of release 
+       - Artist name
+       - Artist term with at least one rock genre
+       - Hottness of the song 
+       - Song name 
+       -etc etc 
 
-We will focus on those genres :
+Because there have been so many genres of rock since the 50s, we decided to focus our attention toward those following ones: 
 
     - pop rock
     - blues-rock
@@ -48,11 +59,17 @@ We will focus on those genres :
     - hard rock
     - soft rock
 
+They cover all eras of rock pretty well and are the most popular and well known subgenre of rock 
+
+
 
 
 # Design 
 
-Description: Visualization tool to show how rock evolve in time.
+Description: Visualization tool to show how rock evolves with time.
+
+This was the first sketch that was made when we came up with the idea. Overall, if we compare it to the final visualization, it shows that we stayed in the same line of work, at least in terms of strucutre. 
+
 
 ```
 +------------------------------------------------------------------------------------------------------+-----------------------------+
@@ -96,7 +113,10 @@ Description: Visualization tool to show how rock evolve in time.
 +--------------------+-------------------------------------------+-------------+-----------------------------------------------------+
                                                                start          END
 
+
 ```
+
+
 
 ## A slow start.. for the best ! 
 
