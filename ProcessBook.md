@@ -125,3 +125,16 @@ As a visualization we had the intention to use a 2D scatter plot with a slider t
 
 We tought that the subject was too wide and not specific enough to convey a clear enough message to the viewer. The scatter plot is a bit simplistic as a visualization method and also difficult to interpret so we decided to have more meaningful approach with the map and the streamgraph. 
 
+
+## Change for the map and streamgraph - Version 1
+
+Having data with geographical location and realease years of songs pushed us towards using a map and a sreamgraph. The streamgraph shoulg give a quick overview of the split of the styles throughout years and the map should split the data geographically. Morevover, we want two graphs to be connected and originally we wanted to use years on x-axis of the streamgraph to filter the data shown on the map, so to show only songs released during selected time range. Another filter that we though of were styles. We wanted to be able to see the progression of only one style on the map, so we added a simple filter with checkboxes in the 'legend' part of the screen. This filter allows to check/unckeck any style available, so we can see any number of available styles on the map. The result of this version can be seen on the [screenshot](https://github.com/GandalfAtEpfl/DataViz/blob/master/screeshot/Screenshot%20from%202017-12-05%2015:44:52.png)
+
+## From Version 1 to Version 2
+The were a few issues we've encountered. First of all, the markers on the map. There were too many overlapping markers in the same locations and they were too big. Secondly, our time brush was on the streamgraph, which made it impossible to make the streamgraph interactive directly. So, we have decided to move the time range selector on the top of the graph, making it a separate selector over the x-axis of the streamgraph.
+
+Another issue we've noticed was the way the time range was selected. In our dataset we have only years, but with the brush selector we could stop anywhere on the timeline. So we've decided to split the timeline clearly by years and make the selector round to the closest year.
+
+For the map we have decided to use some clustering of the data points. At every zoom level we can see a few clusters of data, represented by bubbles. In order to see the number of points in the cluster and song styles, we made the cluster bubble outline colored with styles (like in a pie chart), with the number of points in the middle of the bubble.
+
+This version can be viewed on this [screenshot](https://github.com/GandalfAtEpfl/DataViz/blob/master/screeshot/Screenshot_20171210_125506.png) together with the experimental background :)
