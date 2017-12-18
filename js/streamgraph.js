@@ -80,6 +80,7 @@ function brushed()
   if(YEAREND-YEARSTART<1)
   YEAREND =YEARSTART+1;
 
+  
   updatemap();
 
     //console.log([(YEARSTART),(YEAREND) ])

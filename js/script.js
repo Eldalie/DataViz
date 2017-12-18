@@ -31,7 +31,7 @@ const FIRSTYEAR = 1956;
 const LASTYEAR = 2010;
 //
 
-//Select what yer show on the maps:
+//Select what year show on the maps:
 var YEARSTART = 0;
 var YEAREND = 2900;
 
@@ -86,6 +86,30 @@ function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+let stop = false;
+let isPaused = false;
+let resolvePause = () => {};
+let pauseProm = Promise.resolve();
+
+function sendPause() {
+    if(isPaused) return;
+
+    isPaused = true;
+    pauseProm = new Promise(resolve => resolvePause = resolve);
+}
+/* function changePause() {
+    if (!isPaused) return;
+    pauseProm = new Promise(resolve => resolvePause = resolve);
+} */
+function sendContinue() {
+    isPaused = false;
+    resolvePause();
+}
+  
+function sendStop() {
+    stop = true;
+}
+
 var in_discover = false;
 async function discover()
 {
@@ -98,7 +122,8 @@ async function discover()
 
     for(let i = YEARSTART ; i!= LASTYEAR;i++)
     {
-
+        if (stop) break;
+        await pauseProm;
 
         updatemap();
        // brush.extent([YEARSTART,YEARSTART]);
@@ -114,6 +139,7 @@ async function discover()
     in_discover = false;
 
 }
+
 
 
 d3.json("data.json", function(data) {
