@@ -168,13 +168,24 @@ function updatestream()
 
     svg.select(".stream").selectAll(".chemin")
         .attr("opacity", 1)
+        .classed('selected', true)
         .on("mouseover", function(d, i) {
             d3.select('#streamgraph').select(".stream").selectAll(".chemin").transition()
                 .duration(250)
-                .attr("opacity", function(d, j) {
-                    return j != i ? 0.6 : 1;
+                .attr("stroke", function(d, j) {
+                    return j != i ? "none" : "white";
                 })
             })
+        .on("mouseout", function() {
+            d3.select('#streamgraph').select(".stream").selectAll(".chemin").attr('stroke', 'none')
+        })
+        .on("click", function(d, i) {
+            d3.select(this)
+                .classed('selected', !d3.select(this).classed('selected')) //figure out how to correctly add opacity
+                .attr('opacity', function(d, j) {
+                    return d3.select(this).classed('selected') ? 1 : 0.35
+                })
+        })
     
     svg.select('.x.axis').call(xAxis);
     svg.select('.y.axis').call(yAxis)
