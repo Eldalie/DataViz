@@ -132,6 +132,7 @@ Having data with geographical location and realease years of songs pushed us tow
 ![version1](https://github.com/GandalfAtEpfl/DataViz/blob/master/screeshot/Screenshot%20from%202017-12-05%2015:44:52.png)
 
 ## From Version 1 to Version 2
+
 The were a few issues we've encountered. First of all, the markers on the map. There were too many overlapping markers in the same locations and they were too big. Secondly, our time brush was on the streamgraph, which made it impossible to make the streamgraph interactive directly. So, we have decided to move the time range selector on the top of the graph, making it a separate selector over the x-axis of the streamgraph.
 
 Another issue we've noticed was the way the time range was selected. In our dataset we have only years, but with the brush selector we could stop anywhere on the timeline. So we've decided to split the timeline clearly by years and make the selector round to the closest year.
@@ -140,3 +141,18 @@ For the map we have decided to use some clustering of the data points. At every 
 
 This version can be viewed on this screenshot together with the experimental background :)
 ![version2](https://github.com/GandalfAtEpfl/DataViz/blob/master/screeshot/Screenshot_20171210_125506.png)
+
+## From Version 2 to Version 3
+
+By observing the results of version 2, we have noticed that it was hard to observe the progression through time, as the cluster bubbles were of the same size and grasping the numbers of all to see which one is bigger was sometimes difficult, especially when going through time automatically, with the help of the button in the upper right part of the screen. Another issue with cluster bubbles was their segmentation in styles: since the coloring was proportional to all styles available in that cluster, it wasn't comparable to other clusters. Thus, it was impossible to see from first glance which style was dominant in selected time range and where.
+
+Another option we've tried out was changing the streamgraph. We wanted to be able to show different styles on it, so we made style filter change the graph too (together with the map). However, since we wanted to filter the map by also clicking on the style on the streamgraph (which would also tick or untick the corresponding boxes in the filter), this new option didn't make sense, so we have decided to give it up and just keep the filtering of the map available through the ticking of the box or selecting on the streamgraph.
+
+Our solution to the map was the following: we decided to keep the clusters, however slightly different. Why so? Because of how data points were spread out on the map. The problem is that most of the points actually map to the same locations, like centers of big cities. So, in the end, a lot of points map to the same locations and overlap, so it becomes impossible to see which styles are represented in those locations. We have tried to overcome this issue by introducing some randomness for those locations, but this was distorting out data and eventially it wasn't what we wanted. The fact that the data points were overlapping a lot was also the reason why we've decided to give up on dot distribution map. Even with introduced randomness, the following was the best result we have obtained and as it can be seen from the screenshot, it is difficult to separate points and see which style (which color) has the most points.
+![dot_map](https://github.com/GandalfAtEpfl/DataViz/blob/master/screeshot/Screenshot%20from%202017-12-12%2014:55:13.png)
+
+Here's how we changed the clusters. First of all, we decided to separate each style, so now every cluster is not one bubble, but as many bubbles as there are styles in this cluster. Secondly, the size of each bubble is proportional to the number of data points it represents, so bigger clusters are bigger in size. Like this dominant styles can be instantly seen on the map. Clusterin itself works as before: as you zoom in, the clusters are reformed, allowing to group data points more locally and so see more details on every zoom level in. Below is the screenshot of the map at this stage.
+![separate_clusters](https://github.com/GandalfAtEpfl/DataViz/blob/master/screeshot/2017-12-13.PNG)
+
+
+
