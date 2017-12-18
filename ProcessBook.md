@@ -154,5 +154,7 @@ Our solution to the map was the following: we decided to keep the clusters, howe
 Here's how we changed the clusters. First of all, we decided to separate each style, so now every cluster is not one bubble, but as many bubbles as there are styles in this cluster. Secondly, the size of each bubble is proportional to the number of data points it represents, so bigger clusters are bigger in size. Like this dominant styles can be instantly seen on the map. Clusterin itself works as before: as you zoom in, the clusters are reformed, allowing to group data points more locally and so see more details on every zoom level in. Below is the screenshot of the map at this stage.
 ![separate_clusters](https://github.com/GandalfAtEpfl/DataViz/blob/master/screeshot/2017-12-13.PNG)
 
+## From Version 3 to Version 4
 
+Here's a few things we have come up after discussing out version 3. We have decided to make the time range selector easier: since in order to select one year, one need to find and drag the brush from both sides, we have decided to make that available with on click on the year. Another thing that we finally decided to work on is the styling and shaping of the web page (since some of our elements and text we going out from the page). Another thing we tried to do was to set max zoom for the map and limit it, so it won't be possible to scroll too far on it, but we still need to adjust a few things there. In terms of automatic time view, we decided that we need at least play, stop and pause buttons, for user to have some control over the timeplay. 
 
