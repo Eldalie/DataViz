@@ -92,8 +92,11 @@ let resolvePause = () => {};
 let pauseProm = Promise.resolve();
 
 function sendPause() {
-    if(isPaused) return;
-
+    if(isPaused)
+    {
+        sendContinue();
+        return;
+    }
     isPaused = true;
     pauseProm = new Promise(resolve => resolvePause = resolve);
 }
@@ -107,6 +110,7 @@ function sendContinue() {
 }
   
 function sendStop() {
+    sendContinue();
     stop = true;
 }
 
@@ -114,7 +118,12 @@ var in_discover = false;
 async function discover()
 {
     if(in_discover)
-    return;
+    {
+        sendPause();    
+        return;
+    }
+    
+    console.log("Enter in discover");
     in_discover = true;
 
     YEARSTART = FIRSTYEAR;

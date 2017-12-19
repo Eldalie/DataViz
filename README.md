@@ -34,14 +34,14 @@ TAsk to do :
           Give the option to "un - tick" some genres so the stream graph rescales itself 
           Find a way to make them interactive in both directions.
           
-  - [ ] : Add options: 1 way to see the progression year by year 
+  - [X] : Add options: 1 way to see the progression year by year 
   - [x]                    1 automated progression for the story telling (Press play then show our story) 
                        
-- [ ] : Build the Map
+- [X] : Build the Map
     
-    - [ ] : Choose the maps (That show the city) Adapt the color. Adapt the font, background. IMPROVE THE DESIGN 
+    - [X] : Choose the maps (That show the city) Adapt the color. Adapt the font, background. IMPROVE THE DESIGN 
     - [ ] : Make the map interactive : Click on the US for example change the stream graph 
-    - [ ] : Try different ways to indicate the artist: Marker/circles/other stuff. Adapt the size at least 
+    - [X] : Try different ways to indicate the artist: Marker/circles/other stuff. Adapt the size at least 
 
 
 - [ ] : CSS/achitecture
