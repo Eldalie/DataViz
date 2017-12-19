@@ -93,7 +93,7 @@ let resolvePause = () => {};
 let pauseProm = Promise.resolve();
 
 var history_button = document.getElementById('history_button');
-history_button.value = "Start";
+//history_button.value = "Start";
 
 function history_button_action() {
     if (!in_discover) {
@@ -123,7 +123,6 @@ function sendContinue() {
 }
   
 /* function sendStop() {
->>>>>>> d6ce160a62439d502556fc9537e49dcce86c92c8
     stop = true;
 } */
 
