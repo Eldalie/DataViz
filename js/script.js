@@ -138,7 +138,7 @@ async function discover()
     console.log("Enter in discover");
 
     in_discover = true;
-    history_button.value = "Pause";
+    //history_button.value = "Pause";
 
     YEARSTART = FIRSTYEAR;
     YEAREND = FIRSTYEAR+1;
