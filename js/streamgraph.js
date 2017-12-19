@@ -168,7 +168,7 @@ function updatestream()
     enter.merge(paths).attr("d", area).attr("fill", function(d,i) { return COLOR[GENRES.indexOf(SELECTEDGENRE[i])] ; });
 
     svg.select(".stream").selectAll(".chemin")
-        .attr("opacity", 1)
+        .attr("opacity", 0.95)
         .classed('selected', true)
         .on("mouseover", function(d, i) {
             d3.select('#streamgraph').select(".stream").selectAll(".chemin").transition()
@@ -184,7 +184,7 @@ function updatestream()
             d3.select(this)
                 .classed('selected', !d3.select(this).classed('selected')) //figure out how to correctly add opacity
                 .attr('opacity', function(d, j) {
-                    return d3.select(this).classed('selected') ? 1 : 0.35
+                    return d3.select(this).classed('selected') ? 0.95 : 0.35
                 })
         })
     

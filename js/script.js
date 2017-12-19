@@ -21,7 +21,8 @@ var timer = function(name) {
 //Class for benchmark !
 //"psychedelic rock","progressive rock" ,'#33a02c' - 4
 const GENRES = ["rock 'n roll","pop rock","glam rock","blues-rock","psychedelic rock", "soft rock", "alternative rock", "indie rock", "post rock"]//["rock 'n roll","pop rock","blues-rock","indie rock","soft rock","alternative rock","hard rock"].sort();//...TODO
-const COLOR = ['#a6cee3','#1f78b4','#b2df8a','#fb9a99','#e31a1c','#fdbf6f','#ff7f00','#cab2d6','#6a3d9a']//["#d53e4f", "#fc8d59", "#fee08b", "#ffffbf", "#e6f598", "#99d594", "#3288bd"] //[ "#547980" ,"#355C7D","#9DE0AD","#EDE574","#594F4F","#F8B195","#86AF49" ]
+const COLOR = ['#800026','#e31a1c','#fd8d3c','#980043','#df65b0','#7a0177','#6a51a3','#9e9ac8','#3690c0']
+//['#a6cee3','#1f78b4','#b2df8a','#fb9a99','#e31a1c','#fdbf6f','#ff7f00','#cab2d6','#6a3d9a']//["#d53e4f", "#fc8d59", "#fee08b", "#ffffbf", "#e6f598", "#99d594", "#3288bd"] //[ "#547980" ,"#355C7D","#9DE0AD","#EDE574","#594F4F","#F8B195","#86AF49" ]
 const ICONE_NAMES = ["guitar","guitare", "music-note", "star","star","rock-and-roll","headphones"]
 
 var ICONES = [];
