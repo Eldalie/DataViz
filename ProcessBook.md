@@ -37,11 +37,11 @@ Courtesy of Maximilien Cuony and Kirell Benzi, taken from http://www.kirellbenzi
 
 ## Data analysis 
 
-The Million Song Dataset with its abundant and detailed features for each song is such an incredible source for data treatment. In our case, we had to do some a fair bit of data analysis to understand its nature in order to grasp the potential for a visualization. 
-The full dataset is available in the cluster of the EPFL so we had to write a script to retrieve all the important features that would have meaning for our visualization. For example, features like the BPM, segments_loudness_start that are more focused toward music analysis were left off to save some computation time and memory. (The whole Million Song Dataset is 280 GB in size). 
-Because our visualization is based on the map and on a streamgraph, the location of the artist and the year of the song release is mandatory. Those two requirements . 
+The Million Song Dataset with its abundant and detailed features for each song is such an incredible source for data treatment. In our case, we had to do a fair bit of data analysis to understand its nature in order to grasp the potential for a visualization. 
+The full dataset is available in the cluster of the EPFL so we had to write a script (GetData.py) to retrieve all the important features that would have meaning for our visualization. For example, features like the BPM, segments_loudness_start that are more focused toward music analysis were left off to save some computation time and memory. (The whole Million Song Dataset is 280 GB in size). 
+Because our visualization is based on the map and on a streamgraph, the location of the artist and the year of the song release is mandatory. 
+On top of that, we filtered every song according to those criteria:
 
-It leaves us with around 32 000 songs with the following criteria: 
        - Year of release 
        - Artist name
        - Artist term with at least one rock genre
