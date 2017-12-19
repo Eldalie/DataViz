@@ -19,9 +19,9 @@ var timer = function(name) {
     }
 };
 //Class for benchmark !
-
-const GENRES = ["rock 'n roll","pop rock","blues-rock","indie rock","soft rock","alternative rock","hard rock"].sort();//...TODO
-const COLOR = [ "#547980" ,"#355C7D","#9DE0AD","#EDE574","#594F4F","#F8B195","#86AF49" ]
+//"psychedelic rock","progressive rock" ,'#33a02c' - 4
+const GENRES = ["rock 'n roll","pop rock","glam rock","blues-rock","psychedelic rock", "soft rock", "alternative rock", "indie rock", "post rock"]//["rock 'n roll","pop rock","blues-rock","indie rock","soft rock","alternative rock","hard rock"].sort();//...TODO
+const COLOR = ['#a6cee3','#1f78b4','#b2df8a','#fb9a99','#e31a1c','#fdbf6f','#ff7f00','#cab2d6','#6a3d9a']//["#d53e4f", "#fc8d59", "#fee08b", "#ffffbf", "#e6f598", "#99d594", "#3288bd"] //[ "#547980" ,"#355C7D","#9DE0AD","#EDE574","#594F4F","#F8B195","#86AF49" ]
 const ICONE_NAMES = ["guitar","guitare", "music-note", "star","star","rock-and-roll","headphones"]
 
 var ICONES = [];
@@ -86,10 +86,24 @@ function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-let stop = false;
+
+//let stop = false;
 let isPaused = false;
 let resolvePause = () => {};
 let pauseProm = Promise.resolve();
+
+var history_button = document.getElementById('history_button');
+history_button.value = "Start";
+
+function history_button_action() {
+    if (!in_discover) {
+        return discover();
+    } else if (!isPaused) {
+        return sendPause();
+    } else {
+        return sendContinue();
+    }
+}
 
 function sendPause() {
     if(isPaused)
@@ -98,21 +112,20 @@ function sendPause() {
         return;
     }
     isPaused = true;
+    history_button.value = "Continue";
     pauseProm = new Promise(resolve => resolvePause = resolve);
 }
-/* function changePause() {
-    if (!isPaused) return;
-    pauseProm = new Promise(resolve => resolvePause = resolve);
-} */
+
 function sendContinue() {
     isPaused = false;
+    history_button.value = "Pause";
     resolvePause();
 }
   
-function sendStop() {
-    sendContinue();
+/* function sendStop() {
+>>>>>>> d6ce160a62439d502556fc9537e49dcce86c92c8
     stop = true;
-}
+} */
 
 var in_discover = false;
 async function discover()
@@ -124,14 +137,17 @@ async function discover()
     }
     
     console.log("Enter in discover");
+    return;
+
     in_discover = true;
+    history_button.value = "Pause";
 
     YEARSTART = FIRSTYEAR;
     YEAREND = FIRSTYEAR+1;
 
-    for(let i = YEARSTART ; i!= LASTYEAR;i++)
+    for(let i = YEARSTART ; i!= LASTYEAR + 1;i++)
     {
-        if (stop) break;
+        //if (stop) break;
         await pauseProm;
 
         updatemap();
@@ -139,13 +155,14 @@ async function discover()
         d3.select(".brush").transition().call(brush.move,  [weightYAxis+xScale(YEARSTART),weightYAxis+xScale(YEAREND) ]  );
         await sleep(750);
 
-        YEARSTART= i;
+        //YEARSTART= i;
         YEAREND=i+1;
 
     }
 
 
     in_discover = false;
+    history_button.value = "Restart";
 
 }
 
