@@ -22,14 +22,17 @@ We want to share our enthusiasm with our visualization project "Evolution of Roc
 This process book hopefully shed lights into our thought process during the establishment of our visualization, from the choice of the subject to the final touch of the visualization technique used.
 
 For this visualization we focused our energy on Rock Music. Why Rock Music ? First of all, Rock music was a uninanimous choice in terms of music taste in our team so it's only natural to choose the genre that suits us the best. We were really motivated to know more about the subgenres we like the most, and to expand our music knowledge by discovering other styles ! 
-We also want to reach the maximum of audience with our visualization, that is meant to be easy to understand and instructive. Rock with its many subgenres, covers a large scope of the music produced in the western countries for the past 70 years and we believe that everyone knows at least some songs from iconic artists and groups like Elvis Presley, The Beatles and even Michael Jackson. Hopefully we can provide a good explanation of rock music through our visualization and even surprise the rock pundits ! 
+We also want to reach the maximum of audience with our visualization, that is meant to be easy to understand and instructive. Rock with its many subgenres, covers a large scope of the music produced in the western countries for the past 70 years and we believe that everyone knows at least some songs from iconic artists and groups like Elvis Presley, The Beatles and even Michael Jackson. Hopefully we can provide a good explanation of rock music through our visualization and hopefully even surprise the rock pundits ! 
 
 
 ## Related work and inspiration 
+Throughout the course of Data Visualization this semester, we had the chance to have a look at all sort of visualizations. One graph that suits very well our project of showing the evolution of Rock music in time is the stream graph. It's a time based graph comprising different colors that represent our various subgenres. This visualization gives an a lot of information while remaining fairly simple to read.    
+<br/>
+This is an example of streamgraph that caught our eye. It represents the evolution of music genre at the Montreux Jazz Festival. Each color represents a genre with the possibility to have additional information by hovering over the different colored areas. [See original work](http://www.kirellbenzi.com/blog/evolution-of-genres-in-the-montreux-jazz-festival/)
 
-BENZI BASICALLY 
+![inspiration](https://raw.githubusercontent.com/GandalfAtEpfl/DataViz/master/imgs_processbook/stgraph.png)
 
-Questions: What am I trying to show this my viz?
+Courtesy of Maximilien Cuony and Kirell Benzi, taken from http://www.kirellbenzi.com/. 
 
 
 ## Data analysis 
@@ -62,6 +65,7 @@ Because there have been so many genres of rock since the 50s, we decided to focu
 They cover all eras of rock pretty well and are the most popular and well known subgenre of rock 
 
 
+Questions: What am I trying to show this my viz?
 
 
 # Design 
