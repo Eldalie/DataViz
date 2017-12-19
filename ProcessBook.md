@@ -158,7 +158,7 @@ Here's how we changed the clusters. First of all, we decided to separate each st
 
 Here's a few things we have come up after discussing out version 3. We have decided to make the time range selector easier: since in order to select one year, one need to find and drag the brush from both sides, we have decided to make that available with on click on the year. Another thing that we finally decided to work on is the styling and shaping of the web page (since some of our elements and text we going out from the page). Another thing we tried to do was to set max zoom for the map and limit it, so it won't be possible to scroll too far on it, but we still need to adjust a few things there. In terms of automatic time view, we decided that we need at least play, stop and pause buttons, for user to have some control over the timeplay. 
 Here's our version at this point:
-![version4](https://github.com/GandalfAtEpfl/DataViz/blob/master/screeshot/2017-12-13.2017-12-19.png)
+![version4](https://github.com/GandalfAtEpfl/DataViz/blob/master/screeshot/2017-12-19.png)
 
 We decided that additional options for playing such as speed selector would be a nice thing to have, too.
 
