@@ -47,7 +47,7 @@ var DATA = [];
 for(let genre of GENRES.slice().reverse())
 {
 
-    $('#genre').append("<label style=\"color:"+  COLOR[GENRES.indexOf(genre)]+"\" ><input  name=\""+genre+"\" type=\"checkbox\" checked >"+genre+"</label><br/>");
+    $('#genre').append("<input  name=\""+genre+"\" type=\"checkbox\" checked > <label style=\"color:"+  COLOR[GENRES.indexOf(genre)]+"\" >"+genre+"</label><br/>");
 }
 
 
@@ -87,12 +87,12 @@ function sleep(ms) {
 }
 
 
-//let stop = false;
+let stop = false;
 let isPaused = false;
 let resolvePause = () => {};
 let pauseProm = Promise.resolve();
 
-var history_button = document.getElementById('history_button');
+//var history_button = document.getElementById('history_button');
 //history_button.value = "Start";
 
 function history_button_action() {
@@ -112,31 +112,33 @@ function sendPause() {
         return;
     }
     isPaused = true;
-    history_button.value = "Continue";
+    //history_button.value = "Continue";
     pauseProm = new Promise(resolve => resolvePause = resolve);
 }
 
 function sendContinue() {
     isPaused = false;
-    history_button.value = "Pause";
+    //history_button.value = "Pause";
     resolvePause();
 }
   
-/* function sendStop() {
+ function sendStop() {
+    sendContinue();
     stop = true;
-} */
+} 
 
 var in_discover = false;
 async function discover()
 {
-    if(in_discover)
+
+    if(in_discover)//FOr safety
     {
         sendPause();    
         return;
     }
-    
-    console.log("Enter in discover");
 
+    console.log("Enter in discover");
+    stop = false;
     in_discover = true;
     //history_button.value = "Pause";
 
@@ -145,9 +147,9 @@ async function discover()
 
     for(let i = YEARSTART ; i!= LASTYEAR + 1;i++)
     {
-        //if (stop) break;
-        await pauseProm;
 
+        await pauseProm;
+        if (stop) break;
         updatemap();
        // brush.extent([YEARSTART,YEARSTART]);
         d3.select(".brush").transition().call(brush.move,  [weightYAxis+xScale(YEARSTART),weightYAxis+xScale(YEAREND) ]  );
@@ -158,9 +160,9 @@ async function discover()
 
     }
 
-
+    console.log("outs of discover");
     in_discover = false;
-    history_button.value = "Restart";
+    //history_button.value = "Restart";
 
 }
 

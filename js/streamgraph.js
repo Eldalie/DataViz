@@ -13,7 +13,7 @@ var stack = d3.stack(),
     layers = undefined;
 
 var heightXAxis = 40;
-var weightYAxis = 25;
+var weightYAxis = 45;
 
 var width = $("body").width();
 var height = $("body").height()*0.25;
@@ -57,9 +57,9 @@ function brushed()
     //console.log(d3.event)
   //if(d3.event.type != "end") return;
 
-    console.log(d3.event.sourceEvent)
+    console.log(d3.event);//.sourceEvent)
 
-    if( d3.event.selection == null) // if no sleection select only one year
+    if( d3.event.selection == null /*|| d3.event.sourceEvent.type=="mouseup"*/) // if no sleection select only one year
     {
         var dest = xScale.invert(d3.event.sourceEvent.clientX-weightYAxis);
         YEARSTART = Math.floor(dest);
@@ -204,5 +204,5 @@ function updatestream()
 
     svg.select(".brush")
       .call(brush)
-      .call(brush.move, (d3.brushSelection(d3.select(".brush").node()) || [weightYAxis,width]));
+      .call(brush.move, (d3.brushSelection(d3.select(".brush").node()) || [weightYAxis,weightYAxis]));
 }

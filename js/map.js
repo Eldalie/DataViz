@@ -16,7 +16,7 @@ build_icone();
   .then(function(response) { return response.json(); })
   .then(function(data) {L.geoJSON(data).addTo(map)});*/
 
-var ArtistCluster = new PruneClusterForLeaflet(220,80);
+var ArtistCluster = new PruneClusterForLeaflet(310,10);
 ArtistCluster.BuildLeafletClusterIcon = function(cluster) {
             var e = new L.Icon.MarkerCluster();
 
@@ -31,11 +31,12 @@ ArtistCluster.BuildLeafletCluster =  function (cluster, position) {
             icon: this.BuildLeafletClusterIcon(cluster)
         });
         m._leafletClusterBounds = cluster.bounds;
-        m.on('click', function () {      
+        //m.bindPopup("        ");
+       /* m.on('click', function () {      
             
+            //m.icon = 
             
-            
-        });
+        });*
         return m;
     }
 
@@ -76,8 +77,9 @@ function build_marker()
 
             let index_genre = GENRES.indexOf(element[6][0]);
             var color =  COLOR[index_genre];
-
-            element["marker"] = new PruneCluster.Marker(element[1]+Math.random()/8.0, element[2]+Math.random()/8.0);//,{color:color}) // L.marker( [element[1], element[2]] , {icon: greenIcon});
+            
+            let angle = 360.0*Math.random()
+            element["marker"] = new PruneCluster.Marker(element[1]+Math.cos(angle)/40.0, element[2]+Math.sin(angle)/40.0);//,{color:color}) // L.marker( [element[1], element[2]] , {icon: greenIcon});
 
 
             element["marker"].data.icon = ICONES[index_genre];  // See http://leafletjs.com/reference.html#icon
