@@ -28,7 +28,7 @@ TAsk to do :
 - [x] : Load the Data in json
 - [x] : Build the Stream Graph
 
-  - [ ] : Make the brush on the time axis (Leave a line down the stream graph still) 
+  - [x] : Make the brush on the time axis (Leave a line down the stream graph still) 
           On the stream graph:
           Make it interactive (Click on one color display the genre on the map)
           Give the option to "un - tick" some genres so the stream graph rescales itself 
@@ -56,6 +56,18 @@ TAsk to do :
   - Demonstrate what you can do with your viz in a fun, engaging and impactful manner
   - Talk about your main contributions rather than on technical details
   - 2 min video not more (max +5 sec)
+
+- [] : Last week tasks
+
+  - [] Add speed selector for playing the history
+  - [] Try to make map darker --> try different background
+  - Add on hover event : 
+    - [] For bubbles on the map to show the style and maybe the most popular artist (or the one with most songs)
+    - [] For streamgraph layers to show style, year and number of songs
+  - [] Reposition elements:
+    - Place the timeline with years on the bottom
+    - Place the filter with styles in one line in between map and streamgraph --> to discuss
+    - Potentially remove the legend and text from the right
 
 
 
