@@ -36,7 +36,7 @@ ArtistCluster.BuildLeafletCluster =  function (cluster, position) {
             
             //m.icon = 
             
-        });*
+        });*/
         return m;
     }
 
