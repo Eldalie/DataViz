@@ -86,43 +86,58 @@ function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-let stop = false;
+
+//let stop = false;
 let isPaused = false;
 let resolvePause = () => {};
 let pauseProm = Promise.resolve();
+
+var history_button = document.getElementById('history_button');
+history_button.value = "Start";
+
+function history_button_action() {
+    if (!in_discover) {
+        return discover();
+    } else if (!isPaused) {
+        return sendPause();
+    } else {
+        return sendContinue();
+    }
+}
 
 function sendPause() {
     if(isPaused) return;
 
     isPaused = true;
+    history_button.value = "Continue";
     pauseProm = new Promise(resolve => resolvePause = resolve);
 }
-/* function changePause() {
-    if (!isPaused) return;
-    pauseProm = new Promise(resolve => resolvePause = resolve);
-} */
+
 function sendContinue() {
     isPaused = false;
+    history_button.value = "Pause";
     resolvePause();
 }
   
-function sendStop() {
+/* function sendStop() {
     stop = true;
-}
+} */
 
 var in_discover = false;
 async function discover()
 {
     if(in_discover)
     return;
+
     in_discover = true;
+    history_button.value = "Pause";
 
     YEARSTART = FIRSTYEAR;
     YEAREND = FIRSTYEAR+1;
 
-    for(let i = YEARSTART ; i!= LASTYEAR;i++)
+    for(let i = YEARSTART ; i!= LASTYEAR + 1;i++)
     {
-        if (stop) break;
+        //if (stop) break;
         await pauseProm;
 
         updatemap();
@@ -130,13 +145,14 @@ async function discover()
         d3.select(".brush").transition().call(brush.move,  [weightYAxis+xScale(YEARSTART),weightYAxis+xScale(YEAREND) ]  );
         await sleep(750);
 
-        YEARSTART= i;
+        //YEARSTART= i;
         YEAREND=i+1;
 
     }
 
 
     in_discover = false;
+    history_button.value = "Restart";
 
 }
 
