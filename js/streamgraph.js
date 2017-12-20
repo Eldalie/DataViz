@@ -12,20 +12,20 @@ var year = undefined;
 var stack = d3.stack(),
     layers = undefined;
 
-var heightXAxis = 40;
-var weightYAxis = 45;
+var heightXAxis = 45;
+var weightYAxis = 5;
 
-var width = $("body").width();
+var width = $("body").width()-30;
 var height = $("body").height()*0.25;
 
-var svg = d3.select('#streamgraph')
+var svg = d3.select('#streamgraphSVG')
          .append("svg").attr('class', 'svgstream').attr("width", width)
           .attr("height", height);
 
 
 var xScale = d3.scaleLinear().domain([FIRSTYEAR, LASTYEAR ]);
 var yScale = d3.scaleLinear();
-var xAxis = d3.axisTop(xScale).tickFormat(d3.format("d")).ticks((LASTYEAR-FIRSTYEAR)/1.0);
+var xAxis = d3.axisBottom(xScale).tickFormat(d3.format("d")).ticks((LASTYEAR-FIRSTYEAR)/1.0);
 var yAxis = d3.axisLeft(yScale);
 
 
@@ -147,7 +147,7 @@ function updatestream()
 
     //console.log("update");
 
-    width = $("#streamgraph").width()-1;
+    width = $("#streamgraphSVG").width()-30;
     height =$("#streamgraph").height()-1;
     //console.log(width,height)
 
@@ -164,7 +164,7 @@ function updatestream()
     var paths = svg.select(".stream").selectAll(".chemin")
                .data(layers);
     paths.exit().remove();
-    var enter = paths.enter().append("path").attr("transform", "translate(" + weightYAxis + "," + heightXAxis + ")").attr('class', 'chemin')  ;
+    var enter = paths.enter().append("path").attr("transform", "translate(" + weightYAxis + "," + 0 + ")").attr('class', 'chemin')  ;
     enter.merge(paths).attr("d", area).attr("fill", function(d,i) { return COLOR[GENRES.indexOf(SELECTEDGENRE[i])] ; });
 
     svg.select(".stream").selectAll(".chemin")
@@ -189,17 +189,17 @@ function updatestream()
         })
     
     svg.select('.x.axis').call(xAxis);
-    svg.select('.y.axis').call(yAxis)
-     svg.select('.x.axis').attr("transform", "translate(" + weightYAxis + ","+heightXAxis+")")
-     .selectAll("text")
+    svg.select('.y.axis').call(yAxis).selectAll("text").remove();
+     svg.select('.x.axis').attr("transform", "translate(" + weightYAxis + ","+ (height-heightXAxis )+")")
+     .selectAll("text").attr("dx", "-1.2em")
+            .attr("dy", "+1.6em")
             .attr("transform", function(d) {
                 return "rotate(-65)"
-                }) .attr("dx", "+2.0em")
-            .attr("dy", "+1.1em");
-;
-     svg.select('.y.axis').attr("transform", "translate(" + weightYAxis + "," + heightXAxis + ")");
+                }) 
 
-    brush.extent([[weightYAxis, 0], [width, heightXAxis]])
+     svg.select('.y.axis').attr("transform", "translate(" + weightYAxis + "," + 0 + ")");
+
+    brush.extent([[weightYAxis, height-heightXAxis], [width, height]])
     //console.log(d3.brushSelection(d3.select(".brush").node()))
 
     svg.select(".brush")

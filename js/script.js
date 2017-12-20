@@ -48,7 +48,7 @@ var DATA = [];
 for(let genre of GENRES.slice().reverse())
 {
 
-    $('#genre').append("<input  name=\""+genre+"\" type=\"checkbox\" checked > <label style=\"color:"+  COLOR[GENRES.indexOf(genre)]+"\" >"+genre+"</label><br/>");
+    $('#genre').append("<input  name=\""+genre+"\" type=\"checkbox\" id=\""+genre+"id\"  checked > <label for=\""+genre+"id\"  style=\"color:"+  COLOR[GENRES.indexOf(genre)]+"\" >"+genre+"</label><br/>");
 }
 
 
