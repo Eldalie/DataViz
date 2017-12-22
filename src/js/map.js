@@ -78,7 +78,7 @@ function build_icone()
     {
 
          var Icon = new L.Icon({
-              iconUrl: 'https://raw.githubusercontent.com/GandalfAtEpfl/DataViz/master/icons/'+ icon_name +'.png',
+              iconUrl: 'https://raw.githubusercontent.com/GandalfAtEpfl/DataViz/master/src/icons/'+ icon_name +'.png',
             // shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
               iconSize: [41, 41],
               iconAnchor: [12, 41],
@@ -228,7 +228,7 @@ var colors = COLOR; // ['#ff4b00', '#bac900', '#EC1813', '#55BCBE', '#D2204C', '
             var start = 0;
             for (var i = 0,j=0; i <  colors.length; ++i) {
                 // for each genre:
-                if(this.stats[i]==0)//if not null
+                if(this.stats[i]==0 || !this.stats[i])//if not null
                     continue;
 
                 var rayon = Math.log(this.stats[i])*r;
