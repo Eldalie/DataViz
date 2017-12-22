@@ -1,18 +1,5 @@
-# Process book - Evolution of Rock Music 
 
-To do in the process book: 
-
-- [Ok] Overview, motivation, target audience
-- [Ok] Related work and inspiration
-- [Ok] Questions: What am I trying to show this my viz?
-- [Ok] Dataset: where does it come from, what are you processing steps?
-- [Ok] Exploratory data analysis: What viz have you used to gain insights on the data?
-- [] Designs: What are the different visualizations you considered? Justify the design decisions you made using the perceptual and design principles.
-- [Ongoing] Did you deviate from your initial proposal? (it’s ok)
-- [] Implementation: Describe the intent and functionality of the interactive visualizations you implemented. Provide clear and well-referenced images showing the key design and interaction elements.
-- [] Evaluation: What did you learn about the data by using yourvisualizations? How did you answer your questions? How well does your
-visualization work, and how could you further improve it?
-
+# Process book 
 
 ## Introduction 
 
@@ -209,5 +196,19 @@ The cluster on the map shows the number of songs in the proximate areas. The mor
 Finally we added some information when hovering over the streamgraph. 
 
 
-To improve our our visualization we could have added the link to the corresponding song via a music platform. Some additional interactions with the streamgraph could have been added. Also it would be a good idea to add more transition after each events so the navigation can be smoother.
+To improve our our visualization we could have added the link to the corresponding song via a music platform. Some additional interactions with the streamgraph could have been added. Also it would be a good idea to add more transition after each events so the navigation can be smoother. The demo also needs to be more interactive. It should maybe zoom on an icon, display some texts giving a little explanation. (Similar to the story telling in the screencast)
+
+There are actually so many possibilities with our topic and our visualization.
+
+## Peer assessment 
+
+Paul
+
+- Preparation : My teammates were ready each tuesday to debate for hours about the projects
+- Contribution : Yes we separated the different tasks based on our skills 
+- Respect for other's ideas : Yes the art of criticizing with respect 
+- Flexibility : Yes flexible enough 
+
+
+
 

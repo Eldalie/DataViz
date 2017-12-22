@@ -21,6 +21,7 @@ And here you can take the journey in time yourself:
 [Go to the visualization](https://gandalfatepfl.github.io/DataViz/map.html)
 
 
-The code, the data used and the process book can be found in the following repository on GitHub: [https://github.com/GandalfAtEpfl/DataViz]
+The code, the data used and the process book can be found in the following repository on GitHub:
+[Go to the github repo](https://github.com/GandalfAtEpfl/DataViz)
 
 The process book can be downloaded * here *.
