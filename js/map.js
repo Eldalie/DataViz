@@ -25,8 +25,15 @@ var tiledqrk = L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/d
 var map = new L.Map("maps", {minZoom:1.7,/*maxBounds:[
     [-180, 0],
     [180, 180]
-],*/ attributionControl: false , center: [ 46.519962, 6.633597], zoom: 2}).addLayer(tiledqrk  );
+],*/zoomControl:false, attributionControl: false , center: [ 46.519962, 6.633597], zoom: 2}).addLayer(tiledqrk  );
 build_icone();
+
+
+//add zoom control with your options
+L.control.zoom({
+     position:'topright'
+}).addTo(map);
+
 //http://leaflet-extras.github.io/leaflet-providers/preview/
 /*fetch("https://raw.githubusercontent.com/johan/world.geo.json/master/countries.geo.json")
   .then(function(response) { return response.json(); })
