@@ -129,6 +129,7 @@ function sendContinue() {
 } 
 
 var in_discover = false;
+var speed = 750;
 async function discover()
 {
 
@@ -154,7 +155,7 @@ async function discover()
         updatemap();
        // brush.extent([YEARSTART,YEARSTART]);
         d3.select(".brush").transition().call(brush.move,  [weightYAxis+xScale(YEARSTART),weightYAxis+xScale(YEAREND) ]  );
-        await sleep(750);
+        await sleep(speed);
 
         //YEARSTART= i;
         YEAREND=i+1;
@@ -167,7 +168,15 @@ async function discover()
 
 }
 
+function sendSpeedUP()
+{
+    speed/=2;
+}
 
+function sendSpeedDown()
+{
+    speed*=2;
+}
 
 d3.json("data.json", function(data) {
 
