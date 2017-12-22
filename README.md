@@ -1,5 +1,3 @@
-Add a README file that explains the technical setup and intented usage
-
 # The Evolution of Rock
 
 This is a project for the Data Visualization course at EPFL. It uses data from the Million Song dataset to describe the evolution of the rock style of music over time.
