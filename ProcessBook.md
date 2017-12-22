@@ -34,14 +34,36 @@ This is an example of streamgraph that caught our eye. It represents the evoluti
 
 Courtesy of Maximilien Cuony and Kirell Benzi, taken from http://www.kirellbenzi.com/. 
 
-For the structure of our visualization and especially the story telling we wanted to combine them in the same page. This was decided after looking at this interactive [visualization](http://drones.pitchinteractive.com/index.fr.html) that showed the number of attacks by drone in Pakistan. We think that the user would be more inclined to be interested and focused in our visualization if we accompany him with a demo-like story telling.
+For the structure of our visualization and especially the story telling we wanted to combine them in the same page. This was decided after looking at this interactive [visualization](http://drones.pitchinteractive.com/index.fr.html) that showed the number of attacks by drone in Pakistan. We think that the user would be more inclined to be interested and focused in our visualization if we direct him with a demo-like story telling.
 
+## The Evolution of Rock Music
+
+The main goal of our visualization is to show the evolution of Rock Music in time and space. With our structure, we can assess both variables via our streamgraph with the brusher associated and the map. We can see the markers appear more and more in Europe for example as we move the brush in time. More specifically, we added 9 subgenre of Rock so the user can have an understanding of the different style of Rock first of all, but also their popularity and their evolution in time. Finally, each icon representing one song carry the information of the name of the song, the artist name, the genre and the hotness (measured in by The Echo Nest following their criterion). It's a more detailed information for the users who want to discover new musics, new genres from various countries. 
+There are many way to use our visualization, each type of user can find its own preference.
+Our story telling focus on different eras of Rock music, by highlighting the main genres and the notable artists or groups.
 
 ## Data analysis 
 
 The Million Song Dataset with its abundant and detailed features for each song is such an incredible source for data treatment. In our case, we had to do a fair bit of data analysis to understand its nature in order to grasp the potential for a visualization. 
 The full dataset is available in the cluster of the EPFL so we had to write a script (GetData.py) to retrieve all the important features that would have meaning for our visualization. For example, features like the BPM, segments_loudness_start that are more focused toward music analysis were left off to save some computation time and memory. (The whole Million Song Dataset is 280 GB in size). 
 Because our visualization is based on the map and on a streamgraph, the location of the artist and the year of the song release is mandatory. 
+We used Python and Spark (PySpark) to read the files in h5py, filter them by years and locations and used hd5f_getters.py, a file provided by LabROSA to get the different features of interest: 
+
+       - Year 
+       - Artist lattitude 
+       - Artist longitude 
+       - Artist hotness
+       - Artist name 
+       - Artist id
+       - Artist terms (First 10 genre associated to the artist) 
+       - Title of the song 
+       - Song hotness
+
+If one does not have access to the EPFL cluster, the full dataset and a subset can be downloaded [here](https://labrosa.ee.columbia.edu/millionsong/)
+
+USe spark and python 
+Get data = > filter year and location 
+Spark to collect the data filter and read them in h5py, get fields hdf5.getters given million song lab rosa, t
 On top of that, we filtered every song according to those criteria:
 
        - Year of release 
@@ -49,25 +71,23 @@ On top of that, we filtered every song according to those criteria:
        - Artist term with at least one rock genre
        - Hottness of the song 
        - Song name 
-       -etc etc 
+       - etc etc 
+
+
 
 Because there have been so many genres of rock since the 50s, we decided to focus our attention toward those following ones: 
 
     - pop rock
     - blues-rock
-    - folk rock
     - indie rock
-    - rock
+    - post rock
     - psychedelic rock
     - rock 'n roll
     - alternative rock
-    - hard rock
+    - glam rock
     - soft rock
 
 They cover all eras of rock pretty well and are the most popular and well known subgenre of rock 
-
-
-Questions: What am I trying to show this my viz?
 
 
 # Design 
