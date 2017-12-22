@@ -94,7 +94,7 @@ function build_marker()
             let index_genre = GENRES.indexOf(element[6][0]);
             var color =  COLOR[index_genre];
             
-            let angle = 360.0*Math.random()
+            let angle = 2*Math.PI*Math.random()
             element["marker"] = new PruneCluster.Marker(element[1]+Math.cos(angle)/40.0, element[2]+Math.sin(angle)/40.0);//,{color:color}) // L.marker( [element[1], element[2]] , {icon: greenIcon});
 
 

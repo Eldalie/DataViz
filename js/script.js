@@ -23,7 +23,7 @@ var timer = function(name) {
 const GENRES = ["alternative rock","blues-rock","glam rock","indie rock","pop rock", "post rock", "psychedelic rock","rock 'n roll", "soft rock"]//["rock 'n roll","pop rock","blues-rock","indie rock","soft rock","alternative rock","hard rock"].sort();//...TODO
 const COLOR = ['#e31a1c','#6a51a3','#800026','#fd8d3c','#ff6600','#df65b0','#7a0177','#3690c0','#9e9ac8']
 //['#a6cee3','#1f78b4','#b2df8a','#fb9a99','#e31a1c','#fdbf6f','#ff7f00','#cab2d6','#6a3d9a']//["#d53e4f", "#fc8d59", "#fee08b", "#ffffbf", "#e6f598", "#99d594", "#3288bd"] //[ "#547980" ,"#355C7D","#9DE0AD","#EDE574","#594F4F","#F8B195","#86AF49" ]
-const ICONE_NAMES = ["guitar","guitare", "music-note", "star","star","rock-and-roll","headphones"]
+const ICONE_NAMES = ["guitar","guitare", "stars", "music-note", "stars","bus","star","rock-and-roll","headphones"]
 
 var ICONES = [];
 //First year of studie
