@@ -189,6 +189,9 @@ function updatestream()
             
             let clip = function(a,b,c){return Math.max(a,Math.min(b,c)) ;} 
             
+            console.log(d3.event.layerY)
+            
+            
             tooltip.style("color",(COLOR[GENRES.indexOf(SELECTEDGENRE[i])] ))
                 .style("left",  clip(0+15,d3.event.layerX+40,width -85) + "px")		
                 .style("top", (d3.event.layerY+5) + "px");	

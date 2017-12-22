@@ -50,7 +50,7 @@ for(let genre of GENRES.slice().reverse())
 
    // $('#genre').append("<input  name=\""+genre+"\" type=\"checkbox\" id=\""+genre+"id\"  checked > <label for=\""+genre+"id\"  style=\"color:"+  COLOR[GENRES.indexOf(genre)]+"\" >"+genre+"</label><br/>");
     
-    console.log((15+5+2*genre.length))
+    //console.log((15+5+2*genre.length))
     let can =  $("<canvas  width=\""+(15+5+7+10*genre.length)+"\" height=\"40\"></canvas>");
     $('#genre').append(can)
 
@@ -58,7 +58,7 @@ for(let genre of GENRES.slice().reverse())
      
      check.type = "canvas";
     
-    console.log(check)
+    //console.log(check)
     let canvas = check.getContext("2d");
     
     canvas.beginPath();
