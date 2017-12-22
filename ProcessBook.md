@@ -2,13 +2,16 @@
 
 To do in the process book: 
 
-- [On going] Overview, motivation, target audience
-- [] Related work and inspiration
-- [] Questions: What am I trying to show this my viz?
-- [] Dataset: where does it come from, what are you processing steps?
-- [] Exploratory data analysis: What viz have you used to gain insights on the data?
+- [Ok] Overview, motivation, target audience
+- [Ok] Related work and inspiration
+- [Ok] Questions: What am I trying to show this my viz?
+- [Ok] Dataset: where does it come from, what are you processing steps?
+- [Ok] Exploratory data analysis: What viz have you used to gain insights on the data?
 - [] Designs: What are the different visualizations you considered? Justify the design decisions you made using the perceptual and design principles.
 - [Ongoing] Did you deviate from your initial proposal? (it’s ok)
+- [] Implementation: Describe the intent and functionality of the interactive visualizations you implemented. Provide clear and well-referenced images showing the key design and interaction elements.
+- [] Evaluation: What did you learn about the data by using yourvisualizations? How did you answer your questions? How well does your
+visualization work, and how could you further improve it?
 
 
 ## Introduction 
@@ -63,34 +66,41 @@ If one does not have access to the EPFL cluster, the full dataset and a subset c
 
 Because there have been so many genres of rock since the 50s, we decided to focus our attention toward those following ones: 
 
-    - pop rock
-    - blues-rock
-    - indie rock
-    - post rock
-    - psychedelic rock
-    - rock 'n roll
-    - alternative rock
-    - glam rock
-    - soft rock
+       - pop rock
+       - blues-rock
+       - indie rock
+       - post rock
+       - psychedelic rock
+       - rock 'n roll
+       - alternative rock
+       - glam rock
+       - soft rock
 
 They cover all eras of rock pretty well and are the most popular and well known subgenre of rock. 
+A main giveaway about the treatment of the data is that there are a lot of missing features in the dataset which make the filtering very selective.
 
-## Exploratory data analysis: What viz have you used to gain insights on the data?
+## Exploratory data analysis
+
+For exploratory visualization, we used python to plot some graphs to gain more insights on the dataset. 
+The first key information to follow is the distribution of songs by time. This gives a good indicator of the number of songs in the dataset for each year. It shows that most of the songs in the dataset are quite recent (last decade and a half). Even so, still a great number of songs are present in the dataset ranging from the 50s to the early 2000s. 
 
 ![year](https://raw.githubusercontent.com/GandalfAtEpfl/DataViz/master/imgs_processbook/release_year_distribution.png)
+
+There was also a deep interest in the hotness of the song at the begining of the project, which led us to visualize its ditribution for a range of hotness.
+
 ![hotness](https://raw.githubusercontent.com/GandalfAtEpfl/DataViz/master/imgs_processbook/song_hotttnesss_distribution.png)
 
+We also used a python package called folium to buid a map to have a quick overview of the distribution of songs in the world, to verify that the artist locations are coherent. (For example Vanessa Paradis in France). 
 
 
+## Design 
 
-# Design 
-
-Description: Visualization tool to show how rock evolves with time.
+Our visualization is based on a Leaflet map coupled with a svg streamgraph.
 
 This was the first sketch that was made when we came up with the idea. Overall, if we compare it to the final visualization, it shows that we stayed in the same line of work, at least in terms of strucutre. 
 
-
 ```
+
 +------------------------------------------------------------------------------------------------------+-----------------------------+
 |                                                                                                      |           TITLE             |
 |                                                                                                      |                             |
@@ -132,11 +142,7 @@ This was the first sketch that was made when we came up with the idea. Overall, 
 +--------------------+-------------------------------------------+-------------+-----------------------------------------------------+
                                                                start          END
 
-
 ```
-
-
-
 ## A slow start.. for the best ! 
 
 Initially, we wanted to show the evolution of all types of music thoughout the past century in the world in order to understand the different eras of music by country. The idea was to highlight the evolution of one or two features of a song (e.g. hotness,danceability) by country in time. 
@@ -144,10 +150,17 @@ As a visualization we had the intention to use a 2D scatter plot with a slider t
 
 We tought that the subject was too wide and not specific enough to convey a clear enough message to the viewer. The scatter plot is a bit simplistic as a visualization method and also difficult to interpret so we decided to have more meaningful approach with the map and the streamgraph. 
 
+## First try - Version 0 
+
+As a starter, the aim was to divide the window as shown in the sketch, hence allocating most of the areas to the map and the streamgraph. Each area of the visualization should be stretchable with the proper resizing. 
+
+![0](https://raw.githubusercontent.com/GandalfAtEpfl/DataViz/master/imgs_processbook/First_version.png)
+
+This first visualization was done with 10 points which explains the awkward shape of the stream graph 
 
 ## Change for the map and streamgraph - Version 1
 
-Having data with geographical location and realease years of songs pushed us towards using a map and a sreamgraph. The streamgraph shoulg give a quick overview of the split of the styles throughout years and the map should split the data geographically. Morevover, we want two graphs to be connected and originally we wanted to use years on x-axis of the streamgraph to filter the data shown on the map, so to show only songs released during selected time range. Another filter that we though of were styles. We wanted to be able to see the progression of only one style on the map, so we added a simple filter with checkboxes in the 'legend' part of the screen. This filter allows to check/unckeck any style available, so we can see any number of available styles on the map. The result of this version can be seen on this screenshot
+Having data with geographical location and realease years of songs pushed us towards using a map and a sreamgraph. The streamgraph shoulh give a quick overview of the split of the styles throughout years and the map should split the data geographically. Morevover, we want two graphs to be connected and originally we wanted to use years on x-axis of the streamgraph to filter the data shown on the map, so to show only songs released during selected time range. Another filter that we though of were styles. We wanted to be able to see the progression of only one style on the map, so we added a simple filter with checkboxes in the 'legend' part of the screen. This filter allows to check/unckeck any style available, so we can see any number of available styles on the map. The result of this version can be seen on this screenshot
 ![version1](https://raw.githubusercontent.com/GandalfAtEpfl/DataViz/master/screeshot/Screenshot%20from%202017-12-05%2015:44:52.png)
 
 ## From Version 1 to Version 2
@@ -182,6 +195,4 @@ Here's our version at this point:
 We decided that additional options for playing such as speed selector would be a nice thing to have, too.
 
 The problem we have now is how to make everything look coherent and integrated together. We decided that we need to change the color of the map background, remove y-axis from the streamgraph, reposition some elements on the page and show some information on hover for the streamgraph and map (on the bubbles).
-
-
 
