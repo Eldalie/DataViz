@@ -77,6 +77,10 @@ They cover all eras of rock pretty well and are the most popular and well known 
 
 ## Exploratory data analysis: What viz have you used to gain insights on the data?
 
+![year](https://raw.githubusercontent.com/GandalfAtEpfl/DataViz/master/imgs_processbook/release_year_distribution.png)
+![hotness](https://raw.githubusercontent.com/GandalfAtEpfl/DataViz/master/imgs_processbook/song_hotttnesss_distribution.png)
+
+
 
 
 # Design 
