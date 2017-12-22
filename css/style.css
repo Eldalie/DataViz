@@ -111,19 +111,29 @@ h2
    margin-bottom:  0px;
 }
 
+#mapssplit{
+    
+        height:100%;
+        overflow: hidden;
+}
+
 #genre
 {
 
-    left:2%;
-    position: fixed;
-    height:80%;
-    width: 10%;
+    left:0%;
+    top :-80px;
+    position: relative;
+
     margin-left: 5px;
     color: white;
     font-family: "Rockwell";
+    
+
+    
     z-index: 10000;
 
-
+    height:80px;
+    width: 150%;
 }
 
 
@@ -186,7 +196,8 @@ div.tooltip {
 
 .vertcenter
 {
-        display:table-cell;
-        vertical-align: middle;
-    
+
+       position: relative;
+  top: 38%;
+  margin-top: -72px;
 }

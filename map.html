@@ -14,7 +14,7 @@
     </head>
 
     <body>
-            		        <div id="genre">  <p id ="title"> <!--Choose your sauce !--> </p> </div>
+            		        
 
 		<div id="graph" >
 
@@ -22,11 +22,18 @@
 		    <div id="up-panel" class="split" >
 
 		        <div class= "split horizpan ">
-        		    <div id="maps" class="split split-horizontal" >
+		            
+		            <div id="mapssplit" class="split split-horizontal">
+		                
+		                
+		            
+            		    <div id="maps" class="split" >
 
-
-        		    </div>
-
+    
+            		    </div>
+            		        		               
+ <div id="genre" class="split">  <p id ="title"> <!--Choose your sauce !--> </p> </div>
+                    </div>
 
         		    <div id="legend" class="split split-horizontal">
 
@@ -104,10 +111,10 @@
          sizes: [75, 25],
         cursor: 'row-resize',
         onDrag : updatestream,
-        minSize : 250,
-        maxSize : 500
+        minSize : [300,250],
+
                 })
-        Split(['#maps', '#legend'], {
+        Split(['#mapssplit', '#legend'], {
          sizes: [75, 25],
         cursor: 'col-resize'
                 })
