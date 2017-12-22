@@ -170,11 +170,9 @@ function updatestream()
     var enter = paths.enter().append("path").attr("transform", "translate(" + weightYAxis + "," + 0 + ")").attr('class', 'chemin')  ;
     enter.merge(paths).attr("d", area).attr("fill", function(d,i) { return COLOR[GENRES.indexOf(SELECTEDGENRE[i])] ; });
 
-    svg.select(".stream").selectAll(".chemin")
-        .attr("opacity", 0.95)
-        .classed('selected', true)
-        .on("mousemove", function(d, i) {
-            d3.select('#streamgraph').select(".stream").selectAll(".chemin").transition()
+    function MouseEvent(d,i)
+    {
+        d3.select('#streamgraph').select(".stream").selectAll(".chemin").transition()
                 .duration(250)
                 .attr("stroke", function(d, j) {
                     return j != i ? "none" : COLOR[GENRES.indexOf(SELECTEDGENRE[i])];
@@ -194,8 +192,15 @@ function updatestream()
             tooltip.style("color",(COLOR[GENRES.indexOf(SELECTEDGENRE[i])] ))
                 .style("left",  clip(0+15,d3.event.layerX+40,width -85) + "px")		
                 .style("top", (d3.event.layerY+5) + "px");	
-            
-             }
+        
+    }
+
+
+    svg.select(".stream").selectAll(".chemin")
+        .attr("opacity", 0.95)
+        .classed('selected', true)
+                .on("mouseover", MouseEvent     )
+        .on("mousemove", MouseEvent
             )
         .on("mouseout", function() {
             d3.select('#streamgraph').select(".stream").selectAll(".chemin").attr('stroke', 'none')
