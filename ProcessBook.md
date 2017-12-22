@@ -211,3 +211,15 @@ Finally we added some information when hovering over the streamgraph.
 
 To improve our our visualization we could have added the link to the corresponding song via a music platform. Some additional interactions with the streamgraph could have been added. Also it would be a good idea to add more transition after each events so the navigation can be smoother.
 
+## Peer assessment 
+
+Paul
+
+- Preparation : My teammates were ready each tuesday to debate for hours about the projects
+- Contribution : Yes we separated the different tasks based on our skills 
+- Respect for other's ideas : Yes the art of criticizing with respect 
+- Flexibility : Yes flexible enough 
+
+
+
+
