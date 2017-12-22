@@ -196,7 +196,9 @@ The cluster on the map shows the number of songs in the proximate areas. The mor
 Finally we added some information when hovering over the streamgraph. 
 
 
-To improve our our visualization we could have added the link to the corresponding song via a music platform. Some additional interactions with the streamgraph could have been added. Also it would be a good idea to add more transition after each events so the navigation can be smoother.
+To improve our our visualization we could have added the link to the corresponding song via a music platform. Some additional interactions with the streamgraph could have been added. Also it would be a good idea to add more transition after each events so the navigation can be smoother. The demo also needs to be more interactive. It should maybe zoom on an icon, display some texts giving a little explanation. (Similar to the story telling in the screencast)
+
+There are actually so many possibilities with our topic and our visualization.
 
 ## Peer assessment 
 
