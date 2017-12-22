@@ -43,6 +43,9 @@ var brush = d3.brushX()
     .on("brush end", brushed);
 
 
+
+var tooltip  =  d3.select(".tooltip");
+
 svg.append("g")
     .attr("class", "stream");
 
@@ -177,7 +180,11 @@ function updatestream()
                     return j != i ? "none" : COLOR[GENRES.indexOf(SELECTEDGENRE[i])];
                 })
                 .attr("stroke-width", 2)
-            })
+            
+            console.log(i);
+            tooltip.html(i);
+             }
+            )
         .on("mouseout", function() {
             d3.select('#streamgraph').select(".stream").selectAll(".chemin").attr('stroke', 'none')
         })
