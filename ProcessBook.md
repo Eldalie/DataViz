@@ -156,6 +156,8 @@ As a starter, the aim was to divide the window as shown in the sketch, hence all
 
 ![0](https://raw.githubusercontent.com/GandalfAtEpfl/DataViz/master/imgs_processbook/First_version.png)
 
+This first visualization was done with 10 points which explains the awkward shape of the stream graph 
+
 ## Change for the map and streamgraph - Version 1
 
 Having data with geographical location and realease years of songs pushed us towards using a map and a sreamgraph. The streamgraph shoulh give a quick overview of the split of the styles throughout years and the map should split the data geographically. Morevover, we want two graphs to be connected and originally we wanted to use years on x-axis of the streamgraph to filter the data shown on the map, so to show only songs released during selected time range. Another filter that we though of were styles. We wanted to be able to see the progression of only one style on the map, so we added a simple filter with checkboxes in the 'legend' part of the screen. This filter allows to check/unckeck any style available, so we can see any number of available styles on the map. The result of this version can be seen on this screenshot
