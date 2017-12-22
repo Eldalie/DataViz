@@ -205,7 +205,7 @@ Here is our final version.
 So what are the different features of our visualization. 
 First of all we removed the legend area and moved it inside the map. We feel it makes the experience of the user smoother and the addition of the colored circles next to the text instead of the check boxes makes the genres blend in the dark background better. 
 There are some buttons on the left-bottom side of the screen that can be used to control the demo of the story telling. During this demo, the brusher under the stream graph moves automatically, starting from the first year (1956) with a story about Little Richard and Rock and Roll.
-The cluster on the map are 
+The cluster on the map are shows the number of songs in the proximate areas. The more you zoom the more clusters you see. At the max zoom level, the icons containing the information of the song can be seen. 
 
 
 
