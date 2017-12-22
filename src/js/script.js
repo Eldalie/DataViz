@@ -210,7 +210,7 @@ function sendSpeedDown()
     speed*=2;
 }
 
-d3.json("data.json", function(data) {
+d3.json("../data/data.json", function(data) {
 
  DATA = data;
  //DATA.data =  DATA.data.slice(0,100)
