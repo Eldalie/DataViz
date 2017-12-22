@@ -15,7 +15,7 @@ var stack = d3.stack(),
 var heightXAxis = 45;
 var weightYAxis = 5;
 
-var width = $("body").width()-30;
+var width = $("body").width()-40;
 var height = $("body").height()*0.25;
 
 var svg = d3.select('#streamgraphSVG')
@@ -147,7 +147,7 @@ function updatestream()
 
     //console.log("update");
 
-    width = $("#streamgraphSVG").width()-30;
+    width = $("#streamgraphSVG").width()-40;
     height =$("#streamgraph").height()-1;
     //console.log(width,height)
 
