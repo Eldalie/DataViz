@@ -25,7 +25,7 @@ var tiledqrk = L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/d
 var map = new L.Map("maps", {minZoom:1.7,/*maxBounds:[
     [-180, 0],
     [180, 180]
-],*/zoomControl:false, attributionControl: false , center: [ 46.519962, 6.633597], zoom: 2}).addLayer(tiledqrk  );
+],*/zoomControl:false, attributionControl: false , center: [ 30.519962, 6.633597], zoom: 2}).addLayer(tiledqrk  );
 build_icone();
 
 

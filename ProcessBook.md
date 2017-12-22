@@ -33,7 +33,7 @@ Throughout the course of Data Visualization this semester, we had the chance to 
 <br/>
 This is an example of streamgraph that caught our eye. It represents the evolution of music genre at the Montreux Jazz Festival. Each color represents a genre with the possibility to have additional information by hovering over the different colored areas. [See original work](http://www.kirellbenzi.com/blog/evolution-of-genres-in-the-montreux-jazz-festival/)
 
-![inspiration](https://raw.githubusercontent.com/GandalfAtEpfl/DataViz/master/imgs_processbook/stgraph.png)
+![inspiration](https://raw.githubusercontent.com/GandalfAtEpfl/DataViz/master/images/stgraph.png)
 
 Courtesy of Maximilien Cuony and Kirell Benzi, taken from http://www.kirellbenzi.com/. 
 
@@ -84,11 +84,11 @@ A main giveaway about the treatment of the data is that there are a lot of missi
 For exploratory visualization, we used python to plot some graphs to gain more insights on the dataset. 
 The first key information to follow is the distribution of songs by time. This gives a good indicator of the number of songs in the dataset for each year. It shows that most of the songs in the dataset are quite recent (last decade and a half). Even so, still a great number of songs are present in the dataset ranging from the 50s to the early 2000s. 
 
-![year](https://raw.githubusercontent.com/GandalfAtEpfl/DataViz/master/imgs_processbook/release_year_distribution.png)
+![year](https://raw.githubusercontent.com/GandalfAtEpfl/DataViz/master/images/release_year_distribution.png)
 
 There was also a deep interest in the hotness of the song at the begining of the project, which led us to visualize its ditribution for a range of hotness.
 
-![hotness](https://raw.githubusercontent.com/GandalfAtEpfl/DataViz/master/imgs_processbook/song_hotttnesss_distribution.png)
+![hotness](https://raw.githubusercontent.com/GandalfAtEpfl/DataViz/master/images/song_hotttnesss_distribution.png)
 
 We also used a python package called folium to buid a map to have a quick overview of the distribution of songs in the world, to verify that the artist locations are coherent. (For example Vanessa Paradis in France). 
 
@@ -154,7 +154,7 @@ We tought that the subject was too wide and not specific enough to convey a clea
 
 As a starter, the aim was to divide the window as shown in the sketch, hence allocating most of the areas to the map and the streamgraph. Each area of the visualization should be stretchable with the proper resizing. 
 
-![0](https://raw.githubusercontent.com/GandalfAtEpfl/DataViz/master/imgs_processbook/First_version.png)
+![0](https://raw.githubusercontent.com/GandalfAtEpfl/DataViz/master/images/First_version.png)
 
 This first visualization was done with 10 points which explains the awkward shape of the stream graph. 
 
@@ -172,7 +172,7 @@ Another issue we've noticed was the way the time range was selected. In our data
 For the map we have decided to use some clustering of the data points. At every zoom level we can see a few clusters of data, represented by bubbles. In order to see the number of points in the cluster and song styles, we made the cluster bubble outline colored with styles (like in a pie chart), with the number of points in the middle of the bubble.
 
 This version can be viewed on this screenshot together with the experimental background :)
-![version2](https://raw.githubusercontent.com/GandalfAtEpfl/DataViz/master/screeshot/Screenshot_20171210_125506.png)
+![version2](https://raw.githubusercontent.com/GandalfAtEpfl/DataViz/master/images/Screenshot_20171210_125506.png)
 
 ## From Version 2 to Version 3
 
@@ -184,13 +184,13 @@ Our solution to the map was the following: we decided to keep the clusters, howe
 ![dot_map](https://raw.githubusercontent.com/GandalfAtEpfl/DataViz/master/screeshot/Screenshot%20from%202017-12-12%2014:55:13.png)
 
 Here's how we changed the clusters. First of all, we decided to separate each style, so now every cluster is not one bubble, but as many bubbles as there are styles in this cluster. Secondly, the size of each bubble is proportional to the number of data points it represents, so bigger clusters are bigger in size. Like this dominant styles can be instantly seen on the map. Clusterin itself works as before: as you zoom in, the clusters are reformed, allowing to group data points more locally and so see more details on every zoom level in. Below is the screenshot of the map at this stage.
-![separate_clusters](https://raw.githubusercontent.com/GandalfAtEpfl/DataViz/master/screeshot/2017-12-13.PNG)
+![separate_clusters](https://raw.githubusercontent.com/GandalfAtEpfl/DataViz/master/images/2017-12-13.PNG)
 
 ## From Version 3 to Version 4
 
 Here's a few things we have come up after discussing out version 3. We have decided to make the time range selector easier: since in order to select one year, one need to find and drag the brush from both sides, we have decided to make that available with on click on the year. Another thing that we finally decided to work on is the styling and shaping of the web page (since some of our elements and text we going out from the page). Another thing we tried to do was to set max zoom for the map and limit it, so it won't be possible to scroll too far on it, but we still need to adjust a few things there. In terms of automatic time view, we decided that we need at least play, stop and pause buttons, for user to have some control over the timeplay. 
 Here's our version at this point:
-![version4](https://raw.githubusercontent.com/GandalfAtEpfl/DataViz/master/screeshot/2017-12-19.png)
+![version4](https://raw.githubusercontent.com/GandalfAtEpfl/DataViz/master/images/2017-12-19.png)
 
 We decided that additional options for playing such as speed selector would be a nice thing to have, too.
 
@@ -200,14 +200,14 @@ The problem we have now is how to make everything look coherent and integrated t
 
 Here is our final version.
 
-![final](https://raw.githubusercontent.com/GandalfAtEpfl/DataViz/master/imgs_processbook/final.png)
+![final](https://raw.githubusercontent.com/GandalfAtEpfl/DataViz/master/images/final.png)
 
 So what are the different features of our visualization. 
 First of all we removed the legend area and moved it inside the map. We feel it makes the experience of the user smoother and the addition of the colored circles next to the text instead of the check boxes makes the genres blend in the dark background better. 
 There are some buttons on the left-bottom side of the screen that can be used to control the demo of the story telling. During this demo, the brusher under the stream graph moves automatically, starting from the first year (1956) with a story about Little Richard and Rock and Roll.
-The cluster on the map are shows the number of songs in the proximate areas. The more you zoom the more clusters you see. At the max zoom level, the icons containing the information of the song can be seen. 
+The cluster on the map shows the number of songs in the proximate areas. The more you zoom the more clusters you see. At the max zoom level, the icons containing the information of the song can be seen. 
+Finally we added some information when hovering over the streamgraph. 
 
 
-
-
+To improve our our visualization we could have added the link to the corresponding song via a music platform. Some additional interactions with the streamgraph could have been added. Also it would be a good idea to add more transition after each events so the navigation can be smoother.
 
