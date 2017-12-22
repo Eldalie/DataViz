@@ -34,6 +34,8 @@ This is an example of streamgraph that caught our eye. It represents the evoluti
 
 Courtesy of Maximilien Cuony and Kirell Benzi, taken from http://www.kirellbenzi.com/. 
 
+For the structure of our visualization and especially the story telling we wanted to combine them in the same page. This was decided after looking at this interactive [visualization](http://drones.pitchinteractive.com/index.fr.html) that showed the number of attacks by drone in Pakistan. We think that the user would be more inclined to be interested and focused in our visualization if we accompany him with a demo-like story telling.
+
 
 ## Data analysis 
 
