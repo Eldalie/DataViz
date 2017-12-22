@@ -2,13 +2,16 @@
 
 To do in the process book: 
 
-- [On going] Overview, motivation, target audience
-- [] Related work and inspiration
-- [] Questions: What am I trying to show this my viz?
-- [] Dataset: where does it come from, what are you processing steps?
-- [] Exploratory data analysis: What viz have you used to gain insights on the data?
+- [Ok] Overview, motivation, target audience
+- [Ok] Related work and inspiration
+- [Ok] Questions: What am I trying to show this my viz?
+- [Ok] Dataset: where does it come from, what are you processing steps?
+- [Ok] Exploratory data analysis: What viz have you used to gain insights on the data?
 - [] Designs: What are the different visualizations you considered? Justify the design decisions you made using the perceptual and design principles.
 - [Ongoing] Did you deviate from your initial proposal? (it’s ok)
+- [] Implementation: Describe the intent and functionality of the interactivevisualizations you implemented. Provide clear and well-referenced imagesshowing the key design and interaction elements.
+- [] Evaluation: What did you learn about the data by using yourvisualizations? How did you answer your questions? How well does your
+visualization work, and how could you further improve it?
 
 
 ## Introduction 
@@ -76,7 +79,7 @@ Because there have been so many genres of rock since the 50s, we decided to focu
 They cover all eras of rock pretty well and are the most popular and well known subgenre of rock. 
 A main giveaway about the treatment of the data is that there are a lot of missing features in the dataset which make the filtering very selective.
 
-## Exploratory data analysis: What viz have you used to gain insights on the data?
+## Exploratory data analysis
 
 For exploratory visualization, we used python to plot some graphs to gain more insights on the dataset. 
 The first key information to follow is the distribution of songs by time. This gives a good indicator of the number of songs in the dataset for each year. It shows that most of the songs in the dataset are quite recent (last decade and a half). Even so, still a great number of songs are present in the dataset ranging from the 50s to the early 2000s. 
@@ -90,9 +93,9 @@ There was also a deep interest in the hotness of the song at the begining of the
 We also used a python package called folium to buid a map to have a quick overview of the distribution of songs in the world, to verify that the artist locations are coherent. (For example Vanessa Paradis in France). 
 
 
-# Design 
+## Design 
 
-Description: Visualization tool to show how rock evolves with time.
+Our visualization is based on a Leaflet map coupled with a svg streamgraph.
 
 This was the first sketch that was made when we came up with the idea. Overall, if we compare it to the final visualization, it shows that we stayed in the same line of work, at least in terms of strucutre. 
 
@@ -186,6 +189,4 @@ Here's our version at this point:
 We decided that additional options for playing such as speed selector would be a nice thing to have, too.
 
 The problem we have now is how to make everything look coherent and integrated together. We decided that we need to change the color of the map background, remove y-axis from the streamgraph, reposition some elements on the page and show some information on hover for the streamgraph and map (on the bubbles).
-
-
 
