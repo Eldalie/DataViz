@@ -64,7 +64,7 @@ function brushed()
 
     if( d3.event.selection == null /*|| d3.event.sourceEvent.type=="mouseup"*/) // if no sleection select only one year
     {
-        var dest = xScale.invert(d3.event.sourceEvent.clientX-weightYAxis);
+        var dest = xScale.invert(d3.event.sourceEvent.layerX-weightYAxis);
         YEARSTART = Math.floor(dest);
         YEAREND = Math.floor(dest);
     }
@@ -190,7 +190,7 @@ function updatestream()
             let clip = function(a,b,c){return Math.max(a,Math.min(b,c)) ;} 
             
             tooltip.style("color",(COLOR[GENRES.indexOf(SELECTEDGENRE[i])] ))
-                .style("left",  clip(0+100,d3.event.layerX+40,width -80) + "px")		
+                .style("left",  clip(0+15,d3.event.layerX+40,width -85) + "px")		
                 .style("top", (d3.event.layerY+5) + "px");	
             
              }

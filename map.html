@@ -14,6 +14,7 @@
     </head>
 
     <body>
+            		        <div id="genre">  <p id ="title"> <!--Choose your sauce !--> </p> </div>
 
 		<div id="graph" >
 
@@ -41,10 +42,7 @@
                                 
             		        </div>
 
-            		        <div id="genre">  <p id ="title"> Choose your sauce ! </p> </div>
-            		        
-            		        
-  
+
 
 
         		        </div>
@@ -57,7 +55,7 @@
 		                             <div class="tooltip"></div>
 		            
 		            <div class="vertcenter">
-		            </br>
+		            
                         <input type="image" id="history_buttons" onclick="history_button_action();" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjMycHgiIGhlaWdodD0iMzJweCIgdmlld0JveD0iMCAwIDQ1Ljk3NCA0NS45NzUiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQ1Ljk3NCA0NS45NzU7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPGc+Cgk8Zz4KCQk8Zz4KCQkJPHBhdGggZD0iTTkuNjI5LDQ0LjY4Yy0xLjE1NCwxLjE2LTIuODk1LDEuNTEtNC40MDcsMC44ODVjLTEuNTEzLTAuNjIzLTIuNS0yLjEtMi41LTMuNzM1VjQuMDQzYzAtMS42MzcsMC45ODctMy4xMTIsMi41LTMuNzM2ICAgICBjMS41MTMtMC42MjUsMy4yNTMtMC4yNzUsNC40MDcsMC44ODVsMTcuODYyLDE3Ljk1MWMyLjA4OCwyLjA5OCwyLjA4OCw1LjQ4OCwwLDcuNTg1TDkuNjI5LDQ0LjY4eiIgZmlsbD0iI0ZGRkZGRiIvPgoJCTwvZz4KCQk8Zz4KCQkJPGc+CgkJCQk8cGF0aCBkPSJNMzguMjUyLDQ1Ljk3NWMtMi43NjMsMC01LTIuMjM4LTUtNVY1YzAtMi43NjIsMi4yMzctNSw1LTVjMi43NjIsMCw1LDIuMjM4LDUsNXYzNS45NzUgICAgICBDNDMuMjUyLDQzLjczNiw0MS4wMTMsNDUuOTc1LDM4LjI1Miw0NS45NzV6IiBmaWxsPSIjRkZGRkZGIi8+CgkJCTwvZz4KCQk8L2c+Cgk8L2c+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==" /> 
                                 <!--<input type="button" class="history_buttons" onclick="sendPause()" value="Pause">-->
                                  <!--<input type="button" class="history_buttons" onclick="sendContinue()" value="Continue">-->
@@ -105,20 +103,22 @@
          direction: 'vertical',
          sizes: [75, 25],
         cursor: 'row-resize',
-        onDrag : updatestream
+        onDrag : updatestream,
+        minSize : 250,
+        maxSize : 500
                 })
         Split(['#maps', '#legend'], {
          sizes: [75, 25],
         cursor: 'col-resize'
                 })
 
-          Split(['#text', '#genre'], {
+         /* Split(['#text', '#genre'], {
          direction: 'vertical',
          sizes: [50, 50],
          minSize : 250,
         cursor: 'row-resize',
         onDrag : updatestream
-                })
+                })*/
         </script>
 
 

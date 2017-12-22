@@ -48,22 +48,54 @@ var DATA = [];
 for(let genre of GENRES.slice().reverse())
 {
 
-    $('#genre').append("<input  name=\""+genre+"\" type=\"checkbox\" id=\""+genre+"id\"  checked > <label for=\""+genre+"id\"  style=\"color:"+  COLOR[GENRES.indexOf(genre)]+"\" >"+genre+"</label><br/>");
+   // $('#genre').append("<input  name=\""+genre+"\" type=\"checkbox\" id=\""+genre+"id\"  checked > <label for=\""+genre+"id\"  style=\"color:"+  COLOR[GENRES.indexOf(genre)]+"\" >"+genre+"</label><br/>");
+    
+    
+    let can =  $("<canvas  width=\"170\" height=\"40\"></canvas>");
+    $('#genre').append(can)
+
+     let check =   can[0];
+     
+     check.type = "canvas";
+    
+    console.log(check)
+    let canvas = check.getContext("2d");
+    
+    canvas.beginPath();
+                    canvas.fillStyle = COLOR[GENRES.indexOf(genre)];
+                    canvas.arc(20, 20, 15, 0, Math.PI*2);
+                    canvas.fill();
+                    canvas.closePath();
+
+                    canvas.fillStyle = '#FFFFFF';
+                    //canvas.textAlign = 'center';
+                    canvas.textBaseline = 'middle';
+                    canvas.font = 'bold 14px Rockwell';
+
+                    canvas.fillText(genre, 40, 20);
+                    
+                    
+    check.name =genre ;
+     can.on("click",
+                 function() {
+                console.log(this.name)
+                if (this.checked) {
+                    this.checked = false;
+                    SELECTEDGENRE.push(this.name);
+                    can.fadeTo(250,1);
+                } else {
+                    SELECTEDGENRE = SELECTEDGENRE.filter(e => e !== this.name);
+                                        this.checked = true;
+                                        can.fadeTo(250,0.25);
+                }
+                SELECTEDGENRE = SELECTEDGENRE.sort();
+                fill_stream();
+                updatestream();
+                updatemap();
+            }
+     )
 }
 
-
-$('input[type=checkbox]').change(function() {
-    //console.log(this.name)
-    if (this.checked) {
-        SELECTEDGENRE.push(this.name);
-    } else {
-        SELECTEDGENRE = SELECTEDGENRE.filter(e => e !== this.name);
-    }
-    SELECTEDGENRE = SELECTEDGENRE.sort();
-    fill_stream();
-    updatestream();
-    updatemap();
-});
 
 
 

@@ -224,8 +224,8 @@ var colors = COLOR; // ['#ff4b00', '#bac900', '#EC1813', '#55BCBE', '#D2204C', '
                 if(this.stats[i]==0)//if not null
                     continue;
 
-                var percent = Math.log(this.stats[i])*r;
-                percent = Math.max(10,percent);
+                var rayon = Math.log(this.stats[i])*r;
+                rayon = Math.max(10,rayon);
                 var x =  j%sx*2*maxr+maxr+5;
                 var y =  Math.floor(j/sx)*2*maxr+maxr+5;
                     /*canvas.beginPath();
@@ -246,7 +246,7 @@ var colors = COLOR; // ['#ff4b00', '#bac900', '#EC1813', '#55BCBE', '#D2204C', '
 
                     canvas.beginPath();
                     canvas.fillStyle = COLOR[i];
-                    canvas.arc(x, y, percent, 0, Math.PI*2);
+                    canvas.arc(x, y, rayon, 0, Math.PI*2);
                     canvas.fill();
                     canvas.closePath();
 

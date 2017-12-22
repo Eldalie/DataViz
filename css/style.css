@@ -114,10 +114,14 @@ h2
 #genre
 {
 
-    height:50%;
+    left:2%;
+    position: fixed;
+    height:80%;
+    width: 10%;
     margin-left: 5px;
     color: white;
     font-family: "Rockwell";
+    z-index: 10000;
 
 
 }
@@ -177,4 +181,12 @@ div.tooltip {
     left : -50%;/* initialy hide*/
     top : -10%;/* initialy hide*/
     z-index: 5;
+}
+
+
+.vertcenter
+{
+        display:table-cell;
+        vertical-align: middle;
+    
 }
