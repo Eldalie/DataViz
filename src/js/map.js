@@ -4,6 +4,8 @@ global GENRES
 Js Scirpt for Data visualisation Projet : Evolution of Rock Music
 Autor : Benjamin Girard / Paul Feng / Olga Popovych
 
+This file is use to draw the map 
+
 */
 
 /*var tile = new L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}.{ext}', {
@@ -13,6 +15,7 @@ Autor : Benjamin Girard / Paul Feng / Olga Popovych
 	ext: 'png'
 });
 */
+//layer with tile dark 
 var tiledqrk = L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png', {
 	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
 	subdomains: 'abcd',
@@ -21,15 +24,17 @@ var tiledqrk = L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/d
 
 //orig new L.TileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png")
 
-
+//the map
 var map = new L.Map("maps", {minZoom:1.7,/*maxBounds:[
     [-180, 0],
     [180, 180]
 ],*/zoomControl:false, attributionControl: false , center: [ 30.519962, 6.633597], zoom: 2}).addLayer(tiledqrk  );
+
+//Build for once the icone use by the map
 build_icone();
 
 
-//add zoom control with your options
+//add zoom control to the ritght
 L.control.zoom({
      position:'topright'
 }).addTo(map);
@@ -39,6 +44,8 @@ L.control.zoom({
   .then(function(response) { return response.json(); })
   .then(function(data) {L.geoJSON(data).addTo(map)});*/
 
+
+//PErsonalized cluster to show cricle with size propotional to the number of sont in each cluster
 var ArtistCluster = new PruneClusterForLeaflet(250,150);
 ArtistCluster.BuildLeafletClusterIcon = function(cluster) {
             var e = new L.Icon.MarkerCluster();
@@ -48,6 +55,7 @@ ArtistCluster.BuildLeafletClusterIcon = function(cluster) {
             e.population = cluster.population;
             return e;
 };
+//use our icone
 ArtistCluster.BuildLeafletCluster =  function (cluster, position) {
         var _this = this;
         var m = new L.Marker(position, {
@@ -70,7 +78,7 @@ map.addLayer(ArtistCluster);
 //var ArtistCluster =  L.featureGroup() ;
 
 
-
+//built the icone 
 function build_icone()
 {
     ICONES = [];
@@ -91,16 +99,19 @@ function build_icone()
 
 }
 
+//Cretate all the marker for once
 function build_marker()
 {
 
-    // at start slecto to show return all song that we want studie
+    // at start SelectToShow will return all song that we want studie
     for(var element of SelectToShow())
     {
 
             let index_genre = GENRES.indexOf(element[6][0]);
             var color =  COLOR[index_genre];
             
+            
+            //if tho marker are on the same spot place it in circle
             let angle = 2*Math.PI*Math.random()
             element["marker"] = new PruneCluster.Marker(element[1]+Math.cos(angle)/40.0, element[2]+Math.sin(angle)/40.0);//,{color:color}) // L.marker( [element[1], element[2]] , {icon: greenIcon});
 
@@ -122,6 +133,8 @@ function build_marker()
 
 
 }
+
+//hide the marker that was unselded by the user
 function updatemap()
 {
 
@@ -130,6 +143,8 @@ function updatemap()
 
     //ArtistCluster.remove();
     //ArtistCluster = L.featureGroup()
+    
+    //filter all marker
     for(var element of DATA.data)
     {
         if(element['marker'] != undefined )
@@ -140,6 +155,7 @@ function updatemap()
 
     }
 
+    //and add only the marker selected
 
     for(var element of data)
     {
@@ -161,6 +177,8 @@ function updatemap()
 }
 
 
+
+//here we build our special icone for cluster
 var colors = COLOR; // ['#ff4b00', '#bac900', '#EC1813', '#55BCBE', '#D2204C', '#FF0000', '#ada59a', '#3e647e'],
         pi2 = Math.PI * 2;
 
@@ -175,7 +193,7 @@ var colors = COLOR; // ['#ff4b00', '#bac900', '#EC1813', '#55BCBE', '#D2204C', '
         createIcon: function () {
               var maxr = 0;
               var nbr = 0;
-              const r = 30/10;
+              const r = 30/10;//constante for the rayon
               const minr = 10;//rayon minimal to see cluster
               
               // first we calcul the rayon on the most genre in this cluster
@@ -187,7 +205,7 @@ var colors = COLOR; // ['#ff4b00', '#bac900', '#EC1813', '#55BCBE', '#D2204C', '
                   if(percent>maxr)
                     maxr=percent;
               }
-
+              //minimal rayon
               maxr = Math.max(minr,maxr);
 
             let sx=0;
@@ -231,25 +249,13 @@ var colors = COLOR; // ['#ff4b00', '#bac900', '#EC1813', '#55BCBE', '#D2204C', '
                 if(this.stats[i]==0 || !this.stats[i])//if not null
                     continue;
 
+                // compute the rayon r is a constante
                 var rayon = Math.log(this.stats[i])*r;
                 rayon = Math.max(10,rayon);
-                var x =  j%sx*2*maxr+maxr+5;
+                var x =  j%sx*2*maxr+maxr+5;//place this circle on the grid
                 var y =  Math.floor(j/sx)*2*maxr+maxr+5;
-                    /*canvas.beginPath();
-                    canvas.moveTo(22, 22);
-                    canvas.fillStyle = colors[i];
-                    var from = start + 0.14,
-                        to = start + size * pi2;
-
-                    if (to < from) {
-                        from = start;
-                    }
-                    canvas.arc(22,22,22, from, to);
-
-                    start = start + size*pi2;
-                    canvas.lineTo(22,22);
-                    canvas.fill();
-                    canvas.closePath();/*/
+                    
+                    //draw the circle 
 
                     canvas.beginPath();
                     canvas.fillStyle = COLOR[i];
