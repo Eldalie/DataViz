@@ -181,14 +181,13 @@ function updatestream()
                 })
                 .attr("stroke-width", 2)
             
-            console.log();
+            //console.log();
             let anner = Math.floor(xScale.invert(d3.event.layerX));
             
             
             tooltip.html(SELECTEDGENRE[i]+"<br/>"+year[anner-FIRSTYEAR][i]+" songs in the year "+anner);
             
             let clip = function(a,b,c){return Math.max(a,Math.min(b,c)) ;} 
-            
             console.log(d3.event.layerY)
             
             
