@@ -217,5 +217,10 @@ Olga
 - Flexibility : Yes
 
 
+Benjamin : 
 
+- Preparation : Yes ! 
+- Contribution : Everybody has a slow start a first, but at the end everyone work efficienly   
+- Respect for other's ideas : Yep, everybody takes into account what the other say
+- Flexibility : Yes , but we never have true disagreements, but some difficulty sometime to understand each other due to the english/french language. 
 
