@@ -1,3 +1,4 @@
 theme: jekyll-theme-architect
 
-plugins : jekyll-sitemap
+plugins :
+    - jekyll-sitemap
