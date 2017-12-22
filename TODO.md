@@ -36,27 +36,27 @@ Tasks to do :
     - [X] : Try different ways to indicate the artist: Marker/circles/other stuff. Adapt the size at least 
 
 
-- [ ] : CSS/achitecture
-  - [ ] : legend
-  - [ ] : Introdution
+- [X] : CSS/achitecture
+  - [X] : legend
+  - [X] : Introdution
   - [ ] : big event of rock on timeline/Stream Graphe
 
-- [ ] Process Book
+- [X] Process Book
 
-- [ ] : Screen cast
+- [X] : Screen cast
   
   - Demonstrate what you can do with your viz in a fun, engaging and impactful manner
   - Talk about your main contributions rather than on technical details
   - 2 min video not more (max +5 sec)
 
-- [] : Last week tasks
+- [ ] : Last week tasks
 
-  - [] Add speed selector for playing the history
-  - [] Try to make map darker --> try different background
+  - [X] Add speed selector for playing the history
+  - [X] Try to make map darker --> try different background
   - Add on hover event : 
-    - [] For bubbles on the map to show the style and maybe the most popular artist (or the one with most songs)
-    - [] For streamgraph layers to show style, year and number of songs
-  - [] Reposition elements:
+    - [ ] For bubbles on the map to show the style and maybe the most popular artist (or the one with most songs)
+    - [X] For streamgraph layers to show style, year and number of songs
+  - [X] Reposition elements:
     - Place the timeline with years on the bottom
     - Place the filter with styles in one line in between map and streamgraph --> to discuss
     - Potentially remove the legend and text from the right
