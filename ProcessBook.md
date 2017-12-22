@@ -96,6 +96,8 @@ Description: Visualization tool to show how rock evolves with time.
 
 This was the first sketch that was made when we came up with the idea. Overall, if we compare it to the final visualization, it shows that we stayed in the same line of work, at least in terms of strucutre. 
 
+```
+
 +------------------------------------------------------------------------------------------------------+-----------------------------+
 |                                                                                                      |           TITLE             |
 |                                                                                                      |                             |
@@ -137,6 +139,7 @@ This was the first sketch that was made when we came up with the idea. Overall, 
 +--------------------+-------------------------------------------+-------------+-----------------------------------------------------+
                                                                start          END
 
+```
 
 ## A slow start.. for the best ! 
 
