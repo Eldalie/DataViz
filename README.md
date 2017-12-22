@@ -21,7 +21,7 @@ This repository provides the link to the website which is the main point of usag
 
 ### Visualization description and usage
   
-The link for the [visualization](https://gandalfatepfl.github.io/DataViz/map.html) (which can be also found on the website) brings the user to a separate webpage with the following interactive elements:
+The link for the [visualization](https://gandalfatepfl.github.io/DataViz/src/map.html) (which can be also found on the website) brings the user to a separate webpage with the following interactive elements:
 
   * The map, which the user can zoom in or zoom out, in order to see the location of songs (artists) filtered by music styles, each having each own color. The maximum zoom allows the user to get more info on the particular song.
 
