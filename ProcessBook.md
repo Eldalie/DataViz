@@ -156,7 +156,7 @@ As a starter, the aim was to divide the window as shown in the sketch, hence all
 
 ![0](https://raw.githubusercontent.com/GandalfAtEpfl/DataViz/master/imgs_processbook/First_version.png)
 
-This first visualization was done with 10 points which explains the awkward shape of the stream graph 
+This first visualization was done with 10 points which explains the awkward shape of the stream graph. 
 
 ## Change for the map and streamgraph - Version 1
 
