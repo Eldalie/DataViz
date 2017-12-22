@@ -15,12 +15,12 @@ Secondly, we want to reach the maximum of audience with our visualization, which
 So, let's ROCK!
 
 This is how one can use our time machine and get a glimpse of the rock evolution:
-* Here is the screencast *
+* Here is the screencast
 
 And here you can take the journey in time yourself:
 [Go to the visualization](https://gandalfatepfl.github.io/DataViz/map.html)
 
 
-The code, the data used and the process book can be found in the following repository on GitHub:
-* link *
+The code, the data used and the process book can be found in the following repository on GitHub: [https://github.com/GandalfAtEpfl/DataViz]
+
 The process book can be downloaded * here *.

@@ -1,75 +1,42 @@
-LINKS : 
-  - Process Book : https://gandalfatepfl.github.io/DataViz/ProcessBook
-  - Visualisation  :  https://gandalfatepfl.github.io/DataViz/map.html
-  - Screen CAST : 
+Add a README file that explains the technical setup and intented usage
+
+# The Evolution of Rock
+
+This is a project for the Data Visualization course at EPFL. It uses data from the Million Song dataset to describe the evolution of the rock style of music over time.
+
+The result of this project can be viewed on the following website:
+[Evolution of Rock](https://gandalfatepfl.github.io/DataViz)
+
+## Technical setup
+
+This github repository contains all the work related to the project. In order to see the result, see the link above.
+
+GitHub repo structure:
+
+  - Data: the data and all the scripts related to it, along with description, are in the /data folder
+  - Code: all the code and related files are in the source folder /src.
+  - Other files and documents: images used for the process book are stored in /images folder, the process book itself is in the root both in markdown and pdf verions.
+
+## Intended usage
+
+This repository provides the link to the website which is the main point of usage. On that website one can find the story and the idea of our project and visualization, together with the presentation video and the visualization itself.
+
+### Visualization description and usage
   
-# DataViz : history of Rock genre in time !!!
-
-In this repo ...
-
-
-
-TAsk to do : 
-
-- [X] : Get Real DATA in json  : 
-        get_year,
-        get_artist_latitude,
-        get_artist_longitude,
-        get_artist_hotttnesss,
-        get_artist_name,
-        get_artist_id,
-        get_artist_terms,
-        get title,
-        get song_hotness,
-        
-- [x] : Preprocessing. Remove the artists that don't have the rock genre 
-                       Filter the rock and by year and location 
-                       
-- [x] : Load the Data in json
-- [x] : Build the Stream Graph
-
-  - [x] : Make the brush on the time axis (Leave a line down the stream graph still) 
-          On the stream graph:
-          Make it interactive (Click on one color display the genre on the map)
-          Give the option to "un - tick" some genres so the stream graph rescales itself 
-          Find a way to make them interactive in both directions.
-          
-  - [X] : Add options: 1 way to see the progression year by year 
-  - [x]                    1 automated progression for the story telling (Press play then show our story) 
-                       
-- [X] : Build the Map
-    
-    - [X] : Choose the maps (That show the city) Adapt the color. Adapt the font, background. IMPROVE THE DESIGN 
-    - [ ] : Make the map interactive : Click on the US for example change the stream graph 
-    - [X] : Try different ways to indicate the artist: Marker/circles/other stuff. Adapt the size at least 
-
-
-- [ ] : CSS/achitecture
-  - [ ] : legend
-  - [ ] : Introdution
-  - [ ] : big event of rock on timeline/Stream Graphe
-
-- [ ] Process Book
-
-- [ ] : Screen cast
+  The link for the [visualization](https://gandalfatepfl.github.io/DataViz/map.html) (which can be also found on the website) brings the user to a separate webpage with the following interactive elements:
   
-  - Demonstrate what you can do with your viz in a fun, engaging and impactful manner
-  - Talk about your main contributions rather than on technical details
-  - 2 min video not more (max +5 sec)
+    * The map, which the user can zoom in or zoom out, in order to see the location of songs (artists) filtered by music styles, each having each own color. The maximum zoom allows the user to get more info on the particular song.
 
-- [] : Last week tasks
+    * The streamgraph, which shows the overview of the selected styles, splitted by year. The graph is interactive and the user can get exact numbers for each year and style on hover.
 
-  - [] Add speed selector for playing the history
-  - [] Try to make map darker --> try different background
-  - Add on hover event : 
-    - [] For bubbles on the map to show the style and maybe the most popular artist (or the one with most songs)
-    - [] For streamgraph layers to show style, year and number of songs
-  - [] Reposition elements:
-    - Place the timeline with years on the bottom
-    - Place the filter with styles in one line in between map and streamgraph --> to discuss
-    - Potentially remove the legend and text from the right
+    * The time range selector in years, which is located under the streamgraph, can be used to get the numbers for a specific year (by clicking on it) or a range of years (by draging the sides of the selector). These actions would apply filtering on the map and display only related results.
 
+    * The legend with the selected styles can be used as a filter: clicking on a style with its bubble will delete/add the style from the map and streamgraph.
 
+    * The buttons on the left of the streamgraph will start/pause, stop and change the speed of the demo for the evolution of the rock music: basically the user can see on the map how the numbers change over the years, where the years are changed automatically.
+
+    * Additionally there is an explanation section on the right that provides the user with interesting information and changes for certain years and selections! Explore yourself :)
+  
 
 
 
