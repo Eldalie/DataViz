@@ -1,0 +1,203 @@
+
+html, body {
+    width:100%;
+    height : 100%;
+  }
+
+.split{
+     -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+  .gutter {
+    background-color: rgba(125,125,125,0.25);
+    background-repeat: no-repeat;
+    background-position: 50%;
+  }
+  .gutter.gutter-horizontal {
+    cursor: col-resize;
+    background-image: url('../grips/vertical.png');
+     height: 100%;
+    float: left;
+  }
+  .gutter.gutter-vertical {
+    cursor: row-resize;
+    background-image: url('../grips/horizontal.png');
+  }
+
+.horizpan{
+    width:100%;
+    height:100%;
+    overflow: hidden;
+    
+}
+
+
+.split.split-horizontal {
+    /* height: 65%; */
+    float : left;
+
+  }
+
+#graph    {
+    width:100%;
+    height : 100%;
+
+    margin: 0 0 0 0;
+    position:absolute;
+    left:0;
+    right :0;
+    top:0;
+
+     /*background-image: url("http://rotalstepmusic.net/uploads/images/wwwwwwwwwwwww.jpg");*/
+     background-color: #262626;
+}
+
+
+#up-panel
+{
+    width:100%;
+}
+
+#maps
+{
+    height:calc(100% - 40px);
+    width:100%;
+    /*padding-bottom: 80px; */
+}
+
+#legend
+{
+    /*background-color: gray;*/
+    height:100%;
+    color : white;
+
+}
+
+#streamgraph
+{
+
+height:100%;
+}
+
+#title{
+  font-size:150%;
+  box-sizing: border-box;
+  color: white;
+  font-weight: 400;
+  font-stretch:extra-expanded;
+  font-family: "Rockwell";
+
+}
+
+#text
+{
+    box-sizing: border-box;
+    margin-left: 10px;
+    padding-top:  5%;
+    height:50%;
+    font-weight: 100;
+    color: white;
+    font-family: "Rockwell";
+
+}
+
+h2
+{
+   padding-top:  0px;
+   margin-top:  0px;
+   margin-bottom:  0px;
+}
+
+#mapssplit{
+    
+        height:100%;
+        overflow: hidden;
+}
+
+#genre
+{
+
+    left:0%;
+    top :0px;
+
+    margin-left: 5px;
+    color: white;
+    font-family: "Rockwell";
+    
+
+    
+    z-index: 10000;
+
+    height:40px;
+    width: 150%;
+}
+
+
+.svgstream
+
+{
+  /*width: 100%;*/
+  position: absolute;
+  bottom: 1px;
+  left: 36px;
+}
+
+
+
+.axis text{
+
+    fill: white;
+    font-size: 125%;
+}
+.axis line{
+
+    fill: black;
+}
+.axis path{
+
+    fill: white;
+}
+.leaflet-container {
+    background-color:rgba(0,0,0,0.0);
+    overflow: hidden;
+}
+
+#history_button {
+    color: black;
+}
+/* .chemin
+{
+   opacity: 0.6;
+} */
+
+
+div.tooltip {	
+    position: relative;	
+    text-align: center;	
+    
+    width: 120px;					
+    height: 45px;					
+    padding: 2px;				
+    font: 12px sans-serif;		
+    background: white;	
+    color:white;
+    border: 0px;		
+    border-radius: 8px;			
+    pointer-events: none;
+    left : -50%;/* initialy hide*/
+    top : -10%;/* initialy hide*/
+    z-index: 5;
+}
+
+
+.vertcenter
+{
+
+       position: relative;
+  top: 38%;
+  margin-top: -72px;
+}

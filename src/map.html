@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> EPFL : Data visualization on Millon Songs ! </title>
+        <!-- <meta name="description" content="The HTML5 Herald">-->
+        <meta name="author" content="Groupe : ">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css"/>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.2.0/dist/MarkerCluster.Default.css"/>
+        <link rel="stylesheet" href="css/LeafletStyleSheet.css"/>
+        <link rel="stylesheet" href="./css/style.css">
+
+    </head>
+
+    <body>
+            		        
+
+		<div id="graph" >
+
+
+		    <div id="up-panel" class="split" >
+
+		        <div class= "split horizpan ">
+		            
+		            <div id="mapssplit" class="split split-horizontal">
+		                
+		                
+		            
+            		    <div id="maps" class="split" >
+
+    
+            		    </div>
+            		        		               
+ <div id="genre" class="split">  <!--<p id ="title"> <!--Choose your sauce ! </p> --></div>
+                    </div>
+
+        		    <div id="legend" class="split split-horizontal">
+
+        		        <div class="split horizpan ">
+
+
+            		        <div id = "text">
+
+            		            <p id ="title"> Let's ROCK!<p>
+                                <p>This tool helps to understand the evolution of Rock Music. Enjoy! </p>
+
+                                
+                                
+            		        </div>
+
+
+
+
+        		        </div>
+        		    </div>
+    		    </div>
+		    </div>
+
+
+		        <div id="streamgraph" class="split">
+		                             <div class="tooltip"></div>
+		            
+		            <div class="vertcenter">
+		            
+                        <input type="image" id="history_buttons" onclick="history_button_action();" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjMycHgiIGhlaWdodD0iMzJweCIgdmlld0JveD0iMCAwIDQ1Ljk3NCA0NS45NzUiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQ1Ljk3NCA0NS45NzU7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPGc+Cgk8Zz4KCQk8Zz4KCQkJPHBhdGggZD0iTTkuNjI5LDQ0LjY4Yy0xLjE1NCwxLjE2LTIuODk1LDEuNTEtNC40MDcsMC44ODVjLTEuNTEzLTAuNjIzLTIuNS0yLjEtMi41LTMuNzM1VjQuMDQzYzAtMS42MzcsMC45ODctMy4xMTIsMi41LTMuNzM2ICAgICBjMS41MTMtMC42MjUsMy4yNTMtMC4yNzUsNC40MDcsMC44ODVsMTcuODYyLDE3Ljk1MWMyLjA4OCwyLjA5OCwyLjA4OCw1LjQ4OCwwLDcuNTg1TDkuNjI5LDQ0LjY4eiIgZmlsbD0iI0ZGRkZGRiIvPgoJCTwvZz4KCQk8Zz4KCQkJPGc+CgkJCQk8cGF0aCBkPSJNMzguMjUyLDQ1Ljk3NWMtMi43NjMsMC01LTIuMjM4LTUtNVY1YzAtMi43NjIsMi4yMzctNSw1LTVjMi43NjIsMCw1LDIuMjM4LDUsNXYzNS45NzUgICAgICBDNDMuMjUyLDQzLjczNiw0MS4wMTMsNDUuOTc1LDM4LjI1Miw0NS45NzV6IiBmaWxsPSIjRkZGRkZGIi8+CgkJCTwvZz4KCQk8L2c+Cgk8L2c+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==" /> 
+                                <!--<input type="button" class="history_buttons" onclick="sendPause()" value="Pause">-->
+                                 <!--<input type="button" class="history_buttons" onclick="sendContinue()" value="Continue">-->
+                                 </br>
+                                <input type="image" class="history_buttons" onclick="sendStop()" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjMycHgiIGhlaWdodD0iMzJweCIgdmlld0JveD0iMCAwIDQ2IDQ2IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0NiA0NjsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8Zz4KCTxnPgoJCTxwYXRoIGQ9Ik0zNS44MjIsNkMzOC4xMjYsNiw0MCw3Ljg3NSw0MCwxMC4xNzh2MjUuNjQ2QzQwLDM4LjEyNywzOC4xMjYsNDAsMzUuODIyLDQwSDEwLjE3OEM3Ljg3NCw0MCw2LDM4LjEyNyw2LDM1LjgyMlYxMC4xNzggICAgQzYsNy44NzUsNy44NzQsNiwxMC4xNzgsNkgzNS44MjIgTTM1LjgyMiwwSDEwLjE3OEM0LjU1NywwLDAsNC41NTcsMCwxMC4xNzh2MjUuNjQ2QzAsNDEuNDQzLDQuNTU3LDQ2LDEwLjE3OCw0NmgyNS42NDUgICAgQzQxLjQ0Myw0Niw0Niw0MS40NDMsNDYsMzUuODIyVjEwLjE3OEM0Niw0LjU1Nyw0MS40NDMsMCwzNS44MjIsMEwzNS44MjIsMHoiIGZpbGw9IiNGRkZGRkYiLz4KCTwvZz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K"  />
+                     </br> <input type="image" class="history_buttons" onclick="sendSpeedUP()" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjMycHgiIGhlaWdodD0iMzJweCIgdmlld0JveD0iMCAwIDQzOC41MzYgNDM4LjUzNiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDM4LjUzNiA0MzguNTM2OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxnPgoJPHBhdGggZD0iTTQxNC40MSwyNC4xMjNDMzk4LjMzMyw4LjA0MiwzNzguOTYzLDAsMzU2LjMxNSwwSDgyLjIyOEM1OS41OCwwLDQwLjIxLDguMDQyLDI0LjEyNiwyNC4xMjMgICBDOC4wNDUsNDAuMjA3LDAuMDAzLDU5LjU3NiwwLjAwMyw4Mi4yMjV2Mjc0LjA4NGMwLDIyLjY0Nyw4LjA0Miw0Mi4wMTgsMjQuMTIzLDU4LjEwMmMxNi4wODQsMTYuMDg0LDM1LjQ1NCwyNC4xMjYsNTguMTAyLDI0LjEyNiAgIGgyNzQuMDg0YzIyLjY0OCwwLDQyLjAxOC04LjA0Miw1OC4wOTUtMjQuMTI2YzE2LjA4NC0xNi4wODQsMjQuMTI2LTM1LjQ1NCwyNC4xMjYtNTguMTAyVjgyLjIyNSAgIEM0MzguNTMyLDU5LjU3Niw0MzAuNDksNDAuMjA0LDQxNC40MSwyNC4xMjN6IE0zNjUuNDQ5LDIzNy41MzljMCw0Ljk0OC0xLjgxMSw5LjIzNi01LjQyMSwxMi44NDcgICBjLTMuNjIxLDMuNjE0LTcuOTA1LDUuNDI4LTEyLjg1NCw1LjQyOEgyNTUuODJ2OTEuMzU4YzAsNC45NDgtMS44MTcsOS4yMzItNS40MzIsMTIuODQ3Yy0zLjYxLDMuNjItNy44OTcsNS40MjctMTIuODQ3LDUuNDI3ICAgaC0zNi41NDNjLTQuOTQ4LDAtOS4yMzEtMS44MDctMTIuODQ3LTUuNDI3Yy0zLjYxNy0zLjYxNC01LjQyNi03Ljg5OC01LjQyNi0xMi44NDd2LTkxLjM1OEg5MS4zNjMgICBjLTQuOTQ4LDAtOS4yMjktMS44MTMtMTIuODQ3LTUuNDI4Yy0zLjYxNS0zLjYxLTUuNDI0LTcuODk4LTUuNDI0LTEyLjg0N3YtMzYuNTQ3YzAtNC45NDgsMS44MDktOS4yMzEsNS40MjQtMTIuODQ3ICAgYzMuNjE3LTMuNjE3LDcuODk4LTUuNDI2LDEyLjg0Ny01LjQyNmg5MS4zNjNWOTEuMzZjMC00Ljk0OSwxLjgwOS05LjIzMyw1LjQyNi0xMi44NDdjMy42MTYtMy42MTgsNy44OTgtNS40MjgsMTIuODQ3LTUuNDI4ICAgaDM2LjU0M2M0Ljk0OSwwLDkuMjM2LDEuODEsMTIuODQ3LDUuNDI4YzMuNjE0LDMuNjE0LDUuNDMyLDcuODk4LDUuNDMyLDEyLjg0N3Y5MS4zNmg5MS4zNTRjNC45NDgsMCw5LjIzMiwxLjgwOSwxMi44NTQsNS40MjYgICBjMy42MTMsMy42MTUsNS40MjEsNy44OTgsNS40MjEsMTIuODQ3VjIzNy41Mzl6IiBmaWxsPSIjRkZGRkZGIi8+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==" />
+                       </br> <input type="image" class="history_buttons" onclick="sendSpeedDown()" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjMycHgiIGhlaWdodD0iMzJweCIgdmlld0JveD0iMCAwIDQwMS45OTggNDAxLjk5OCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDAxLjk5OCA0MDEuOTk4OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxnPgoJPGc+CgkJPHBhdGggZD0iTTM3Ny44NywyNC4xMjZDMzYxLjc4Niw4LjA0MiwzNDIuNDE3LDAsMzE5Ljc2OSwwSDgyLjIyN0M1OS41NzksMCw0MC4yMTEsOC4wNDIsMjQuMTI1LDI0LjEyNiAgICBDOC4wNDQsNDAuMjEyLDAuMDAyLDU5LjU3NiwwLjAwMiw4Mi4yMjh2MjM3LjU0M2MwLDIyLjY0Nyw4LjA0Miw0Mi4wMTQsMjQuMTIzLDU4LjEwMWMxNi4wODYsMTYuMDg1LDM1LjQ1NCwyNC4xMjcsNTguMTAyLDI0LjEyNyAgICBoMjM3LjU0MmMyMi42NDgsMCw0Mi4wMTEtOC4wNDIsNTguMTAyLTI0LjEyN2MxNi4wODUtMTYuMDg3LDI0LjEyNi0zNS40NTMsMjQuMTI2LTU4LjEwMVY4Mi4yMjggICAgQzQwMS45OTMsNTkuNTgsMzkzLjk1MSw0MC4yMTIsMzc3Ljg3LDI0LjEyNnogTTM2NS40NDgsMzE5Ljc3MWMwLDEyLjU2NS00LjQ3LDIzLjMxNC0xMy40MTUsMzIuMjY0ICAgIGMtOC45NDUsOC45NDUtMTkuNjk4LDEzLjQxOC0zMi4yNjUsMTMuNDE4SDgyLjIyN2MtMTIuNTYzLDAtMjMuMzE3LTQuNDczLTMyLjI2NC0xMy40MTggICAgYy04Ljk0NS04Ljk0OS0xMy40MTgtMTkuNjk4LTEzLjQxOC0zMi4yNjRWODIuMjMxYzAtMTIuNTYzLDQuNDczLTIzLjMxNywxMy40MTgtMzIuMjY1QzU4LjkxLDQxLjAyMSw2OS42NjQsMzYuNTUsODIuMjI3LDM2LjU1ICAgIGgyMzcuNTQyYzEyLjU2NiwwLDIzLjMxOSw0LjQ3MSwzMi4yNjUsMTMuNDE3YzguOTQ1LDguOTQ3LDEzLjQxNSwxOS43MDIsMTMuNDE1LDMyLjI2NVYzMTkuNzcxTDM2NS40NDgsMzE5Ljc3MXoiIGZpbGw9IiNGRkZGRkYiLz4KCQk8cGF0aCBkPSJNMzE5Ljc2OSwxODIuNzMxSDgyLjIyN2MtMi42NjMsMC00Ljg1MywwLjg1NS02LjU2NywyLjU2NWMtMS43MDksMS43MTMtMi41NjgsMy45MDMtMi41NjgsNi41Njd2MTguMjcxICAgIGMwLDIuNjY5LDAuODU2LDQuODU5LDIuNTY4LDYuNTdjMS43MTUsMS43MDQsMy45MDUsMi41Niw2LjU2NywyLjU2aDIzNy41NDJjMi42NjMsMCw0Ljg1My0wLjg1NSw2LjU3MS0yLjU2ICAgIGMxLjcxMS0xLjcxMSwyLjU2Ni0zLjkwMSwyLjU2Ni02LjU3di0xOC4yNzFjMC0yLjY2NC0wLjg1NS00Ljg1NC0yLjU2Ni02LjU2N0MzMjQuNjE4LDE4My41ODcsMzIyLjQyOCwxODIuNzMxLDMxOS43NjksMTgyLjczMXoiIGZpbGw9IiNGRkZGRkYiLz4KCTwvZz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K" />
+                 </div>
+
+                 <div id="streamgraphSVG"> 
+
+                </div>
+		        </div>
+		</div>
+
+      <!-- MAPS -->
+        <script src="//d3js.org/topojson.v1.min.js"></script>
+        <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
+        <script src=' https://unpkg.com/leaflet.markercluster@1.2.0/dist/leaflet.markercluster.js'></script>
+
+
+        <script src="https://d3js.org/d3.v4.min.js"></script>
+
+        <!-- MISC -->
+        <script
+			  src="https://code.jquery.com/jquery-3.2.1.min.js"
+			  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+			  crossorigin="anonymous"></script>
+
+        <script src="js/PruneCluster.js"></script>
+
+        <script src="js/script.js"></script>
+        <script src="js/map.js"></script>
+        <script src="js/streamgraph.js"></script>
+
+
+          <!-- SPLIT -->
+        <script src="https://unpkg.com/split.js/split.min.js"></script>
+
+        <script type="text/javascript" >
+
+              window.addEventListener("resize", updatestream);
+
+        Split(['#up-panel', '#streamgraph'], {
+         direction: 'vertical',
+         sizes: [75, 25],
+        cursor: 'row-resize',
+        onDrag : updatestream,
+        minSize : [300,250],
+
+                })
+        Split(['#mapssplit', '#legend'], {
+         sizes: [85, 15],
+        cursor: 'col-resize'
+                })
+
+         /* Split(['#text', '#genre'], {
+         direction: 'vertical',
+         sizes: [50, 50],
+         minSize : 250,
+        cursor: 'row-resize',
+        onDrag : updatestream
+                })*/
+        </script>
+
+
+
+
+		</body>
+</html>
