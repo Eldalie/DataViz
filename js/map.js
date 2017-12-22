@@ -6,17 +6,33 @@ Autor : Benjamin Girard / Paul Feng / Olga Popovych
 
 */
 
+/*var tile = new L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}.{ext}', {
+	subdomains: 'abcd',
+	minZoom: 0,
+	maxZoom: 20,
+	ext: 'png'
+});
+*/
+var tiledqrk = L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png', {
+	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
+	subdomains: 'abcd',
+	maxZoom: 19
+});
+
+//orig new L.TileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png")
+
+
 var map = new L.Map("maps", {minZoom:1.7,/*maxBounds:[
     [-180, 0],
     [180, 180]
-],*/ attributionControl: false , center: [ 46.519962, 6.633597], zoom: 2}).addLayer(new L.TileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"));
+],*/ attributionControl: false , center: [ 46.519962, 6.633597], zoom: 2}).addLayer(tiledqrk  );
 build_icone();
 //http://leaflet-extras.github.io/leaflet-providers/preview/
 /*fetch("https://raw.githubusercontent.com/johan/world.geo.json/master/countries.geo.json")
   .then(function(response) { return response.json(); })
   .then(function(data) {L.geoJSON(data).addTo(map)});*/
 
-var ArtistCluster = new PruneClusterForLeaflet(310,10);
+var ArtistCluster = new PruneClusterForLeaflet(250,150);
 ArtistCluster.BuildLeafletClusterIcon = function(cluster) {
             var e = new L.Icon.MarkerCluster();
 
