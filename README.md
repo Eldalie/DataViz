@@ -13,7 +13,7 @@ GitHub repo structure:
 
   - Data: the data and all the scripts related to it, along with description, are in the /data folder
   - Code: all the code and related files are in the source folder /src.
-  - Other files and documents: images used for the process book are stored in /images folder, the process book itself is in the root both in markdown and pdf verions.
+  - Other files and documents: images used for the process book are stored in /images folder, the process book itself is in the root both in markdown and pdf versions.
 
 ## Intended usage
 
@@ -33,7 +33,6 @@ The link for the [visualization](https://gandalfatepfl.github.io/DataViz/src/map
 
   * The buttons on the left of the streamgraph will start/pause, stop and change the speed of the demo for the evolution of the rock music: basically the user can see on the map how the numbers change over the years, where the years are changed automatically.
 
-  * Additionally there is an explanation section on the right that provides the user with interesting information and changes for certain years and selections! Explore yourself :)
 
 
 
