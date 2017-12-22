@@ -187,10 +187,11 @@ function updatestream()
             
             tooltip.html(SELECTEDGENRE[i]+"<br/>"+year[anner-FIRSTYEAR][i]+" songs in the year "+anner);
             
+            let clip = function(a,b,c){return Math.max(a,Math.min(b,c)) ;} 
             
             tooltip.style("color",(COLOR[GENRES.indexOf(SELECTEDGENRE[i])] ))
-                .style("left", (d3.event.layerX-50) + "px")		
-                .style("top", (d3.event.layerY-50) + "px");	
+                .style("left",  clip(0+100,d3.event.layerX+40,width -80) + "px")		
+                .style("top", (d3.event.layerY+5) + "px");	
             
              }
             )

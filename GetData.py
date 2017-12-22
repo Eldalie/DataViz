@@ -74,7 +74,7 @@ fjson.write('{"columns":'+jsonData([name.__name__[4:].replace('_', ' ') for name
 # Select on what you want work
 path='hdfs:/datasets/million-song_untar/'
 
-for l1 in "MNOPQRSTUVWXYZ" : 
+for l1 in "ABCDEFGHIJKLMNOPQRSTUVWXYZ" : 
     for l2 in "ABCDEFGHIJKLMNOPQRSTUVWXYZ" :
         for l3 in "ABCDEFGHIJKLMNOPQRSTUVWXYZ" :
             gp = path+l1+'/'+l2+'/'+l3+'/*.h5'
