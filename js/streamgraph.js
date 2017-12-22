@@ -173,7 +173,7 @@ function updatestream()
     svg.select(".stream").selectAll(".chemin")
         .attr("opacity", 0.95)
         .classed('selected', true)
-        .on("mouseover", function(d, i) {
+        .on("mousemove", function(d, i) {
             d3.select('#streamgraph').select(".stream").selectAll(".chemin").transition()
                 .duration(250)
                 .attr("stroke", function(d, j) {
@@ -181,12 +181,23 @@ function updatestream()
                 })
                 .attr("stroke-width", 2)
             
-            console.log(i);
-            tooltip.html(i);
+            console.log();
+            let anner = Math.floor(xScale.invert(d3.event.layerX));
+            
+            
+            tooltip.html(SELECTEDGENRE[i]+"<br/>"+year[anner-FIRSTYEAR][i]+" songs in the year "+anner);
+            
+            
+            tooltip.style("color",(COLOR[GENRES.indexOf(SELECTEDGENRE[i])] ))
+                .style("left", (d3.event.layerX-50) + "px")		
+                .style("top", (d3.event.layerY-50) + "px");	
+            
              }
             )
         .on("mouseout", function() {
             d3.select('#streamgraph').select(".stream").selectAll(".chemin").attr('stroke', 'none')
+            tooltip.style("left", "-10%")		
+                .style("top", "-10%");
         })
         
     
