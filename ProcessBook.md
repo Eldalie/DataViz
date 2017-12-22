@@ -86,50 +86,8 @@ Our visualization is based on a Leaflet map coupled with a svg streamgraph.
 
 This was the first sketch that was made when we came up with the idea. Overall, if we compare it to the final visualization, it shows that we stayed in the same line of work, at least in terms of strucutre. 
 
-```
+![0](https://raw.githubusercontent.com/GandalfAtEpfl/DataViz/master/images/Ascii.PNG)
 
-+------------------------------------------------------------------------------------------------------+-----------------------------+
-|                                                                                                      |           TITLE             |
-|                                                                                                      |                             |
-|                                                                                                      |     SOME TEXTE              |
-|                                                                                                      |                             |
-|                                                                                                      |                             |
-|                                                                                                      |                             |
-|                                                                                                      |                             |
-|                                                                                                      |                             |
-|                                                                                                      |                             |
-|                       WORDL MAP : WITH ZOMING,move,each song is a dot with a color                   +-----------------------------+
-|                       of his genre                                                                   |                             |
-|                                                                                                      |                             |
-|                                                                                                      |                             |
-|                                                                                                      |                             |
-|                                                                                                      |       LEGEND !!             |
-|                                                                                                      |                             |
-|                                                                                                      |                             |
-|                                                                                                      |                             |
-|                inportant event                                                                       |                             |
-|                                                                                                      |                             |
-+--------------------+-------------------------------------------+-------------+-----------------------+-----------------------------+
-|                    |                                           |             |                                                     |
-|                    |                                           |             |                                                     |
-|                    |                                           |             |                                                     |
-|                    |                                           |             |         Golden ratio                                |
-|                    |                                           |             |                                                     |
-|                    |                                           |             |                                                     |
-|                    |                                           |             |                                                     |
-|                    |     SELECT TIME    +       STREAM GRAPH   |             |                                                     |
-|                    |                                           |             |                                                     |
-|                    |                                           |             |                                                     |
-|                    |                                           |             |                                                     |
-|                    |                                           |             |                                                     |
-|                    |                                           |             |                                                     |
-|                    |                                           |             |                                                     |
-|                    |                                           |             |                                                     |
-|                    |                                           |             |                                                     |
-+--------------------+-------------------------------------------+-------------+-----------------------------------------------------+
-                                                               start          END
-
-```
 ## A slow start.. for the best ! 
 
 Initially, we wanted to show the evolution of all types of music thoughout the past century in the world in order to understand the different eras of music by country. The idea was to highlight the evolution of one or two features of a song (e.g. hotness,danceability) by country in time. 
