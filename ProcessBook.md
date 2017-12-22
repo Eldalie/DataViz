@@ -133,7 +133,7 @@ We tought that the subject was too wide and not specific enough to convey a clea
 ## Change for the map and streamgraph - Version 1
 
 Having data with geographical location and realease years of songs pushed us towards using a map and a sreamgraph. The streamgraph shoulg give a quick overview of the split of the styles throughout years and the map should split the data geographically. Morevover, we want two graphs to be connected and originally we wanted to use years on x-axis of the streamgraph to filter the data shown on the map, so to show only songs released during selected time range. Another filter that we though of were styles. We wanted to be able to see the progression of only one style on the map, so we added a simple filter with checkboxes in the 'legend' part of the screen. This filter allows to check/unckeck any style available, so we can see any number of available styles on the map. The result of this version can be seen on this screenshot
-![version1](https://rawgit.com/GandalfAtEpfl/DataViz/blob/master/screeshot/Screenshot%20from%202017-12-05%2015:44:52.png)
+![version1](https://raw.githubusercontent.com/GandalfAtEpfl/DataViz/master/screeshot/Screenshot%20from%202017-12-05%2015:44:52.png)
 
 ## From Version 1 to Version 2
 
@@ -144,7 +144,7 @@ Another issue we've noticed was the way the time range was selected. In our data
 For the map we have decided to use some clustering of the data points. At every zoom level we can see a few clusters of data, represented by bubbles. In order to see the number of points in the cluster and song styles, we made the cluster bubble outline colored with styles (like in a pie chart), with the number of points in the middle of the bubble.
 
 This version can be viewed on this screenshot together with the experimental background :)
-![version2](https://rawgit.com/GandalfAtEpfl/DataViz/blob/master/screeshot/Screenshot_20171210_125506.png)
+![version2](https://raw.githubusercontent.com/GandalfAtEpfl/DataViz/master/screeshot/Screenshot_20171210_125506.png)
 
 ## From Version 2 to Version 3
 
@@ -153,16 +153,16 @@ By observing the results of version 2, we have noticed that it was hard to obser
 Another option we've tried out was changing the streamgraph. We wanted to be able to show different styles on it, so we made style filter change the graph too (together with the map). However, since we wanted to filter the map by also clicking on the style on the streamgraph (which would also tick or untick the corresponding boxes in the filter), this new option didn't make sense, so we have decided to give it up and just keep the filtering of the map available through the ticking of the box or selecting on the streamgraph.
 
 Our solution to the map was the following: we decided to keep the clusters, however slightly different. Why so? Because of how data points were spread out on the map. The problem is that most of the points actually map to the same locations, like centers of big cities. So, in the end, a lot of points map to the same locations and overlap, so it becomes impossible to see which styles are represented in those locations. We have tried to overcome this issue by introducing some randomness for those locations, but this was distorting out data and eventially it wasn't what we wanted. The fact that the data points were overlapping a lot was also the reason why we've decided to give up on dot distribution map. Even with introduced randomness, the following was the best result we have obtained and as it can be seen from the screenshot, it is difficult to separate points and see which style (which color) has the most points.
-![dot_map](https://rawgit.com/GandalfAtEpfl/DataViz/blob/master/screeshot/Screenshot%20from%202017-12-12%2014:55:13.png)
+![dot_map](https://raw.githubusercontent.com/GandalfAtEpfl/DataViz/master/screeshot/Screenshot%20from%202017-12-12%2014:55:13.png)
 
 Here's how we changed the clusters. First of all, we decided to separate each style, so now every cluster is not one bubble, but as many bubbles as there are styles in this cluster. Secondly, the size of each bubble is proportional to the number of data points it represents, so bigger clusters are bigger in size. Like this dominant styles can be instantly seen on the map. Clusterin itself works as before: as you zoom in, the clusters are reformed, allowing to group data points more locally and so see more details on every zoom level in. Below is the screenshot of the map at this stage.
-![separate_clusters](https://rawgit.com/GandalfAtEpfl/DataViz/blob/master/screeshot/2017-12-13.PNG)
+![separate_clusters](https://raw.githubusercontent.com/GandalfAtEpfl/DataViz/master/screeshot/2017-12-13.PNG)
 
 ## From Version 3 to Version 4
 
 Here's a few things we have come up after discussing out version 3. We have decided to make the time range selector easier: since in order to select one year, one need to find and drag the brush from both sides, we have decided to make that available with on click on the year. Another thing that we finally decided to work on is the styling and shaping of the web page (since some of our elements and text we going out from the page). Another thing we tried to do was to set max zoom for the map and limit it, so it won't be possible to scroll too far on it, but we still need to adjust a few things there. In terms of automatic time view, we decided that we need at least play, stop and pause buttons, for user to have some control over the timeplay. 
 Here's our version at this point:
-![version4](https://rawgit.com/GandalfAtEpfl/DataViz/blob/master/screeshot/2017-12-19.png)
+![version4](https://raw.githubusercontent.com/GandalfAtEpfl/DataViz/master/screeshot/2017-12-19.png)
 
 We decided that additional options for playing such as speed selector would be a nice thing to have, too.
 
