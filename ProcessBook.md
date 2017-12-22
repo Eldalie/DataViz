@@ -34,13 +34,13 @@ This is an example of streamgraph that caught our eye. It represents the evoluti
 
 Courtesy of Maximilien Cuony and Kirell Benzi, taken from http://www.kirellbenzi.com/. 
 
-For the structure of our visualization and especially the story telling we wanted to combine them in the same page. This was decided after looking at this interactive [visualization](http://drones.pitchinteractive.com/index.fr.html) that showed the number of attacks by drone in Pakistan. We think that the user would be more inclined to be interested and focused in our visualization if we direct him with a demo-like story telling.
+For the structure of our visualization and especially the story telling we wanted to combine them in the same page. This was decided after looking at this interactive [visualization](http://drones.pitchinteractive.com/index.fr.html) that showed the number of attacks by drone in Pakistan. We think that the user would be more inclined to be interested and focused in our visualization if we guide him/her with a demo-like story telling.
 
 ## The Evolution of Rock Music
 
-The main goal of our visualization is to show the evolution of Rock Music in time and space. With our structure, we can assess both variables via our streamgraph with the brusher associated and the map. We can see the markers appear more and more in Europe for example as we move the brush in time. More specifically, we added 9 subgenre of Rock so the user can have an understanding of the different style of Rock first of all, but also their popularity and their evolution in time. Finally, each icon representing one song carry the information of the name of the song, the artist name, the genre and the hotness (measured in by The Echo Nest following their criterion). It's a more detailed information for the users who want to discover new musics, new genres from various countries. 
-There are many way to use our visualization, each type of user can find its own preference.
-Our story telling focus on different eras of Rock music, by highlighting the main genres and the notable artists or groups.
+The main goal of our visualization is to show the evolution of Rock Music in time and space. With our structure, we can assess both variables via our streamgraph with the brusher associated, and the map. We can see the markers appear more and more in Europe for example as we move the brush in time. More specifically, we added 9 subgenres of Rock so the user can have an understanding of the different style of Rock first of all, but also their popularity and their evolution in time. Finally, each icon representing one song carry the information of the name of the song, the artist name, the genre and the hotness (measured in by The Echo Nest following their criterion). It's a more detailed information for the users who want to discover new musics, new genres from various countries. 
+There are many ways to use our visualization, each type of user can find its own preference.
+Our story telling focus on different eras of Rock music, by highlighting the main subgenres and the notable artists or groups.
 
 ## Data analysis 
 
@@ -74,6 +74,9 @@ Because there have been so many genres of rock since the 50s, we decided to focu
     - soft rock
 
 They cover all eras of rock pretty well and are the most popular and well known subgenre of rock. 
+
+## Exploratory data analysis: What viz have you used to gain insights on the data?
+
 
 
 # Design 
