@@ -126,7 +126,7 @@ h2
 .svgstream
 
 {
-  width: 100%;
+  /*width: 100%;*/
   position: absolute;
   bottom: 1px;
   left: 36px;
