@@ -176,7 +176,7 @@ h2
 
 
 div.tooltip {	
-    position: relative;	
+    position: absolute;	
     text-align: center;	
     
     width: 120px;					
@@ -197,7 +197,7 @@ div.tooltip {
 .vertcenter
 {
 
-       position: relative;
-  top: 38%;
-  margin-top: -72px;
+      /* position: relative;*/
+  /*top: 38%;
+  margin-top: -72px;*/
 }
