@@ -1,18 +1,5 @@
-# Process book - Evolution of Rock Music 
 
-To do in the process book: 
-
-- [Ok] Overview, motivation, target audience
-- [Ok] Related work and inspiration
-- [Ok] Questions: What am I trying to show this my viz?
-- [Ok] Dataset: where does it come from, what are you processing steps?
-- [Ok] Exploratory data analysis: What viz have you used to gain insights on the data?
-- [] Designs: What are the different visualizations you considered? Justify the design decisions you made using the perceptual and design principles.
-- [Ongoing] Did you deviate from your initial proposal? (it’s ok)
-- [] Implementation: Describe the intent and functionality of the interactive visualizations you implemented. Provide clear and well-referenced images showing the key design and interaction elements.
-- [] Evaluation: What did you learn about the data by using yourvisualizations? How did you answer your questions? How well does your
-visualization work, and how could you further improve it?
-
+# Process book 
 
 ## Introduction 
 
