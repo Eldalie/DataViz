@@ -63,24 +63,31 @@ If one does not have access to the EPFL cluster, the full dataset and a subset c
 
 Because there have been so many genres of rock since the 50s, we decided to focus our attention toward those following ones: 
 
-    - pop rock
-    - blues-rock
-    - indie rock
-    - post rock
-    - psychedelic rock
-    - rock 'n roll
-    - alternative rock
-    - glam rock
-    - soft rock
+       - pop rock
+       - blues-rock
+       - indie rock
+       - post rock
+       - psychedelic rock
+       - rock 'n roll
+       - alternative rock
+       - glam rock
+       - soft rock
 
 They cover all eras of rock pretty well and are the most popular and well known subgenre of rock. 
+A main giveaway about the treatment of the data is that there are a lot of missing features in the dataset which make the filtering very selective.
 
 ## Exploratory data analysis: What viz have you used to gain insights on the data?
 
+For exploratory visualization, we used python to plot some graphs to gain more insights on the dataset. 
+The first key information to follow is the distribution of songs by time. This gives a good indicator of the number of songs in the dataset for each year. It shows that most of the songs in the dataset are quite recent (last decade and a half). Even so, still a great number of songs are present in the dataset ranging from the 50s to the early 2000s. 
+
 ![year](https://raw.githubusercontent.com/GandalfAtEpfl/DataViz/master/imgs_processbook/release_year_distribution.png)
+
+There was also a deep interest in the hotness of the song at the begining of the project, which led us to visualize its ditribution for a range of hotness
+
 ![hotness](https://raw.githubusercontent.com/GandalfAtEpfl/DataViz/master/imgs_processbook/song_hotttnesss_distribution.png)
 
-
+We also used a python package called folium to buid a map to have a quick overview of the distribution of songs in the world, to verify that the artist locations are coherent. (For example Vanessa Paradis in France). 
 
 
 # Design 
@@ -89,8 +96,6 @@ Description: Visualization tool to show how rock evolves with time.
 
 This was the first sketch that was made when we came up with the idea. Overall, if we compare it to the final visualization, it shows that we stayed in the same line of work, at least in terms of strucutre. 
 
-
-```
 +------------------------------------------------------------------------------------------------------+-----------------------------+
 |                                                                                                      |           TITLE             |
 |                                                                                                      |                             |
@@ -131,10 +136,6 @@ This was the first sketch that was made when we came up with the idea. Overall, 
 |                    |                                           |             |                                                     |
 +--------------------+-------------------------------------------+-------------+-----------------------------------------------------+
                                                                start          END
-
-
-```
-
 
 
 ## A slow start.. for the best ! 
